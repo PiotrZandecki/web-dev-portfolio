@@ -1,15 +1,12 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ContactCta } from "@/components/ContactCta";
-import { FeaturedProject } from "@/components/FeaturedProject";
-import { HeroSection } from "@/components/HeroSection";
-import { ProjectCard } from "@/components/ProjectCard";
-import { SkillsSection } from "@/components/SkillsSection";
+import { ProjectsExplorer } from "@/components/ProjectsExplorer";
+import { ProjectSummaryBar } from "@/components/ProjectSummaryBar";
+import { SectionHeader } from "@/components/SectionHeader";
 import { projects } from "@/content/projects";
 import { getDictionary, isLocale } from "@/lib/i18n";
 
-type HomePageProps = {
+type ProjectsPageProps = {
   params: Promise<{
     locale: string;
   }>;
@@ -17,7 +14,7 @@ type HomePageProps = {
 
 export async function generateMetadata({
   params,
-}: HomePageProps): Promise<Metadata> {
+}: ProjectsPageProps): Promise<Metadata> {
   const { locale } = await params;
 
   if (!isLocale(locale)) {
@@ -27,18 +24,18 @@ export async function generateMetadata({
   const dictionary = getDictionary(locale);
 
   return {
-    title: dictionary.seo.homeTitle,
-    description: dictionary.seo.homeDescription,
+    title: dictionary.seo.projectsTitle,
+    description: dictionary.seo.projectsDescription,
     alternates: {
       languages: {
-        en: "/en",
-        pl: "/pl",
+        en: "/en/projects",
+        pl: "/pl/projects",
       },
     },
   };
 }
 
-export default async function HomePage({ params }: HomePageProps) {
+export default async function ProjectsPage({ params }: ProjectsPageProps) {
   const { locale } = await params;
 
   if (!isLocale(locale)) {
@@ -46,73 +43,22 @@ export default async function HomePage({ params }: HomePageProps) {
   }
 
   const dictionary = getDictionary(locale);
-  const [featuredProject, ...otherProjects] = projects;
 
   return (
-    <main>
-      <HeroSection locale={locale} dictionary={dictionary} />
+    <main className="mx-auto max-w-6xl px-6 py-20">
+      <SectionHeader
+        eyebrow={dictionary.projectsPage.eyebrow}
+        title={dictionary.projectsPage.title}
+        description={dictionary.projectsPage.description}
+      />
 
-      <section id="about" className="mx-auto max-w-6xl px-6 py-20">
-        <div className="rounded-3xl border border-white/10 bg-white/5 p-8 md:p-10">
-          <p className="text-sm font-medium uppercase tracking-[0.3em] text-cyan-400">
-            {dictionary.home.aboutEyebrow}
-          </p>
+      <ProjectSummaryBar dictionary={dictionary} />
 
-          <h2 className="mt-4 text-4xl font-bold tracking-tight text-white">
-            {dictionary.home.aboutTitle}
-          </h2>
-
-          <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300">
-            {dictionary.home.aboutDescription}
-          </p>
-        </div>
-      </section>
-
-      <SkillsSection locale={locale} dictionary={dictionary} />
-
-      <section className="mx-auto max-w-6xl px-6 py-20">
-        <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <div>
-            <p className="text-sm font-medium uppercase tracking-[0.3em] text-cyan-400">
-              {dictionary.home.projectsEyebrow}
-            </p>
-
-            <h2 className="mt-4 text-4xl font-bold tracking-tight text-white">
-              {dictionary.home.projectsTitle}
-            </h2>
-
-            <p className="mt-4 max-w-2xl text-slate-300">
-              {dictionary.home.projectsDescription}
-            </p>
-          </div>
-
-          <Link
-            href={`/${locale}/projects`}
-            className="w-fit rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-white transition hover:border-white/40"
-          >
-            {dictionary.common.viewProjects}
-          </Link>
-        </div>
-
-        <FeaturedProject
-          project={featuredProject}
-          locale={locale}
-          dictionary={dictionary}
-        />
-
-        <div className="mt-6 grid gap-6 md:grid-cols-2">
-          {otherProjects.map((project) => (
-            <ProjectCard
-              key={project.slug}
-              project={project}
-              locale={locale}
-              dictionary={dictionary}
-            />
-          ))}
-        </div>
-      </section>
-
-      <ContactCta locale={locale} dictionary={dictionary} />
+      <ProjectsExplorer
+        projects={projects}
+        locale={locale}
+        dictionary={dictionary}
+      />
     </main>
   );
 }

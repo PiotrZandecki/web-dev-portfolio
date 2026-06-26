@@ -53,6 +53,20 @@ export type Dictionary = {
     title: string;
     description: string;
   };
+  projectsExplorer: {
+    searchLabel: string;
+    searchPlaceholder: string;
+    statusLabel: string;
+    categoryLabel: string;
+    allStatuses: string;
+    allCategories: string;
+    clearFilters: string;
+    resultsPrefix: string;
+    resultsSuffix: string;
+    helperText: string;
+    emptyTitle: string;
+    emptyDescription: string;
+  };
   featuredProject: {
     eyebrow: string;
     previewTitle: string;
@@ -191,6 +205,21 @@ const dictionaries: Record<Locale, Dictionary> = {
       title: "My web development projects",
       description:
         "Each project has its own page with description, features, technologies and links. This section will grow together with my skills and portfolio.",
+    },
+    projectsExplorer: {
+      searchLabel: "Search",
+      searchPlaceholder: "Search by name, technology or description...",
+      statusLabel: "Status",
+      categoryLabel: "Category",
+      allStatuses: "All statuses",
+      allCategories: "All categories",
+      clearFilters: "Clear filters",
+      resultsPrefix: "Showing",
+      resultsSuffix: "projects",
+      helperText: "Use filters to quickly find a specific project.",
+      emptyTitle: "No projects found",
+      emptyDescription:
+        "Try changing the search phrase, status or category filter to see more projects.",
     },
     featuredProject: {
       eyebrow: "Featured",
@@ -343,6 +372,21 @@ const dictionaries: Record<Locale, Dictionary> = {
       title: "Moje projekty web development",
       description:
         "Każdy projekt ma własną podstronę z opisem, funkcjami, technologiami i linkami. Ta sekcja będzie rozwijać się razem z moimi umiejętnościami i portfolio.",
+    },
+    projectsExplorer: {
+      searchLabel: "Wyszukaj",
+      searchPlaceholder: "Szukaj po nazwie, technologii albo opisie...",
+      statusLabel: "Status",
+      categoryLabel: "Kategoria",
+      allStatuses: "Wszystkie statusy",
+      allCategories: "Wszystkie kategorie",
+      clearFilters: "Wyczyść filtry",
+      resultsPrefix: "Wyświetlono",
+      resultsSuffix: "projektów",
+      helperText: "Użyj filtrów, żeby szybko znaleźć konkretny projekt.",
+      emptyTitle: "Nie znaleziono projektów",
+      emptyDescription:
+        "Spróbuj zmienić frazę wyszukiwania, status albo kategorię, żeby zobaczyć więcej projektów.",
     },
     featuredProject: {
       eyebrow: "Wyróżniony",
