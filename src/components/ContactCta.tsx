@@ -33,12 +33,6 @@ export function ContactCta({ locale, dictionary }: ContactCtaProps) {
       value: siteConfig.githubUrl || dictionary.contactSection.pendingValue,
       href: contactLinks.github || undefined,
     },
-    {
-      title: dictionary.contactSection.linkedinTitle,
-      description: dictionary.contactSection.linkedinDescription,
-      value: siteConfig.linkedinUrl || dictionary.contactSection.pendingValue,
-      href: contactLinks.linkedin || undefined,
-    },
   ];
 
   return (

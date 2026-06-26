@@ -27,10 +27,6 @@ export function Footer({ dictionary }: FooterProps) {
       label: dictionary.contactSection.githubTitle,
       href: contactLinks.github,
     },
-    {
-      label: dictionary.contactSection.linkedinTitle,
-      href: contactLinks.linkedin,
-    },
   ].filter((link) => Boolean(link.href));
 
   return (
@@ -51,14 +47,14 @@ export function Footer({ dictionary }: FooterProps) {
           className="flex flex-wrap gap-3 text-sm text-slate-400"
         >
           <Link
-            href="/en"
+            href="/en/"
             className="rounded-full border border-white/10 px-4 py-2 transition hover:border-white/40 hover:text-white"
           >
             EN
           </Link>
 
           <Link
-            href="/pl"
+            href="/pl/"
             className="rounded-full border border-white/10 px-4 py-2 transition hover:border-white/40 hover:text-white"
           >
             PL
