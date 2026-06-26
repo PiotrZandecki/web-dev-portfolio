@@ -10,16 +10,25 @@ export const metadata: Metadata = {
   applicationName: siteConfig.name,
   title: {
     default: `${siteConfig.name} | Web Developer Portfolio`,
-    template: `%s`,
+    template: "%s",
   },
   description: siteConfig.description,
+  keywords: [...siteConfig.keywords],
   authors: [{ name: siteConfig.author }],
   creator: siteConfig.author,
   publisher: siteConfig.author,
+  category: "portfolio",
   icons: {
     icon: "/favicon.ico",
   },
   manifest: "/manifest.webmanifest",
+  alternates: {
+    canonical: "/en",
+    languages: {
+      en: "/en",
+      pl: "/pl",
+    },
+  },
   openGraph: {
     type: "website",
     url: "/en",
@@ -28,17 +37,32 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     locale: "en_US",
     alternateLocale: ["pl_PL"],
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.name} Web Developer Portfolio`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${siteConfig.name} | Web Developer Portfolio`,
     description: siteConfig.description,
+    images: ["/opengraph-image"],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
 export const viewport: Viewport = {
   themeColor: "#020617",
   colorScheme: "dark",
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({

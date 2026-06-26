@@ -1,36 +1,123 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Piotr.dev — Web Developer Portfolio
 
-## Getting Started
+Bilingual web developer portfolio built with Next.js, TypeScript and Tailwind CSS.
 
-First, run the development server:
+The portfolio is designed as a central hub for smaller web development projects. Each project has its own page, case study sections, technology stack, links area and prepared space for embedded live previews.
+
+## Tech stack
+
+- Next.js
+- TypeScript
+- Tailwind CSS
+- App Router
+- i18n routing with `/en` and `/pl`
+- SEO routes: sitemap, robots, manifest, Open Graph image
+
+## Local development
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```txt
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Environment variables
 
-## Learn More
+Create `.env.local` based on `.env.example`.
 
-To learn more about Next.js, take a look at the following resources:
+```env
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+NEXT_PUBLIC_CONTACT_EMAIL=
+NEXT_PUBLIC_GITHUB_URL=
+NEXT_PUBLIC_LINKEDIN_URL=
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+For production deployment, set these values in the hosting provider panel.
 
-## Deploy on Vercel
+Example:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```env
+NEXT_PUBLIC_SITE_URL=https://your-domain.com
+NEXT_PUBLIC_CONTACT_EMAIL=your-email@example.com
+NEXT_PUBLIC_GITHUB_URL=https://github.com/your-login
+NEXT_PUBLIC_LINKEDIN_URL=https://www.linkedin.com/in/your-profile
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Available routes
+
+```txt
+/en
+/pl
+/en/projects
+/pl/projects
+/en/projects/private-space
+/pl/projects/private-space
+/en/projects/aurora-beauty
+/pl/projects/aurora-beauty
+/en/projects/web-dev-portfolio
+/pl/projects/web-dev-portfolio
+```
+
+## SEO routes
+
+```txt
+/robots.txt
+/sitemap.xml
+/manifest.webmanifest
+/opengraph-image
+```
+
+## Pre-deployment checks
+
+Run:
+
+```bash
+npm run lint
+npm run build
+```
+
+Then verify locally:
+
+```bash
+npm run dev
+```
+
+Check:
+
+```txt
+http://localhost:3000/en
+http://localhost:3000/pl
+http://localhost:3000/robots.txt
+http://localhost:3000/sitemap.xml
+http://localhost:3000/manifest.webmanifest
+http://localhost:3000/opengraph-image
+```
+
+## Deployment notes
+
+Recommended deployment target: Vercel.
+
+Before deployment:
+
+1. Push the repository to GitHub.
+2. Import the repository in Vercel.
+3. Add environment variables:
+   - `NEXT_PUBLIC_SITE_URL`
+   - `NEXT_PUBLIC_CONTACT_EMAIL`
+   - `NEXT_PUBLIC_GITHUB_URL`
+   - `NEXT_PUBLIC_LINKEDIN_URL`
+4. Run production build.
+5. Check both language versions after deployment.
