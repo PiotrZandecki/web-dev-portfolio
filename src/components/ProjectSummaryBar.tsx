@@ -34,15 +34,18 @@ export function ProjectSummaryBar({ dictionary }: ProjectSummaryBarProps) {
   ];
 
   return (
-    <section className="mb-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    <section
+      aria-label={dictionary.projectsPage.title}
+      className="mb-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+    >
       {summaryItems.map((item) => (
-        <div
+        <article
           key={item.label}
-          className="rounded-3xl border border-white/10 bg-white/5 p-6"
+          className="rounded-3xl border border-white/10 bg-white/5 p-6 transition hover:border-cyan-400/30 hover:bg-white/[0.07]"
         >
           <p className="text-3xl font-bold text-white">{item.value}</p>
           <p className="mt-2 text-sm text-slate-400">{item.label}</p>
-        </div>
+        </article>
       ))}
     </section>
   );

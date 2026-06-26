@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ProjectCard } from "@/components/ProjectCard";
+import { ProjectsExplorer } from "@/components/ProjectsExplorer";
 import { ProjectSummaryBar } from "@/components/ProjectSummaryBar";
 import { SectionHeader } from "@/components/SectionHeader";
 import { projects } from "@/content/projects";
@@ -45,7 +45,11 @@ export default async function ProjectsPage({ params }: ProjectsPageProps) {
   const dictionary = getDictionary(locale);
 
   return (
-    <main className="mx-auto max-w-6xl px-6 py-20">
+    <main
+      id="main-content"
+      tabIndex={-1}
+      className="mx-auto max-w-6xl px-6 py-20"
+    >
       <SectionHeader
         eyebrow={dictionary.projectsPage.eyebrow}
         title={dictionary.projectsPage.title}
@@ -54,16 +58,11 @@ export default async function ProjectsPage({ params }: ProjectsPageProps) {
 
       <ProjectSummaryBar dictionary={dictionary} />
 
-      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-        {projects.map((project) => (
-          <ProjectCard
-            key={project.slug}
-            project={project}
-            locale={locale}
-            dictionary={dictionary}
-          />
-        ))}
-      </div>
+      <ProjectsExplorer
+        projects={projects}
+        locale={locale}
+        dictionary={dictionary}
+      />
     </main>
   );
 }

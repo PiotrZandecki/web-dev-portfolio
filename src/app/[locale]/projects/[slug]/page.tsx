@@ -75,7 +75,11 @@ export default async function ProjectDetailsPage({
   const dictionary = getDictionary(locale);
 
   return (
-    <main className="mx-auto max-w-6xl px-6 py-20">
+    <main
+      id="main-content"
+      tabIndex={-1}
+      className="mx-auto max-w-6xl px-6 py-20"
+    >
       <Link
         href={`/${locale}/projects`}
         className="text-sm font-semibold text-cyan-300 transition hover:text-cyan-200"
