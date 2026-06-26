@@ -7,8 +7,10 @@ import { ProjectDetailsHero } from "@/components/ProjectDetailsHero";
 import { ProjectEmbed } from "@/components/ProjectEmbed";
 import { ProjectLinks } from "@/components/ProjectLinks";
 import { ProjectMockups } from "@/components/ProjectMockups";
+import { ProjectPager } from "@/components/ProjectPager";
 import { ProjectProcess } from "@/components/ProjectProcess";
 import { ProjectSectionNav } from "@/components/ProjectSectionNav";
+import { ProjectSnapshot } from "@/components/ProjectSnapshot";
 import { RelatedProjects } from "@/components/RelatedProjects";
 import { getProjectBySlug, projects } from "@/content/projects";
 import { getDictionary, isLocale } from "@/lib/i18n";
@@ -109,6 +111,12 @@ export default async function ProjectDetailsPage({
 
       <ProjectSectionNav locale={locale} />
 
+      <ProjectSnapshot
+        project={project}
+        locale={locale}
+        dictionary={dictionary}
+      />
+
       <ProjectLinks project={project} dictionary={dictionary} />
 
       <ProjectProcess
@@ -130,6 +138,12 @@ export default async function ProjectDetailsPage({
       />
 
       <ProjectEmbed project={project} locale={locale} />
+
+      <ProjectPager
+        currentProjectSlug={project.slug}
+        projects={projects}
+        locale={locale}
+      />
 
       <RelatedProjects
         currentProjectSlug={project.slug}

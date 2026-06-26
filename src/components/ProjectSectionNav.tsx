@@ -8,6 +8,8 @@ const projectSectionNavCopy: Record<
   Locale,
   {
     label: string;
+    overview: string;
+    snapshot: string;
     links: string;
     process: string;
     preview: string;
@@ -16,6 +18,8 @@ const projectSectionNavCopy: Record<
 > = {
   en: {
     label: "Case study navigation",
+    overview: "Overview",
+    snapshot: "Snapshot",
     links: "Links",
     process: "Process",
     preview: "Preview",
@@ -23,6 +27,8 @@ const projectSectionNavCopy: Record<
   },
   pl: {
     label: "Nawigacja case study",
+    overview: "Opis",
+    snapshot: "Podsumowanie",
     links: "Linki",
     process: "Proces",
     preview: "Podgląd",
@@ -34,6 +40,14 @@ export function ProjectSectionNav({ locale }: ProjectSectionNavProps) {
   const copy = projectSectionNavCopy[locale];
 
   const items = [
+    {
+      label: copy.overview,
+      href: "#project-overview",
+    },
+    {
+      label: copy.snapshot,
+      href: "#project-snapshot",
+    },
     {
       label: copy.links,
       href: "#project-links",

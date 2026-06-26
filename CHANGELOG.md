@@ -27,12 +27,16 @@ All notable changes to this project will be documented in this file.
 - Added dedicated homepage project showcase component.
 - Added value proposition section to homepage and services page.
 - Added service package section to services page.
+- Added project snapshot section on project case study pages.
+- Added previous/next project navigation on project case study pages.
 
 ### Changed
 
 - Redesigned homepage hero section with stronger Z-TECH positioning.
 - Reordered homepage sections for a more business-oriented flow.
 - Expanded services page into a more complete offer page.
+- Redesigned project case study hero sections with large visual previews.
+- Expanded project case study navigation.
 
 ### Planned
 
