@@ -23,7 +23,7 @@ const footerCopy: Record<
     navigationTitle: string;
     linksTitle: string;
     services: string;
-    process: string;
+    stack: string;
     faq: string;
     sourceCode: string;
   }
@@ -32,7 +32,7 @@ const footerCopy: Record<
     navigationTitle: "Navigation",
     linksTitle: "Links",
     services: "Services",
-    process: "Process",
+    stack: "Stack",
     faq: "FAQ",
     sourceCode: "Source code",
   },
@@ -40,7 +40,7 @@ const footerCopy: Record<
     navigationTitle: "Nawigacja",
     linksTitle: "Linki",
     services: "Usługi",
-    process: "Proces",
+    stack: "Technologie",
     faq: "FAQ",
     sourceCode: "Kod źródłowy",
   },
@@ -68,12 +68,8 @@ export function Footer({ locale, dictionary }: FooterProps) {
       href: `/${locale}/about/`,
     },
     {
-      label: copy.process,
-      href: `/${locale}/#process`,
-    },
-    {
-      label: dictionary.navigation.skills,
-      href: `/${locale}/#skills`,
+      label: copy.stack,
+      href: `/${locale}/stack/`,
     },
     {
       label: copy.faq,

@@ -31,6 +31,8 @@ All notable changes to this project will be documented in this file.
 - Added previous/next project navigation on project case study pages.
 - Added expanded contact page with contact methods and project inquiry guidance.
 - Added JSON-LD structured data for About, Services and Contact pages.
+- Added dedicated localized Stack page.
+- Added Stack page to sitemap and documentation.
 
 ### Changed
 
@@ -39,6 +41,7 @@ All notable changes to this project will be documented in this file.
 - Expanded services page into a more complete offer page.
 - Redesigned project case study hero sections with large visual previews.
 - Expanded project case study navigation.
+- Updated Header and Footer navigation to include Stack page.
 
 ### Planned
 

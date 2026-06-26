@@ -80,6 +80,8 @@ NEXT_PUBLIC_REPOSITORY_URL=https://github.com/PiotrZandecki/web-dev-portfolio
 /pl/projects/
 /en/services/
 /pl/services/
+/en/stack/
+/pl/stack/
 /en/contact/
 /pl/contact/
 /en/projects/private-space/
@@ -149,6 +151,8 @@ https://zandeckidev.netlify.app/en/projects/
 https://zandeckidev.netlify.app/pl/projects/
 https://zandeckidev.netlify.app/en/services/
 https://zandeckidev.netlify.app/pl/services/
+https://zandeckidev.netlify.app/en/stack/
+https://zandeckidev.netlify.app/pl/stack/
 https://zandeckidev.netlify.app/en/contact/
 https://zandeckidev.netlify.app/pl/contact/
 https://zandeckidev.netlify.app/robots.txt

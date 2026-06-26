@@ -14,9 +14,9 @@ const servicesLabels: Record<Locale, string> = {
   pl: "Usługi",
 };
 
-const processLabels: Record<Locale, string> = {
-  en: "Process",
-  pl: "Proces",
+const stackLabels: Record<Locale, string> = {
+  en: "Stack",
+  pl: "Technologie",
 };
 
 const faqLabels: Record<Locale, string> = {
@@ -30,8 +30,7 @@ export function Header({ locale, dictionary }: HeaderProps) {
     { label: dictionary.navigation.projects, href: `/${locale}/projects/` },
     { label: servicesLabels[locale], href: `/${locale}/services/` },
     { label: dictionary.navigation.about, href: `/${locale}/about/` },
-    { label: processLabels[locale], href: `/${locale}/#process` },
-    { label: dictionary.navigation.skills, href: `/${locale}/#skills` },
+    { label: stackLabels[locale], href: `/${locale}/stack/` },
     { label: faqLabels[locale], href: `/${locale}/#faq` },
     { label: dictionary.navigation.contact, href: `/${locale}/contact/` },
   ];
