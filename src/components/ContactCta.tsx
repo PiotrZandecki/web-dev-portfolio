@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { siteConfig } from "@/config/site";
+import { getContactLinks, siteConfig } from "@/config/site";
 import { Dictionary } from "@/lib/i18n";
 import { Locale } from "@/types/locale";
 
@@ -8,25 +8,36 @@ type ContactCtaProps = {
   dictionary: Dictionary;
 };
 
+function getExternalLinkProps(href: string) {
+  const isEmailLink = href.startsWith("mailto:");
+
+  return {
+    target: isEmailLink ? undefined : "_blank",
+    rel: isEmailLink ? undefined : "noreferrer",
+  };
+}
+
 export function ContactCta({ locale, dictionary }: ContactCtaProps) {
+  const contactLinks = getContactLinks();
+
   const contactItems = [
     {
       title: dictionary.contactSection.emailTitle,
       description: dictionary.contactSection.emailDescription,
       value: siteConfig.email || dictionary.contactSection.pendingValue,
-      href: siteConfig.email ? `mailto:${siteConfig.email}` : undefined,
+      href: contactLinks.email || undefined,
     },
     {
       title: dictionary.contactSection.githubTitle,
       description: dictionary.contactSection.githubDescription,
       value: siteConfig.githubUrl || dictionary.contactSection.pendingValue,
-      href: siteConfig.githubUrl || undefined,
+      href: contactLinks.github || undefined,
     },
     {
       title: dictionary.contactSection.linkedinTitle,
       description: dictionary.contactSection.linkedinDescription,
       value: siteConfig.linkedinUrl || dictionary.contactSection.pendingValue,
-      href: siteConfig.linkedinUrl || undefined,
+      href: contactLinks.linkedin || undefined,
     },
   ];
 
@@ -53,7 +64,7 @@ export function ContactCta({ locale, dictionary }: ContactCtaProps) {
 
             <Link
               href={`/${locale}/projects`}
-              className="mt-8 inline-flex rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40"
+              className="mt-8 inline-flex rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/5"
             >
               {dictionary.common.viewProjects}
             </Link>
@@ -83,14 +94,8 @@ export function ContactCta({ locale, dictionary }: ContactCtaProps) {
                   {item.href ? (
                     <a
                       href={item.href}
-                      target={
-                        item.href.startsWith("mailto:") ? undefined : "_blank"
-                      }
-                      rel={
-                        item.href.startsWith("mailto:")
-                          ? undefined
-                          : "noreferrer"
-                      }
+                      {...getExternalLinkProps(item.href)}
+                      aria-label={`${dictionary.contactSection.openLink}: ${item.title}`}
                       className="shrink-0 rounded-full bg-cyan-400 px-4 py-2 text-center text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
                     >
                       {dictionary.contactSection.openLink}

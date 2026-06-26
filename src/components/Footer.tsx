@@ -1,26 +1,37 @@
 import Link from "next/link";
-import { siteConfig } from "@/config/site";
+import { getContactLinks, siteConfig } from "@/config/site";
 import { Dictionary } from "@/lib/i18n";
 
 type FooterProps = {
   dictionary: Dictionary;
 };
 
+function getExternalLinkProps(href: string) {
+  const isEmailLink = href.startsWith("mailto:");
+
+  return {
+    target: isEmailLink ? undefined : "_blank",
+    rel: isEmailLink ? undefined : "noreferrer",
+  };
+}
+
 export function Footer({ dictionary }: FooterProps) {
+  const contactLinks = getContactLinks();
+
   const footerLinks = [
     {
       label: dictionary.contactSection.emailTitle,
-      href: siteConfig.email ? `mailto:${siteConfig.email}` : undefined,
+      href: contactLinks.email,
     },
     {
       label: dictionary.contactSection.githubTitle,
-      href: siteConfig.githubUrl || undefined,
+      href: contactLinks.github,
     },
     {
       label: dictionary.contactSection.linkedinTitle,
-      href: siteConfig.linkedinUrl || undefined,
+      href: contactLinks.linkedin,
     },
-  ];
+  ].filter((link) => Boolean(link.href));
 
   return (
     <footer className="border-t border-white/10 px-6 py-10">
@@ -53,19 +64,16 @@ export function Footer({ dictionary }: FooterProps) {
             PL
           </Link>
 
-          {footerLinks.map((link) =>
-            link.href ? (
-              <a
-                key={link.label}
-                href={link.href}
-                target={link.href.startsWith("mailto:") ? undefined : "_blank"}
-                rel={link.href.startsWith("mailto:") ? undefined : "noreferrer"}
-                className="rounded-full border border-white/10 px-4 py-2 transition hover:border-white/40 hover:text-white"
-              >
-                {link.label}
-              </a>
-            ) : null,
-          )}
+          {footerLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              {...getExternalLinkProps(link.href)}
+              className="rounded-full border border-white/10 px-4 py-2 transition hover:border-white/40 hover:text-white"
+            >
+              {link.label}
+            </a>
+          ))}
         </nav>
       </div>
     </footer>

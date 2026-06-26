@@ -8,4 +8,18 @@ export const siteConfig = {
   linkedinUrl: "",
   locale: "en",
   alternateLocale: "pl",
-};
+} as const;
+
+export function getContactLinks() {
+  return {
+    email: siteConfig.email ? `mailto:${siteConfig.email}` : "",
+    github: siteConfig.githubUrl,
+    linkedin: siteConfig.linkedinUrl,
+  };
+}
+
+export function hasAnyContactLink() {
+  const links = getContactLinks();
+
+  return Boolean(links.email || links.github || links.linkedin);
+}
