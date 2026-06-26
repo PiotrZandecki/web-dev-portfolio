@@ -9,6 +9,7 @@ import { HomeProjectShowcase } from "@/components/HomeProjectShowcase";
 import { JsonLd } from "@/components/JsonLd";
 import { ServicesSection } from "@/components/ServicesSection";
 import { SkillsSection } from "@/components/SkillsSection";
+import { ValuePropositionSection } from "@/components/ValuePropositionSection";
 import { WorkProcessSection } from "@/components/WorkProcessSection";
 import { projects } from "@/content/projects";
 import { getDictionary, isLocale } from "@/lib/i18n";
@@ -57,6 +58,8 @@ export default async function HomePage({ params }: HomePageProps) {
       <JsonLd data={getHomeStructuredData(locale)} />
 
       <HeroSection locale={locale} dictionary={dictionary} />
+
+      <ValuePropositionSection locale={locale} />
 
       <ServicesSection locale={locale} />
 

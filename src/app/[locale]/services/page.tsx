@@ -4,7 +4,9 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FaqSection } from "@/components/FaqSection";
 import { FinalCta } from "@/components/FinalCta";
 import { PageIntro } from "@/components/PageIntro";
+import { ServicePackagesSection } from "@/components/ServicePackagesSection";
 import { ServicesSection } from "@/components/ServicesSection";
+import { ValuePropositionSection } from "@/components/ValuePropositionSection";
 import { WorkProcessSection } from "@/components/WorkProcessSection";
 import { isLocale } from "@/lib/i18n";
 import { locales, Locale } from "@/types/locale";
@@ -111,6 +113,10 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
         title={copy.title}
         description={copy.description}
       />
+
+      <ServicePackagesSection locale={locale} />
+
+      <ValuePropositionSection locale={locale} />
 
       <ServicesSection locale={locale} />
 

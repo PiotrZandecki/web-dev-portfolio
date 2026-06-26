@@ -8,43 +8,49 @@ type HeroSectionProps = {
   dictionary: Dictionary;
 };
 
-const heroStats = {
-  en: [
-    { value: "3+", label: "Portfolio projects" },
-    { value: "2", label: "Languages" },
-    { value: "Next.js", label: "Main stack" },
-  ],
-  pl: [
-    { value: "3+", label: "Projekty w portfolio" },
-    { value: "2", label: "Języki" },
-    { value: "Next.js", label: "Główny stack" },
-  ],
-};
-
-const heroCardCopy = {
+const heroCopy = {
   en: {
-    label: "Portfolio structure",
-    title: "Project hub built for growth",
-    description:
-      "Every smaller project has its own page, case study section and dedicated space for a future live preview.",
-    items: ["Bilingual routing", "Dynamic project pages", "Embedded previews"],
+    availability: "Available for frontend-focused web projects",
+    primaryCta: "View services",
+    secondaryCta: "Explore projects",
+    contactCta: "Contact Z-TECH",
+    cardEyebrow: "Z-TECH delivery focus",
+    cardTitle: "Clean websites, project hubs and frontend interfaces.",
+    cardDescription:
+      "A practical approach to web development: clear structure, reusable components, bilingual content and deployment-ready delivery.",
+    highlights: [
+      "Business websites",
+      "Portfolio systems",
+      "Bilingual pages",
+      "Static deployment",
+    ],
+    stackLabel: "Core stack",
+    deliveryLabel: "Delivery",
+    deliveryValue: "Netlify / Static export",
   },
   pl: {
-    label: "Struktura portfolio",
-    title: "Hub projektów gotowy do rozwoju",
-    description:
-      "Każdy mniejszy projekt ma własną podstronę, sekcję case study i miejsce na przyszły podgląd live.",
-    items: [
-      "Dwujęzyczny routing",
-      "Dynamiczne strony projektów",
-      "Osadzone podglądy",
+    availability: "Dostępne pod projekty webowe skupione na frontendzie",
+    primaryCta: "Zobacz usługi",
+    secondaryCta: "Zobacz projekty",
+    contactCta: "Kontakt z Z-TECH",
+    cardEyebrow: "Kierunek realizacji Z-TECH",
+    cardTitle: "Czyste strony, huby projektów i interfejsy frontendowe.",
+    cardDescription:
+      "Praktyczne podejście do web developmentu: czytelna struktura, komponenty wielokrotnego użytku, treści dwujęzyczne i przygotowanie pod wdrożenie.",
+    highlights: [
+      "Strony firmowe",
+      "Systemy portfolio",
+      "Strony dwujęzyczne",
+      "Statyczny deployment",
     ],
+    stackLabel: "Główny stack",
+    deliveryLabel: "Wdrożenie",
+    deliveryValue: "Netlify / Static export",
   },
 };
 
 export function HeroSection({ locale, dictionary }: HeroSectionProps) {
-  const stats = heroStats[locale];
-  const cardCopy = heroCardCopy[locale];
+  const copy = heroCopy[locale];
 
   return (
     <section
@@ -53,17 +59,21 @@ export function HeroSection({ locale, dictionary }: HeroSectionProps) {
     >
       <div
         aria-hidden="true"
-        className="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-400/20 blur-3xl"
+        className="absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-cyan-400/20 blur-3xl"
       />
       <div
         aria-hidden="true"
-        className="absolute right-0 top-40 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl"
+        className="absolute right-0 top-40 h-96 w-96 rounded-full bg-blue-500/10 blur-3xl"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute bottom-0 left-0 h-80 w-80 rounded-full bg-cyan-900/20 blur-3xl"
       />
 
-      <div className="relative mx-auto grid max-w-6xl gap-12 px-6 py-24 md:grid-cols-[1.15fr_0.85fr] md:items-center lg:py-28">
+      <div className="relative mx-auto grid max-w-6xl gap-10 px-6 py-24 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-28">
         <div>
           <p className="mb-6 inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-cyan-300">
-            {dictionary.home.eyebrow}
+            {copy.availability}
           </p>
 
           <h1
@@ -79,49 +89,66 @@ export function HeroSection({ locale, dictionary }: HeroSectionProps) {
 
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
-              href={`/${locale}/projects`}
+              href={`/${locale}/services/`}
               className="rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-950/40 transition hover:bg-cyan-300"
             >
-              {dictionary.common.viewProjects}
+              {copy.primaryCta}
             </Link>
 
             <Link
-              href={`/${locale}#contact`}
+              href={`/${locale}/projects/`}
               className="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/5"
             >
-              {dictionary.common.contactMe}
+              {copy.secondaryCta}
+            </Link>
+
+            <Link
+              href={`/${locale}/contact/`}
+              className="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-6 py-3 text-sm font-semibold text-cyan-200 transition hover:border-cyan-300/50 hover:bg-cyan-400/15"
+            >
+              {copy.contactCta}
             </Link>
           </div>
 
-          <dl className="mt-12 grid max-w-2xl gap-4 sm:grid-cols-3">
-            {stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="rounded-2xl border border-white/10 bg-white/5 p-4"
-              >
-                <dt className="text-sm text-slate-400">{stat.label}</dt>
-                <dd className="mt-1 text-2xl font-bold text-white">
-                  {stat.value}
-                </dd>
-              </div>
-            ))}
+          <dl className="mt-12 grid max-w-3xl gap-4 sm:grid-cols-3">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <dt className="text-sm text-slate-400">{copy.stackLabel}</dt>
+              <dd className="mt-1 text-xl font-bold text-white">Next.js</dd>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <dt className="text-sm text-slate-400">
+                {dictionary.projectsSummary.languages}
+              </dt>
+              <dd className="mt-1 text-xl font-bold text-white">PL / EN</dd>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <dt className="text-sm text-slate-400">{copy.deliveryLabel}</dt>
+              <dd className="mt-1 text-xl font-bold text-white">
+                {copy.deliveryValue}
+              </dd>
+            </div>
           </dl>
         </div>
 
         <aside
-          aria-label={`${siteConfig.name} portfolio structure`}
+          aria-label={`${siteConfig.name} project focus`}
           className="rounded-3xl border border-white/10 bg-white/5 p-4 shadow-2xl shadow-cyan-950/30 backdrop-blur"
         >
           <div className="rounded-2xl border border-white/10 bg-slate-950 p-6">
             <div className="flex items-center justify-between border-b border-white/10 pb-4">
               <div>
-                <p className="text-sm text-slate-400">{cardCopy.label}</p>
-                <h2 className="mt-2 text-2xl font-semibold text-white">
-                  {cardCopy.title}
+                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-cyan-400">
+                  {copy.cardEyebrow}
+                </p>
+
+                <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white">
+                  {copy.cardTitle}
                 </h2>
               </div>
 
-              <div aria-hidden="true" className="flex gap-2">
+              <div aria-hidden="true" className="hidden gap-2 sm:flex">
                 <span className="h-3 w-3 rounded-full bg-red-400" />
                 <span className="h-3 w-3 rounded-full bg-yellow-400" />
                 <span className="h-3 w-3 rounded-full bg-green-400" />
@@ -129,19 +156,20 @@ export function HeroSection({ locale, dictionary }: HeroSectionProps) {
             </div>
 
             <p className="mt-5 leading-7 text-slate-300">
-              {cardCopy.description}
+              {copy.cardDescription}
             </p>
 
-            <ul className="mt-8 grid gap-3">
-              {cardCopy.items.map((item) => (
+            <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+              {copy.highlights.map((item) => (
                 <li
                   key={item}
-                  className="flex items-center justify-between rounded-2xl bg-white/5 p-4 text-sm text-slate-300"
+                  className="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm font-medium text-slate-300"
                 >
-                  <span>{item}</span>
-                  <span aria-hidden="true" className="text-cyan-300">
-                    ✓
-                  </span>
+                  <span
+                    aria-hidden="true"
+                    className="mr-3 inline-block h-2 w-2 rounded-full bg-cyan-400"
+                  />
+                  {item}
                 </li>
               ))}
             </ul>
@@ -150,9 +178,11 @@ export function HeroSection({ locale, dictionary }: HeroSectionProps) {
               <p className="text-sm text-cyan-300">
                 {dictionary.home.focusLabel}
               </p>
+
               <p className="mt-2 font-semibold text-white">
                 {dictionary.home.focusTitle}
               </p>
+
               <p className="mt-2 text-sm leading-6 text-slate-300">
                 {dictionary.home.focusDescription}
               </p>
