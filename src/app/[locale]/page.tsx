@@ -5,6 +5,7 @@ import { ContactCta } from "@/components/ContactCta";
 import { FeaturedProject } from "@/components/FeaturedProject";
 import { HeroSection } from "@/components/HeroSection";
 import { ProjectCard } from "@/components/ProjectCard";
+import { ServicesSection } from "@/components/ServicesSection";
 import { SkillsSection } from "@/components/SkillsSection";
 import { projects } from "@/content/projects";
 import { getDictionary, isLocale } from "@/lib/i18n";
@@ -31,8 +32,8 @@ export async function generateMetadata({
     description: dictionary.seo.homeDescription,
     alternates: {
       languages: {
-        en: "/en",
-        pl: "/pl",
+        en: "/en/",
+        pl: "/pl/",
       },
     },
   };
@@ -68,6 +69,8 @@ export default async function HomePage({ params }: HomePageProps) {
         </div>
       </section>
 
+      <ServicesSection locale={locale} />
+
       <SkillsSection locale={locale} dictionary={dictionary} />
 
       <section className="mx-auto max-w-6xl px-6 py-20">
@@ -87,7 +90,7 @@ export default async function HomePage({ params }: HomePageProps) {
           </div>
 
           <Link
-            href={`/${locale}/projects`}
+            href={`/${locale}/projects/`}
             className="w-fit rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/5"
           >
             {dictionary.common.viewProjects}
