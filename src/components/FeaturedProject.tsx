@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Project } from "@/content/projects";
 import { Dictionary } from "@/lib/i18n";
@@ -14,8 +15,10 @@ export function FeaturedProject({
   locale,
   dictionary,
 }: FeaturedProjectProps) {
+  const previewImage = project.mockups[0];
+
   return (
-    <article className="overflow-hidden rounded-3xl border border-cyan-400/4 shadow-2xl shadow-cyan-950/20">
+    <article className="overflow-hidden rounded-3xl border border-cyan-400/20 bg-cyan-400/4 shadow-2xl shadow-cyan-950/20">
       <div className="grid gap-0 lg:grid-cols-[1.05fr_0.95fr]">
         <div className="p-8 md:p-10">
           <div className="flex flex-wrap items-center gap-2">
@@ -56,7 +59,7 @@ export function FeaturedProject({
 
           <div className="mt-9 flex flex-wrap gap-4">
             <Link
-              href={`/${locale}/projects/${project.slug}`}
+              href={`/${locale}/projects/${project.slug}/`}
               aria-label={`${dictionary.common.viewProject}: ${project.title}`}
               className="rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
             >
@@ -64,7 +67,7 @@ export function FeaturedProject({
             </Link>
 
             <Link
-              href={`/${locale}/projects`}
+              href={`/${locale}/projects/`}
               className="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/5"
             >
               {dictionary.common.viewProjects}
@@ -73,12 +76,9 @@ export function FeaturedProject({
         </div>
 
         <div className="border-t border-white/10 bg-slate-950/70 p-6 lg:border-l lg:border-t-0">
-          <div
-            aria-hidden="true"
-            className="overflow-hidden rounded-2xl border border-white/10 bg-slate-900"
-          >
+          <div className="overflow-hidden rounded-2xl border border-white/10 bg-slate-900">
             <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
-              <div className="flex gap-2">
+              <div aria-hidden="true" className="flex gap-2">
                 <span className="h-3 w-3 rounded-full bg-red-400" />
                 <span className="h-3 w-3 rounded-full bg-yellow-400" />
                 <span className="h-3 w-3 rounded-full bg-green-400" />
@@ -87,27 +87,24 @@ export function FeaturedProject({
               <span className="text-xs text-slate-500">{project.slug}</span>
             </div>
 
-            <div className="space-y-4 p-5">
-              <div className="h-4 w-2/3 rounded-full bg-cyan-400/30" />
-              <div className="h-4 w-full rounded-full bg-white/10" />
-              <div className="h-4 w-5/6 rounded-full bg-white/10" />
+            <Image
+              src={previewImage.imageSrc}
+              alt={previewImage.title[locale]}
+              width={1200}
+              height={760}
+              sizes="(min-width: 1024px) 520px, calc(100vw - 48px)"
+              className="aspect-1200/760 w-full object-cover"
+              priority
+            />
 
-              <div className="grid grid-cols-2 gap-3 pt-4">
-                <div className="h-24 rounded-2xl bg-cyan-400/10" />
-                <div className="h-24 rounded-2xl bg-white/10" />
-                <div className="h-24 rounded-2xl bg-white/10" />
-                <div className="h-24 rounded-2xl bg-cyan-400/10" />
-              </div>
+            <div className="border-t border-white/10 p-5">
+              <p className="text-sm font-semibold text-white">
+                {dictionary.featuredProject.previewTitle}
+              </p>
 
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                <p className="text-sm font-semibold text-white">
-                  {dictionary.featuredProject.previewTitle}
-                </p>
-
-                <p className="mt-2 text-sm leading-6 text-slate-400">
-                  {dictionary.featuredProject.previewDescription}
-                </p>
-              </div>
+              <p className="mt-2 text-sm leading-6 text-slate-400">
+                {dictionary.featuredProject.previewDescription}
+              </p>
             </div>
           </div>
         </div>
