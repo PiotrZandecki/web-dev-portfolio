@@ -28,7 +28,7 @@ export default async function LocaleLayout({
   const dictionary = getDictionary(locale);
 
   return (
-    <div className="min-h-screen bg-slate-950">
+    <div className="min-h-screen bg-slate-950 text-slate-100">
       <Header locale={locale} dictionary={dictionary} />
       {children}
       <Footer dictionary={dictionary} />
