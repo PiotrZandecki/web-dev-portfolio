@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ProjectCard } from "@/components/ProjectCard";
 import { ProjectSummaryBar } from "@/components/ProjectSummaryBar";
@@ -10,6 +11,29 @@ type ProjectsPageProps = {
     locale: string;
   }>;
 };
+
+export async function generateMetadata({
+  params,
+}: ProjectsPageProps): Promise<Metadata> {
+  const { locale } = await params;
+
+  if (!isLocale(locale)) {
+    return {};
+  }
+
+  const dictionary = getDictionary(locale);
+
+  return {
+    title: dictionary.seo.projectsTitle,
+    description: dictionary.seo.projectsDescription,
+    alternates: {
+      languages: {
+        en: "/en/projects",
+        pl: "/pl/projects",
+      },
+    },
+  };
+}
 
 export default async function ProjectsPage({ params }: ProjectsPageProps) {
   const { locale } = await params;

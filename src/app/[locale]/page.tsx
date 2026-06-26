@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ContactCta } from "@/components/ContactCta";
@@ -13,6 +14,29 @@ type HomePageProps = {
     locale: string;
   }>;
 };
+
+export async function generateMetadata({
+  params,
+}: HomePageProps): Promise<Metadata> {
+  const { locale } = await params;
+
+  if (!isLocale(locale)) {
+    return {};
+  }
+
+  const dictionary = getDictionary(locale);
+
+  return {
+    title: dictionary.seo.homeTitle,
+    description: dictionary.seo.homeDescription,
+    alternates: {
+      languages: {
+        en: "/en",
+        pl: "/pl",
+      },
+    },
+  };
+}
 
 export default async function HomePage({ params }: HomePageProps) {
   const { locale } = await params;

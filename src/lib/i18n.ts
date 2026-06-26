@@ -26,6 +26,13 @@ export type Dictionary = {
     completed: string;
     inProgress: string;
   };
+  seo: {
+    homeTitle: string;
+    homeDescription: string;
+    projectsTitle: string;
+    projectsDescription: string;
+    projectTitleSuffix: string;
+  };
   home: {
     eyebrow: string;
     title: string;
@@ -79,6 +86,11 @@ export type Dictionary = {
     description: string;
     browserLabel: string;
   };
+  relatedProjects: {
+    eyebrow: string;
+    title: string;
+    description: string;
+  };
   skillsSection: {
     eyebrow: string;
     title: string;
@@ -91,6 +103,14 @@ export type Dictionary = {
     currentlyAvailable: string;
     emailMe: string;
     emailPlaceholderNote: string;
+    emailTitle: string;
+    githubTitle: string;
+    linkedinTitle: string;
+    emailDescription: string;
+    githubDescription: string;
+    linkedinDescription: string;
+    pendingValue: string;
+    openLink: string;
   };
   projectSections: {
     caseStudy: string;
@@ -133,6 +153,15 @@ const dictionaries: Record<Locale, Dictionary> = {
     status: {
       completed: "Completed",
       inProgress: "In progress",
+    },
+    seo: {
+      homeTitle: "Piotr.dev | Web Developer Portfolio",
+      homeDescription:
+        "Bilingual web developer portfolio focused on Next.js, TypeScript, Tailwind CSS and project-based frontend development.",
+      projectsTitle: "Projects | Piotr.dev",
+      projectsDescription:
+        "A project hub with frontend projects, case studies, technologies, lessons learned and future embedded live previews.",
+      projectTitleSuffix: "Project Case Study | Piotr.dev",
     },
     home: {
       eyebrow: "Web Developer Portfolio",
@@ -203,6 +232,12 @@ const dictionaries: Record<Locale, Dictionary> = {
         "This section is prepared for screenshots, mockups or visual highlights that will show the project interface in context.",
       browserLabel: "Preview window",
     },
+    relatedProjects: {
+      eyebrow: "More projects",
+      title: "Explore other case studies",
+      description:
+        "Each project has its own page, structure and development notes. This portfolio is designed to grow with new work.",
+    },
     skillsSection: {
       eyebrow: "Skills",
       title: "Technologies I work with",
@@ -217,7 +252,18 @@ const dictionaries: Record<Locale, Dictionary> = {
       currentlyAvailable: "Currently focused on frontend portfolio projects.",
       emailMe: "Email Me",
       emailPlaceholderNote:
-        "This email address is a placeholder. It will be replaced with a real contact address before deployment.",
+        "Contact details are controlled from one configuration file and can be updated before deployment.",
+      emailTitle: "Email",
+      githubTitle: "GitHub",
+      linkedinTitle: "LinkedIn",
+      emailDescription:
+        "The best place for direct contact, project questions or recruitment conversations.",
+      githubDescription:
+        "A place for source code, repositories and development progress.",
+      linkedinDescription:
+        "A professional profile for career updates and contact.",
+      pendingValue: "To be added",
+      openLink: "Open",
     },
     projectSections: {
       caseStudy: "Case Study",
@@ -259,6 +305,15 @@ const dictionaries: Record<Locale, Dictionary> = {
     status: {
       completed: "Ukończony",
       inProgress: "W trakcie",
+    },
+    seo: {
+      homeTitle: "Piotr.dev | Portfolio Web Developera",
+      homeDescription:
+        "Dwujęzyczne portfolio web developera skupione na Next.js, TypeScript, Tailwind CSS i nauce frontendu przez realne projekty.",
+      projectsTitle: "Projekty | Piotr.dev",
+      projectsDescription:
+        "Hub projektów frontendowych z case studies, technologiami, wnioskami z nauki i miejscem na przyszłe osadzone podglądy live.",
+      projectTitleSuffix: "Case Study Projektu | Piotr.dev",
     },
     home: {
       eyebrow: "Portfolio Web Developera",
@@ -329,6 +384,12 @@ const dictionaries: Record<Locale, Dictionary> = {
         "Ta sekcja jest przygotowana pod screeny, mockupy lub wizualne wyróżniki pokazujące interfejs projektu w kontekście.",
       browserLabel: "Okno podglądu",
     },
+    relatedProjects: {
+      eyebrow: "Więcej projektów",
+      title: "Zobacz inne case studies",
+      description:
+        "Każdy projekt ma własną podstronę, strukturę i notatki z procesu tworzenia. To portfolio jest przygotowane tak, żeby rozwijało się razem z kolejnymi realizacjami.",
+    },
     skillsSection: {
       eyebrow: "Umiejętności",
       title: "Technologie, z którymi pracuję",
@@ -344,7 +405,18 @@ const dictionaries: Record<Locale, Dictionary> = {
         "Aktualnie skupiam się na projektach frontendowych do portfolio.",
       emailMe: "Napisz do mnie",
       emailPlaceholderNote:
-        "Ten adres e-mail jest placeholderem. Przed wdrożeniem zostanie podmieniony na prawdziwy adres kontaktowy.",
+        "Dane kontaktowe są kontrolowane z jednego pliku konfiguracji i mogą zostać uzupełnione przed wdrożeniem.",
+      emailTitle: "Email",
+      githubTitle: "GitHub",
+      linkedinTitle: "LinkedIn",
+      emailDescription:
+        "Najlepsze miejsce do bezpośredniego kontaktu, pytań o projekt albo rozmów rekrutacyjnych.",
+      githubDescription:
+        "Miejsce na kod źródłowy, repozytoria i postępy developerskie.",
+      linkedinDescription:
+        "Profil zawodowy do aktualizacji kariery i kontaktu.",
+      pendingValue: "Do uzupełnienia",
+      openLink: "Otwórz",
     },
     projectSections: {
       caseStudy: "Case Study",

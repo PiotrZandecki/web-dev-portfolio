@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ProjectCaseStudy } from "@/components/ProjectCaseStudy";
@@ -6,6 +7,7 @@ import { ProjectEmbed } from "@/components/ProjectEmbed";
 import { ProjectLinks } from "@/components/ProjectLinks";
 import { ProjectMockups } from "@/components/ProjectMockups";
 import { ProjectProcess } from "@/components/ProjectProcess";
+import { RelatedProjects } from "@/components/RelatedProjects";
 import { getProjectBySlug, projects } from "@/content/projects";
 import { getDictionary, isLocale } from "@/lib/i18n";
 import { locales } from "@/types/locale";
@@ -24,6 +26,35 @@ export function generateStaticParams() {
       slug: project.slug,
     })),
   );
+}
+
+export async function generateMetadata({
+  params,
+}: ProjectDetailsPageProps): Promise<Metadata> {
+  const { locale, slug } = await params;
+
+  if (!isLocale(locale)) {
+    return {};
+  }
+
+  const project = getProjectBySlug(slug);
+
+  if (!project) {
+    return {};
+  }
+
+  const dictionary = getDictionary(locale);
+
+  return {
+    title: `${project.title} | ${dictionary.seo.projectTitleSuffix}`,
+    description: project.shortDescription[locale],
+    alternates: {
+      languages: {
+        en: `/en/projects/${project.slug}`,
+        pl: `/pl/projects/${project.slug}`,
+      },
+    },
+  };
 }
 
 export default async function ProjectDetailsPage({
@@ -79,6 +110,12 @@ export default async function ProjectDetailsPage({
       />
 
       <ProjectEmbed project={project} locale={locale} />
+
+      <RelatedProjects
+        currentProjectSlug={project.slug}
+        locale={locale}
+        dictionary={dictionary}
+      />
     </main>
   );
 }

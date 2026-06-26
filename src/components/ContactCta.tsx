@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { siteConfig } from "@/config/site";
 import { Dictionary } from "@/lib/i18n";
 import { Locale } from "@/types/locale";
 
@@ -8,10 +9,31 @@ type ContactCtaProps = {
 };
 
 export function ContactCta({ locale, dictionary }: ContactCtaProps) {
+  const contactItems = [
+    {
+      title: dictionary.contactSection.emailTitle,
+      description: dictionary.contactSection.emailDescription,
+      value: siteConfig.email || dictionary.contactSection.pendingValue,
+      href: siteConfig.email ? `mailto:${siteConfig.email}` : undefined,
+    },
+    {
+      title: dictionary.contactSection.githubTitle,
+      description: dictionary.contactSection.githubDescription,
+      value: siteConfig.githubUrl || dictionary.contactSection.pendingValue,
+      href: siteConfig.githubUrl || undefined,
+    },
+    {
+      title: dictionary.contactSection.linkedinTitle,
+      description: dictionary.contactSection.linkedinDescription,
+      value: siteConfig.linkedinUrl || dictionary.contactSection.pendingValue,
+      href: siteConfig.linkedinUrl || undefined,
+    },
+  ];
+
   return (
     <section id="contact" className="mx-auto max-w-6xl px-6 py-20">
       <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 md:p-12">
-        <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
+        <div className="grid gap-10 md:grid-cols-[1fr_1.1fr] md:items-start">
           <div>
             <p className="text-sm font-medium uppercase tracking-[0.3em] text-cyan-400">
               {dictionary.contactSection.eyebrow}
@@ -24,30 +46,65 @@ export function ContactCta({ locale, dictionary }: ContactCtaProps) {
             <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-300">
               {dictionary.contactSection.description}
             </p>
-          </div>
 
-          <div className="rounded-2xl bg-slate-900 p-6">
-            <p className="text-sm text-slate-400">
+            <p className="mt-6 rounded-2xl border border-cyan-400/20 bg-cyan-400/10 p-4 text-sm leading-6 text-cyan-200">
               {dictionary.contactSection.currentlyAvailable}
             </p>
 
-            <div className="mt-6 flex flex-col gap-3">
-              <a
-                href="mailto:your-email@example.com"
-                className="rounded-full bg-cyan-400 px-6 py-3 text-center text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
-              >
-                {dictionary.contactSection.emailMe}
-              </a>
+            <Link
+              href={`/${locale}/projects`}
+              className="mt-8 inline-flex rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40"
+            >
+              {dictionary.common.viewProjects}
+            </Link>
+          </div>
 
-              <Link
-                href={`/${locale}/projects`}
-                className="rounded-full border border-white/15 px-6 py-3 text-center text-sm font-semibold text-white transition hover:border-white/40"
+          <div className="grid gap-4">
+            {contactItems.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-2xl border border-white/10 bg-slate-900 p-5"
               >
-                {dictionary.common.viewProjects}
-              </Link>
-            </div>
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">
+                      {item.title}
+                    </h3>
 
-            <p className="mt-5 text-xs leading-5 text-slate-500">
+                    <p className="mt-2 text-sm leading-6 text-slate-300">
+                      {item.description}
+                    </p>
+
+                    <p className="mt-3 break-all text-sm text-slate-500">
+                      {item.value}
+                    </p>
+                  </div>
+
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      target={
+                        item.href.startsWith("mailto:") ? undefined : "_blank"
+                      }
+                      rel={
+                        item.href.startsWith("mailto:")
+                          ? undefined
+                          : "noreferrer"
+                      }
+                      className="shrink-0 rounded-full bg-cyan-400 px-4 py-2 text-center text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
+                    >
+                      {dictionary.contactSection.openLink}
+                    </a>
+                  ) : (
+                    <span className="shrink-0 rounded-full bg-white/10 px-4 py-2 text-center text-sm font-semibold text-slate-400">
+                      {dictionary.contactSection.pendingValue}
+                    </span>
+                  )}
+                </div>
+              </article>
+            ))}
+
+            <p className="text-xs leading-5 text-slate-500">
               {dictionary.contactSection.emailPlaceholderNote}
             </p>
           </div>
