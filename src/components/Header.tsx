@@ -1,7 +1,7 @@
 import Link from "next/link";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { Dictionary } from "@/lib/i18n";
 import { Locale } from "@/types/locale";
-import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
 type HeaderProps = {
   locale: Locale;
@@ -13,6 +13,7 @@ export function Header({ locale, dictionary }: HeaderProps) {
     { label: dictionary.navigation.home, href: `/${locale}` },
     { label: dictionary.navigation.projects, href: `/${locale}/projects` },
     { label: dictionary.navigation.about, href: `/${locale}#about` },
+    { label: dictionary.navigation.skills, href: `/${locale}#skills` },
     { label: dictionary.navigation.contact, href: `/${locale}#contact` },
   ];
 

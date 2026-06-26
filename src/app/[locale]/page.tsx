@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ContactCta } from "@/components/ContactCta";
 import { ProjectCard } from "@/components/ProjectCard";
+import { SkillsSection } from "@/components/SkillsSection";
 import { projects } from "@/content/projects";
 import { getDictionary, isLocale } from "@/lib/i18n";
 
@@ -94,19 +96,30 @@ export default async function HomePage({ params }: HomePageProps) {
         </div>
       </section>
 
+      <SkillsSection locale={locale} dictionary={dictionary} />
+
       <section className="mx-auto max-w-6xl px-6 py-20">
-        <div className="mb-10">
-          <p className="text-sm font-medium uppercase tracking-[0.3em] text-cyan-400">
-            {dictionary.home.projectsEyebrow}
-          </p>
+        <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="text-sm font-medium uppercase tracking-[0.3em] text-cyan-400">
+              {dictionary.home.projectsEyebrow}
+            </p>
 
-          <h2 className="mt-4 text-4xl font-bold tracking-tight text-white">
-            {dictionary.home.projectsTitle}
-          </h2>
+            <h2 className="mt-4 text-4xl font-bold tracking-tight text-white">
+              {dictionary.home.projectsTitle}
+            </h2>
 
-          <p className="mt-4 max-w-2xl text-slate-300">
-            {dictionary.home.projectsDescription}
-          </p>
+            <p className="mt-4 max-w-2xl text-slate-300">
+              {dictionary.home.projectsDescription}
+            </p>
+          </div>
+
+          <Link
+            href={`/${locale}/projects`}
+            className="w-fit rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-white transition hover:border-white/40"
+          >
+            {dictionary.common.viewProjects}
+          </Link>
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
@@ -120,6 +133,8 @@ export default async function HomePage({ params }: HomePageProps) {
           ))}
         </div>
       </section>
+
+      <ContactCta locale={locale} dictionary={dictionary} />
     </main>
   );
 }

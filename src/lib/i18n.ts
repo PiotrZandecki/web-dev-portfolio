@@ -5,6 +5,7 @@ export type Dictionary = {
     home: string;
     projects: string;
     about: string;
+    skills: string;
     contact: string;
   };
   common: {
@@ -44,6 +45,19 @@ export type Dictionary = {
     title: string;
     description: string;
   };
+  skillsSection: {
+    eyebrow: string;
+    title: string;
+    description: string;
+  };
+  contactSection: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    currentlyAvailable: string;
+    emailMe: string;
+    emailPlaceholderNote: string;
+  };
   projectSections: {
     caseStudy: string;
     title: string;
@@ -65,6 +79,7 @@ const dictionaries: Record<Locale, Dictionary> = {
       home: "Home",
       projects: "Projects",
       about: "About",
+      skills: "Skills",
       contact: "Contact",
     },
     common: {
@@ -113,6 +128,22 @@ const dictionaries: Record<Locale, Dictionary> = {
       description:
         "Each project has its own page with description, features, technologies and links. This section will grow together with my skills and portfolio.",
     },
+    skillsSection: {
+      eyebrow: "Skills",
+      title: "Technologies I work with",
+      description:
+        "A focused set of tools and technologies I use while building frontend projects and improving my development workflow.",
+    },
+    contactSection: {
+      eyebrow: "Contact",
+      title: "Let’s build something useful.",
+      description:
+        "I am developing my frontend skills through practical projects and I am open to opportunities where I can keep learning, building and improving.",
+      currentlyAvailable: "Currently focused on frontend portfolio projects.",
+      emailMe: "Email Me",
+      emailPlaceholderNote:
+        "This email address is a placeholder. It will be replaced with a real contact address before deployment.",
+    },
     projectSections: {
       caseStudy: "Case Study",
       title: "How this project was built",
@@ -133,6 +164,7 @@ const dictionaries: Record<Locale, Dictionary> = {
       home: "Start",
       projects: "Projekty",
       about: "O mnie",
+      skills: "Umiejętności",
       contact: "Kontakt",
     },
     common: {
@@ -180,6 +212,23 @@ const dictionaries: Record<Locale, Dictionary> = {
       title: "Moje projekty web development",
       description:
         "Każdy projekt ma własną podstronę z opisem, funkcjami, technologiami i linkami. Ta sekcja będzie rozwijać się razem z moimi umiejętnościami i portfolio.",
+    },
+    skillsSection: {
+      eyebrow: "Umiejętności",
+      title: "Technologie, z którymi pracuję",
+      description:
+        "Skupiony zestaw narzędzi i technologii, których używam podczas budowania projektów frontendowych i rozwijania swojego workflow.",
+    },
+    contactSection: {
+      eyebrow: "Kontakt",
+      title: "Zbudujmy coś użytecznego.",
+      description:
+        "Rozwijam swoje umiejętności frontendowe przez praktyczne projekty i jestem otwarty na możliwości, w których mogę dalej się uczyć, budować i rozwijać.",
+      currentlyAvailable:
+        "Aktualnie skupiam się na projektach frontendowych do portfolio.",
+      emailMe: "Napisz do mnie",
+      emailPlaceholderNote:
+        "Ten adres e-mail jest placeholderem. Przed wdrożeniem zostanie podmieniony na prawdziwy adres kontaktowy.",
     },
     projectSections: {
       caseStudy: "Case Study",
