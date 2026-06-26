@@ -9,41 +9,42 @@ export type SkillGroup = {
 export const skillGroups: SkillGroup[] = [
   {
     title: {
-      en: "Frontend",
-      pl: "Frontend",
+      en: "Frontend fundamentals",
+      pl: "Podstawy frontendu",
     },
     description: {
-      en: "Core technologies used to build modern web interfaces.",
-      pl: "Podstawowe technologie używane do budowania nowoczesnych interfejsów webowych.",
+      en: "Core technologies used to build accessible, responsive and maintainable web interfaces.",
+      pl: "Podstawowe technologie używane do budowania dostępnych, responsywnych i utrzymywalnych interfejsów webowych.",
     },
     skills: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js"],
   },
   {
     title: {
-      en: "Styling & UI",
+      en: "Styling and UI",
       pl: "Styling i UI",
     },
     description: {
-      en: "Tools and patterns used to create responsive and clean layouts.",
-      pl: "Narzędzia i wzorce używane do tworzenia responsywnych i czystych layoutów.",
+      en: "Tools and practices used to create clean layouts, reusable components and consistent visual systems.",
+      pl: "Narzędzia i praktyki używane do tworzenia czystych layoutów, komponentów wielokrotnego użytku i spójnych systemów wizualnych.",
     },
     skills: [
       "Tailwind CSS",
       "Responsive Design",
       "Component-based UI",
       "Dark UI",
+      "Accessibility",
     ],
   },
   {
     title: {
-      en: "Workflow",
-      pl: "Workflow",
+      en: "Development workflow",
+      pl: "Workflow developerski",
     },
     description: {
-      en: "Development tools used to keep projects structured and maintainable.",
-      pl: "Narzędzia developerskie pomagające utrzymać strukturę i porządek w projektach.",
+      en: "Tools that help keep projects structured, versioned, tested and ready for deployment.",
+      pl: "Narzędzia pomagające utrzymać strukturę projektu, kontrolę wersji, testy i gotowość do deploymentu.",
     },
-    skills: ["Git", "GitHub", "VS Code", "ESLint", "npm"],
+    skills: ["Git", "GitHub", "VS Code", "ESLint", "npm", "Vercel"],
   },
   {
     title: {
@@ -51,14 +52,15 @@ export const skillGroups: SkillGroup[] = [
       pl: "Aktualnie rozwijam",
     },
     description: {
-      en: "Areas I am actively practicing through portfolio projects.",
-      pl: "Obszary, które aktywnie ćwiczę przez budowanie projektów portfolio.",
+      en: "Areas I am actively practicing through portfolio projects and production-focused iterations.",
+      pl: "Obszary, które aktywnie ćwiczę przez projekty portfolio i iteracje skupione na jakości produkcyjnej.",
     },
     skills: [
-      "State Management",
       "Project Architecture",
       "Reusable Components",
+      "SEO",
       "Deployment",
+      "State Management",
     ],
   },
 ];
