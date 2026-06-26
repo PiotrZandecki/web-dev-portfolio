@@ -10,7 +10,7 @@ import { ImageResponse } from "next/og";
 
 export const dynamic = "force-static";
 
-export const alt = "Piotr.dev Web Developer Portfolio";
+export const alt = "Z-TECH Web Developer Portfolio";
 
 export const size = {
   width: 1200,
@@ -75,7 +75,7 @@ export default function OpenGraphImage() {
               letterSpacing: "-4px",
             }}
           >
-            Piotr.dev
+            Z-TECH
           </h1>
 
           <p
@@ -87,8 +87,8 @@ export default function OpenGraphImage() {
               lineHeight: 1.25,
             }}
           >
-            Next.js, TypeScript, Tailwind CSS and project-based frontend
-            development.
+            Z-TECH Piotr Zandecki — Next.js, TypeScript, Tailwind CSS and
+            project-based frontend development.
           </p>
         </div>
 

@@ -1,8 +1,12 @@
-# Piotr.dev — Web Developer Portfolio
+# Z-TECH — Web Developer Portfolio
 
 Bilingual web developer portfolio built with Next.js, TypeScript and Tailwind CSS.
 
 The portfolio is designed as a central hub for smaller web development projects. Each project has its own page, case study sections, technology stack, links area and prepared space for embedded live previews.
+
+## Author
+
+Z-TECH Piotr Zandecki
 
 ## Tech stack
 
@@ -43,7 +47,6 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 
 NEXT_PUBLIC_CONTACT_EMAIL=
 NEXT_PUBLIC_GITHUB_URL=
-NEXT_PUBLIC_LINKEDIN_URL=
 ```
 
 For production deployment, set these values in the hosting provider panel.
@@ -54,23 +57,22 @@ Example:
 NEXT_PUBLIC_SITE_URL=https://your-domain.com
 NEXT_PUBLIC_CONTACT_EMAIL=your-email@example.com
 NEXT_PUBLIC_GITHUB_URL=https://github.com/your-login
-NEXT_PUBLIC_LINKEDIN_URL=https://www.linkedin.com/in/your-profile
 ```
 
 ## Available routes
 
 ```txt
 /
- /en/
- /pl/
- /en/projects/
- /pl/projects/
- /en/projects/private-space/
- /pl/projects/private-space/
- /en/projects/aurora-beauty/
- /pl/projects/aurora-beauty/
- /en/projects/web-dev-portfolio/
- /pl/projects/web-dev-portfolio/
+/en/
+/pl/
+/en/projects/
+/pl/projects/
+/en/projects/private-space/
+/pl/projects/private-space/
+/en/projects/aurora-beauty/
+/pl/projects/aurora-beauty/
+/en/projects/web-dev-portfolio/
+/pl/projects/web-dev-portfolio/
 ```
 
 ## SEO routes
@@ -118,6 +120,5 @@ Before deployment:
    - `NEXT_PUBLIC_SITE_URL`
    - `NEXT_PUBLIC_CONTACT_EMAIL`
    - `NEXT_PUBLIC_GITHUB_URL`
-   - `NEXT_PUBLIC_LINKEDIN_URL`
 4. Run production build.
 5. Check both language versions after deployment.

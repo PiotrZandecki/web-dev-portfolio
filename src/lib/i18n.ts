@@ -119,10 +119,8 @@ export type Dictionary = {
     emailPlaceholderNote: string;
     emailTitle: string;
     githubTitle: string;
-    linkedinTitle: string;
     emailDescription: string;
     githubDescription: string;
-    linkedinDescription: string;
     pendingValue: string;
     openLink: string;
   };
@@ -169,13 +167,13 @@ const dictionaries: Record<Locale, Dictionary> = {
       inProgress: "In progress",
     },
     seo: {
-      homeTitle: "Piotr.dev | Web Developer Portfolio",
+      homeTitle: "Z-TECH | Web Developer Portfolio",
       homeDescription:
-        "Bilingual web developer portfolio focused on Next.js, TypeScript, Tailwind CSS and project-based frontend development.",
-      projectsTitle: "Projects | Piotr.dev",
+        "Bilingual web developer portfolio by Z-TECH Piotr Zandecki, focused on Next.js, TypeScript, Tailwind CSS and project-based frontend development.",
+      projectsTitle: "Projects | Z-TECH",
       projectsDescription:
         "A project hub with frontend projects, case studies, technologies, lessons learned and future embedded live previews.",
-      projectTitleSuffix: "Project Case Study | Piotr.dev",
+      projectTitleSuffix: "Project Case Study | Z-TECH",
     },
     home: {
       eyebrow: "Web Developer Portfolio",
@@ -284,13 +282,10 @@ const dictionaries: Record<Locale, Dictionary> = {
         "Contact details are controlled from one configuration file and can be updated before deployment.",
       emailTitle: "Email",
       githubTitle: "GitHub",
-      linkedinTitle: "LinkedIn",
       emailDescription:
         "The best place for direct contact, project questions or recruitment conversations.",
       githubDescription:
         "A place for source code, repositories and development progress.",
-      linkedinDescription:
-        "A professional profile for career updates and contact.",
       pendingValue: "To be added",
       openLink: "Open",
     },
@@ -336,13 +331,13 @@ const dictionaries: Record<Locale, Dictionary> = {
       inProgress: "W trakcie",
     },
     seo: {
-      homeTitle: "Piotr.dev | Portfolio Web Developera",
+      homeTitle: "Z-TECH | Portfolio Web Developera",
       homeDescription:
-        "Dwujęzyczne portfolio web developera skupione na Next.js, TypeScript, Tailwind CSS i nauce frontendu przez realne projekty.",
-      projectsTitle: "Projekty | Piotr.dev",
+        "Dwujęzyczne portfolio web developera Z-TECH Piotr Zandecki, skupione na Next.js, TypeScript, Tailwind CSS i nauce frontendu przez realne projekty.",
+      projectsTitle: "Projekty | Z-TECH",
       projectsDescription:
         "Hub projektów frontendowych z case studies, technologiami, wnioskami z nauki i miejscem na przyszłe osadzone podglądy live.",
-      projectTitleSuffix: "Case Study Projektu | Piotr.dev",
+      projectTitleSuffix: "Case Study Projektu | Z-TECH",
     },
     home: {
       eyebrow: "Portfolio Web Developera",
@@ -452,13 +447,10 @@ const dictionaries: Record<Locale, Dictionary> = {
         "Dane kontaktowe są kontrolowane z jednego pliku konfiguracji i mogą zostać uzupełnione przed wdrożeniem.",
       emailTitle: "Email",
       githubTitle: "GitHub",
-      linkedinTitle: "LinkedIn",
       emailDescription:
         "Najlepsze miejsce do bezpośredniego kontaktu, pytań o projekt albo rozmów rekrutacyjnych.",
       githubDescription:
         "Miejsce na kod źródłowy, repozytoria i postępy developerskie.",
-      linkedinDescription:
-        "Profil zawodowy do aktualizacji kariery i kontaktu.",
       pendingValue: "Do uzupełnienia",
       openLink: "Otwórz",
     },
