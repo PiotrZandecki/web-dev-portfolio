@@ -2,11 +2,14 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FinalCta } from "@/components/FinalCta";
+import { JsonLd } from "@/components/JsonLd";
 import { PageIntro } from "@/components/PageIntro";
+import { SiteProductionChecklist } from "@/components/SiteProductionChecklist";
 import { SkillsSection } from "@/components/SkillsSection";
 import { TechStackSection } from "@/components/TechStackSection";
 import { WorkProcessSection } from "@/components/WorkProcessSection";
 import { getDictionary, isLocale } from "@/lib/i18n";
+import { getStackPageStructuredData } from "@/lib/structured-data";
 import { locales, Locale } from "@/types/locale";
 
 type StackPageProps = {
@@ -104,6 +107,8 @@ export default async function StackPage({ params }: StackPageProps) {
       tabIndex={-1}
       className="mx-auto max-w-6xl px-6 py-20"
     >
+      <JsonLd data={getStackPageStructuredData(locale)} />
+
       <Breadcrumbs items={breadcrumbItems} />
 
       <PageIntro
@@ -115,6 +120,8 @@ export default async function StackPage({ params }: StackPageProps) {
       <TechStackSection locale={locale} />
 
       <SkillsSection locale={locale} dictionary={dictionary} />
+
+      <SiteProductionChecklist locale={locale} />
 
       <WorkProcessSection locale={locale} />
 

@@ -1,10 +1,13 @@
 import Link from "next/link";
-import { siteConfig } from "@/config/site";
 
-export default function NotFound() {
+export default function LocaleNotFound() {
   return (
-    <main className="min-h-screen bg-slate-950 px-6 py-20 text-slate-100">
-      <div className="mx-auto max-w-3xl rounded-3xl border border-white/10 bg-white/5 p-8 md:p-10">
+    <main
+      id="main-content"
+      tabIndex={-1}
+      className="mx-auto max-w-6xl px-6 py-20"
+    >
+      <section className="rounded-3xl border border-white/10 bg-white/5 p-8 md:p-10">
         <p className="text-sm font-medium uppercase tracking-[0.3em] text-cyan-400">
           404
         </p>
@@ -13,9 +16,14 @@ export default function NotFound() {
           Page not found
         </h1>
 
-        <p className="mt-6 text-lg leading-8 text-slate-300">
-          The page you are looking for does not exist or has been moved. Choose
-          a language version below to return to {siteConfig.name}.
+        <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+          This localized page does not exist. You can return to one of the main
+          language versions below.
+        </p>
+
+        <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-300">
+          Ta lokalizowana strona nie istnieje. Możesz wrócić do jednej z
+          głównych wersji językowych poniżej.
         </p>
 
         <div className="mt-8 flex flex-wrap gap-4">
@@ -33,7 +41,7 @@ export default function NotFound() {
             Polska strona główna
           </Link>
         </div>
-      </div>
+      </section>
     </main>
   );
 }

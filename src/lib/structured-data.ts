@@ -149,6 +149,53 @@ export function getServicesPageStructuredData(locale: Locale) {
   ];
 }
 
+export function getStackPageStructuredData(locale: Locale) {
+  const stackUrl = getLocalizedUrl(locale, "stack/");
+
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: locale === "pl" ? "Technologie | Z-TECH" : "Stack | Z-TECH",
+      url: stackUrl,
+      inLanguage: locale,
+      description:
+        locale === "pl"
+          ? "Stack technologiczny projektów frontendowych Z-TECH: Next.js, TypeScript, Tailwind CSS, treści dwujęzyczne i deployment na Netlify."
+          : "Technology stack behind Z-TECH frontend projects: Next.js, TypeScript, Tailwind CSS, bilingual content and Netlify deployment.",
+      about: {
+        "@type": "DefinedTermSet",
+        name:
+          locale === "pl"
+            ? "Stack technologiczny Z-TECH"
+            : "Z-TECH technology stack",
+        hasDefinedTerm: [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Tailwind CSS",
+          "Static export",
+          "Netlify",
+        ].map((name) => ({
+          "@type": "DefinedTerm",
+          name,
+        })),
+      },
+      publisher: getBaseOrganization(),
+    },
+    getBaseBreadcrumbs(locale, [
+      {
+        name: locale === "pl" ? "Start" : "Home",
+        item: getLocalizedUrl(locale),
+      },
+      {
+        name: locale === "pl" ? "Technologie" : "Stack",
+        item: stackUrl,
+      },
+    ]),
+  ];
+}
+
 export function getContactPageStructuredData(locale: Locale) {
   const contactUrl = getLocalizedUrl(locale, "contact/");
 
