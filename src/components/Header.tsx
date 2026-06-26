@@ -14,12 +14,18 @@ const servicesLabels: Record<Locale, string> = {
   pl: "Usługi",
 };
 
+const processLabels: Record<Locale, string> = {
+  en: "Process",
+  pl: "Proces",
+};
+
 export function Header({ locale, dictionary }: HeaderProps) {
   const navigationItems = [
     { label: dictionary.navigation.home, href: `/${locale}/` },
     { label: dictionary.navigation.projects, href: `/${locale}/projects/` },
     { label: dictionary.navigation.about, href: `/${locale}/#about` },
     { label: servicesLabels[locale], href: `/${locale}/#services` },
+    { label: processLabels[locale], href: `/${locale}/#process` },
     { label: dictionary.navigation.skills, href: `/${locale}/#skills` },
     { label: dictionary.navigation.contact, href: `/${locale}/#contact` },
   ];
@@ -44,7 +50,7 @@ export function Header({ locale, dictionary }: HeaderProps) {
 
         <nav
           aria-label="Main navigation"
-          className="hidden items-center gap-6 text-sm text-slate-300 md:flex"
+          className="hidden items-center gap-5 text-sm text-slate-300 lg:flex"
         >
           {navigationItems.map((item) => (
             <Link
@@ -62,7 +68,7 @@ export function Header({ locale, dictionary }: HeaderProps) {
 
       <nav
         aria-label="Mobile navigation"
-        className="no-scrollbar mx-auto flex max-w-6xl gap-3 overflow-x-auto px-6 pb-4 text-sm text-slate-300 md:hidden"
+        className="no-scrollbar mx-auto flex max-w-6xl gap-3 overflow-x-auto px-6 pb-4 text-sm text-slate-300 lg:hidden"
       >
         {navigationItems.map((item) => (
           <Link

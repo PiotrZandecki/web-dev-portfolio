@@ -2,43 +2,38 @@
 
 All notable changes to this project will be documented in this file.
 
-## v1.0.0 — Deployed portfolio
-
-Initial deployed version of the Z-TECH web developer portfolio.
+## [Unreleased]
 
 ### Added
 
-- Bilingual routing with English and Polish versions.
-- Portfolio homepage with hero, about, skills, featured project and contact sections.
-- Project hub with search, filters and project summary.
-- Dynamic project detail pages generated from shared project data.
-- Case study sections for each project:
-  - overview
-  - technologies
-  - highlights
-  - links
-  - process
-  - mockups
-  - features
-  - lessons learned
-  - challenges
-  - next steps
-- Static export configuration for Netlify.
-- SEO routes:
-  - `robots.txt`
-  - `sitemap.xml`
-  - `manifest.webmanifest`
-  - Open Graph image
-- Z-TECH branding.
-- SVG favicon.
-- Contact configuration through environment variables.
-- GitHub and repository link support.
-- Deployment documentation.
+- Added visual project previews for project case studies.
+- Added project preview images to project cards and featured project section.
+- Added Z-TECH services section on the homepage.
+- Added services navigation link.
+- Added Z-TECH work process section.
+- Added final homepage CTA section.
+
+### Planned
+
+- Replace designed SVG previews with real screenshots where available.
+- Add more deployed frontend projects.
+- Improve visual identity and portfolio polish.
+- Consider adding a custom domain.
+
+## [1.0.0] - 2026-06-26
+
+### Added
+
+- Initial deployed version of the Z-TECH web developer portfolio.
+- Bilingual routing for English and Polish pages.
+- Project hub with search and filters.
+- Dynamic project case study pages.
+- Contact section with email and GitHub links.
+- SEO routes: sitemap, robots, manifest and Open Graph image.
+- Static export configuration for Netlify deployment.
+- Z-TECH branding and SVG favicon.
 
 ### Deployment
 
-Production URL:
-
-```txt
-https://zandeckidev.netlify.app
-```
+- Deployed to Netlify.
+- Production URL: https://zandeckidev.netlify.app

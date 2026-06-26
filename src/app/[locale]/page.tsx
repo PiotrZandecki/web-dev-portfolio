@@ -3,10 +3,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ContactCta } from "@/components/ContactCta";
 import { FeaturedProject } from "@/components/FeaturedProject";
+import { FinalCta } from "@/components/FinalCta";
 import { HeroSection } from "@/components/HeroSection";
 import { ProjectCard } from "@/components/ProjectCard";
 import { ServicesSection } from "@/components/ServicesSection";
 import { SkillsSection } from "@/components/SkillsSection";
+import { WorkProcessSection } from "@/components/WorkProcessSection";
 import { projects } from "@/content/projects";
 import { getDictionary, isLocale } from "@/lib/i18n";
 
@@ -71,6 +73,8 @@ export default async function HomePage({ params }: HomePageProps) {
 
       <ServicesSection locale={locale} />
 
+      <WorkProcessSection locale={locale} />
+
       <SkillsSection locale={locale} dictionary={dictionary} />
 
       <section className="mx-auto max-w-6xl px-6 py-20">
@@ -114,6 +118,8 @@ export default async function HomePage({ params }: HomePageProps) {
           ))}
         </div>
       </section>
+
+      <FinalCta locale={locale} />
 
       <ContactCta locale={locale} dictionary={dictionary} />
     </main>
