@@ -47,6 +47,7 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 
 NEXT_PUBLIC_CONTACT_EMAIL=
 NEXT_PUBLIC_GITHUB_URL=
+NEXT_PUBLIC_REPOSITORY_URL=
 ```
 
 For production deployment, set these values in the hosting provider panel.
@@ -57,6 +58,7 @@ Example:
 NEXT_PUBLIC_SITE_URL=https://your-domain.com
 NEXT_PUBLIC_CONTACT_EMAIL=your-email@example.com
 NEXT_PUBLIC_GITHUB_URL=https://github.com/your-login
+NEXT_PUBLIC_REPOSITORY_URL=https://github.com/your-login/web-dev-portfolio
 ```
 
 ## Available routes
@@ -120,5 +122,6 @@ Before deployment:
    - `NEXT_PUBLIC_SITE_URL`
    - `NEXT_PUBLIC_CONTACT_EMAIL`
    - `NEXT_PUBLIC_GITHUB_URL`
+   - `NEXT_PUBLIC_REPOSITORY_URL`
 4. Run production build.
 5. Check both language versions after deployment.

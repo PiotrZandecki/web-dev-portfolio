@@ -5,6 +5,7 @@ export const siteConfig = {
     "Bilingual web developer portfolio focused on Next.js, TypeScript, Tailwind CSS and project-based frontend development.",
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "",
   githubUrl: process.env.NEXT_PUBLIC_GITHUB_URL ?? "",
+  repositoryUrl: process.env.NEXT_PUBLIC_REPOSITORY_URL ?? "",
   locale: "en",
   alternateLocale: "pl",
   keywords: [

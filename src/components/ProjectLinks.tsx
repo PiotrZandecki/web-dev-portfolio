@@ -1,5 +1,7 @@
+import { siteConfig } from "@/config/site";
 import { Project } from "@/content/projects";
 import { Dictionary } from "@/lib/i18n";
+import { getSiteUrl } from "@/lib/site-url";
 
 type ProjectLinksProps = {
   project: Project;
@@ -15,17 +17,30 @@ function getExternalLinkProps(href: string) {
   };
 }
 
+function getResolvedProjectLinks(project: Project) {
+  const isPortfolioProject = project.slug === "web-dev-portfolio";
+
+  return {
+    liveUrl: project.liveUrl || (isPortfolioProject ? getSiteUrl() : undefined),
+    sourceUrl:
+      project.sourceUrl ||
+      (isPortfolioProject ? siteConfig.repositoryUrl : undefined),
+  };
+}
+
 export function ProjectLinks({ project, dictionary }: ProjectLinksProps) {
+  const resolvedLinks = getResolvedProjectLinks(project);
+
   const links = [
     {
       label: dictionary.common.liveDemo,
       description: dictionary.projectLinks.liveDescription,
-      href: project.liveUrl,
+      href: resolvedLinks.liveUrl,
     },
     {
       label: dictionary.common.sourceCode,
       description: dictionary.projectLinks.sourceDescription,
-      href: project.sourceUrl,
+      href: resolvedLinks.sourceUrl,
     },
   ];
 
