@@ -1,21 +1,20 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { AboutSection } from "@/components/AboutSection";
-import { ContactCta } from "@/components/ContactCta";
-import { FaqSection } from "@/components/FaqSection";
-import { FinalCta } from "@/components/FinalCta";
-import { HeroSection } from "@/components/HeroSection";
-import { HomeProjectShowcase } from "@/components/HomeProjectShowcase";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
-import { ServicesSection } from "@/components/ServicesSection";
-import { SkillsSection } from "@/components/SkillsSection";
-import { ValuePropositionSection } from "@/components/ValuePropositionSection";
-import { WorkProcessSection } from "@/components/WorkProcessSection";
+import { ProjectComparisonMatrix } from "@/components/ProjectComparisonMatrix";
+import { ProjectDeliveryDashboard } from "@/components/ProjectDeliveryDashboard";
+import { ProjectDeliveryPipeline } from "@/components/ProjectDeliveryPipeline";
+import { ProjectMaintenanceGuide } from "@/components/ProjectMaintenanceGuide";
+import { ProjectProductionGate } from "@/components/ProjectProductionGate";
+import { ProjectsExplorer } from "@/components/ProjectsExplorer";
+import { ProjectSummaryBar } from "@/components/ProjectSummaryBar";
+import { SectionHeader } from "@/components/SectionHeader";
 import { projects } from "@/content/projects";
 import { getDictionary, isLocale } from "@/lib/i18n";
-import { getHomeStructuredData } from "@/lib/structured-data";
+import { getProjectsPageStructuredData } from "@/lib/structured-data";
 
-type HomePageProps = {
+type ProjectsPageProps = {
   params: Promise<{
     locale: string;
   }>;
@@ -23,7 +22,7 @@ type HomePageProps = {
 
 export async function generateMetadata({
   params,
-}: HomePageProps): Promise<Metadata> {
+}: ProjectsPageProps): Promise<Metadata> {
   const { locale } = await params;
 
   if (!isLocale(locale)) {
@@ -33,18 +32,18 @@ export async function generateMetadata({
   const dictionary = getDictionary(locale);
 
   return {
-    title: dictionary.seo.homeTitle,
-    description: dictionary.seo.homeDescription,
+    title: dictionary.seo.projectsTitle,
+    description: dictionary.seo.projectsDescription,
     alternates: {
       languages: {
-        en: "/en/",
-        pl: "/pl/",
+        en: "/en/projects/",
+        pl: "/pl/projects/",
       },
     },
   };
 }
 
-export default async function HomePage({ params }: HomePageProps) {
+export default async function ProjectsPage({ params }: ProjectsPageProps) {
   const { locale } = await params;
 
   if (!isLocale(locale)) {
@@ -53,33 +52,49 @@ export default async function HomePage({ params }: HomePageProps) {
 
   const dictionary = getDictionary(locale);
 
+  const breadcrumbItems = [
+    {
+      label: dictionary.navigation.home,
+      href: `/${locale}/`,
+    },
+    {
+      label: dictionary.navigation.projects,
+    },
+  ];
+
   return (
-    <main id="main-content" tabIndex={-1}>
-      <JsonLd data={getHomeStructuredData(locale)} />
+    <main
+      id="main-content"
+      tabIndex={-1}
+      className="mx-auto max-w-6xl px-6 py-20"
+    >
+      <JsonLd data={getProjectsPageStructuredData(locale, projects)} />
 
-      <HeroSection locale={locale} dictionary={dictionary} />
+      <Breadcrumbs items={breadcrumbItems} />
 
-      <ValuePropositionSection locale={locale} />
-
-      <ServicesSection locale={locale} />
-
-      <HomeProjectShowcase
-        locale={locale}
-        dictionary={dictionary}
-        projects={projects}
+      <SectionHeader
+        eyebrow={dictionary.projectsPage.eyebrow}
+        title={dictionary.projectsPage.title}
+        description={dictionary.projectsPage.description}
       />
 
-      <AboutSection locale={locale} />
+      <ProjectDeliveryDashboard projects={projects} locale={locale} />
 
-      <WorkProcessSection locale={locale} />
+      <ProjectProductionGate projects={projects} locale={locale} />
 
-      <SkillsSection locale={locale} dictionary={dictionary} />
+      <ProjectDeliveryPipeline locale={locale} />
 
-      <FaqSection locale={locale} />
+      <ProjectComparisonMatrix projects={projects} locale={locale} />
 
-      <FinalCta locale={locale} />
+      <ProjectMaintenanceGuide locale={locale} />
 
-      <ContactCta locale={locale} dictionary={dictionary} />
+      <ProjectSummaryBar dictionary={dictionary} />
+
+      <ProjectsExplorer
+        projects={projects}
+        locale={locale}
+        dictionary={dictionary}
+      />
     </main>
   );
 }
