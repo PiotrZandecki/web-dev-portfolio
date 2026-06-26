@@ -8,6 +8,11 @@ type LanguageSwitcherProps = {
   currentLocale: Locale;
 };
 
+const languageLabels: Record<Locale, string> = {
+  en: "English",
+  pl: "Polski",
+};
+
 export function LanguageSwitcher({ currentLocale }: LanguageSwitcherProps) {
   const pathname = usePathname();
 
@@ -23,7 +28,10 @@ export function LanguageSwitcher({ currentLocale }: LanguageSwitcherProps) {
   }
 
   return (
-    <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 p-1">
+    <nav
+      aria-label="Language switcher"
+      className="flex items-center gap-1 rounded-full border border-white/10 bg-white/5 p-1"
+    >
       {locales.map((locale) => {
         const isActive = locale === currentLocale;
 
@@ -31,6 +39,8 @@ export function LanguageSwitcher({ currentLocale }: LanguageSwitcherProps) {
           <Link
             key={locale}
             href={getLocalizedPath(locale)}
+            aria-current={isActive ? "page" : undefined}
+            title={languageLabels[locale]}
             className={`rounded-full px-3 py-1 text-xs font-semibold uppercase transition ${
               isActive
                 ? "bg-cyan-400 text-slate-950"
@@ -38,9 +48,10 @@ export function LanguageSwitcher({ currentLocale }: LanguageSwitcherProps) {
             }`}
           >
             {locale}
+            <span className="sr-only"> — {languageLabels[locale]}</span>
           </Link>
         );
       })}
-    </div>
+    </nav>
   );
 }
