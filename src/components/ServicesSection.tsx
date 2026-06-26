@@ -25,6 +25,7 @@ export function ServicesSection({ locale }: ServicesSectionProps) {
 
   return (
     <section
+      id="services"
       aria-labelledby="services-heading"
       className="mx-auto max-w-6xl px-6 py-20"
     >

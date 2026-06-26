@@ -9,13 +9,19 @@ type HeaderProps = {
   dictionary: Dictionary;
 };
 
+const servicesLabels: Record<Locale, string> = {
+  en: "Services",
+  pl: "Usługi",
+};
+
 export function Header({ locale, dictionary }: HeaderProps) {
   const navigationItems = [
-    { label: dictionary.navigation.home, href: `/${locale}` },
-    { label: dictionary.navigation.projects, href: `/${locale}/projects` },
-    { label: dictionary.navigation.about, href: `/${locale}#about` },
-    { label: dictionary.navigation.skills, href: `/${locale}#skills` },
-    { label: dictionary.navigation.contact, href: `/${locale}#contact` },
+    { label: dictionary.navigation.home, href: `/${locale}/` },
+    { label: dictionary.navigation.projects, href: `/${locale}/projects/` },
+    { label: dictionary.navigation.about, href: `/${locale}/#about` },
+    { label: servicesLabels[locale], href: `/${locale}/#services` },
+    { label: dictionary.navigation.skills, href: `/${locale}/#skills` },
+    { label: dictionary.navigation.contact, href: `/${locale}/#contact` },
   ];
 
   return (
@@ -29,7 +35,7 @@ export function Header({ locale, dictionary }: HeaderProps) {
 
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
         <Link
-          href={`/${locale}`}
+          href={`/${locale}/`}
           aria-label={`${siteConfig.name} homepage`}
           className="text-lg font-semibold tracking-tight text-white transition hover:text-cyan-200"
         >
