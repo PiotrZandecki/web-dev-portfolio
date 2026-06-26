@@ -76,6 +76,10 @@ NEXT_PUBLIC_REPOSITORY_URL=https://github.com/PiotrZandecki/web-dev-portfolio
 /pl/
 /en/projects/
 /pl/projects/
+/en/services/
+/pl/services/
+/en/contact/
+/pl/contact/
 /en/projects/private-space/
 /pl/projects/private-space/
 /en/projects/aurora-beauty/
@@ -139,6 +143,10 @@ https://zandeckidev.netlify.app/en/
 https://zandeckidev.netlify.app/pl/
 https://zandeckidev.netlify.app/en/projects/
 https://zandeckidev.netlify.app/pl/projects/
+https://zandeckidev.netlify.app/en/services/
+https://zandeckidev.netlify.app/pl/services/
+https://zandeckidev.netlify.app/en/contact/
+https://zandeckidev.netlify.app/pl/contact/
 https://zandeckidev.netlify.app/robots.txt
 https://zandeckidev.netlify.app/sitemap.xml
 https://zandeckidev.netlify.app/manifest.webmanifest

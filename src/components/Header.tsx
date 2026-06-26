@@ -28,12 +28,12 @@ export function Header({ locale, dictionary }: HeaderProps) {
   const navigationItems = [
     { label: dictionary.navigation.home, href: `/${locale}/` },
     { label: dictionary.navigation.projects, href: `/${locale}/projects/` },
+    { label: servicesLabels[locale], href: `/${locale}/services/` },
     { label: dictionary.navigation.about, href: `/${locale}/#about` },
-    { label: servicesLabels[locale], href: `/${locale}/#services` },
     { label: processLabels[locale], href: `/${locale}/#process` },
     { label: dictionary.navigation.skills, href: `/${locale}/#skills` },
     { label: faqLabels[locale], href: `/${locale}/#faq` },
-    { label: dictionary.navigation.contact, href: `/${locale}/#contact` },
+    { label: dictionary.navigation.contact, href: `/${locale}/contact/` },
   ];
 
   return (

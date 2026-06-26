@@ -19,6 +19,9 @@ All notable changes to this project will be documented in this file.
 - Added visible breadcrumbs on projects and project case study pages.
 - Added section navigation for project case study pages.
 - Added expanded localized footer with navigation and external links.
+- Added dedicated localized Services page.
+- Added dedicated localized Contact page.
+- Added Services and Contact pages to sitemap.
 
 ### Planned
 

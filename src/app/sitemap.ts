@@ -22,6 +22,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority: 0.9,
     },
+    {
+      url: `${siteUrl}/${locale}/services/`,
+      lastModified: currentDate,
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
+    },
+    {
+      url: `${siteUrl}/${locale}/contact/`,
+      lastModified: currentDate,
+      changeFrequency: "monthly" as const,
+      priority: 0.75,
+    },
   ]);
 
   const projectRoutes = locales.flatMap((locale) =>

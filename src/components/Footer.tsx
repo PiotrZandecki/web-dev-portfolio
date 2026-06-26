@@ -60,12 +60,12 @@ export function Footer({ locale, dictionary }: FooterProps) {
       href: `/${locale}/projects/`,
     },
     {
-      label: dictionary.navigation.about,
-      href: `/${locale}/#about`,
+      label: copy.services,
+      href: `/${locale}/services/`,
     },
     {
-      label: copy.services,
-      href: `/${locale}/#services`,
+      label: dictionary.navigation.about,
+      href: `/${locale}/#about`,
     },
     {
       label: copy.process,
@@ -81,7 +81,7 @@ export function Footer({ locale, dictionary }: FooterProps) {
     },
     {
       label: dictionary.navigation.contact,
-      href: `/${locale}/#contact`,
+      href: `/${locale}/contact/`,
     },
   ];
 
