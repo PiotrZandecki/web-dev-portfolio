@@ -11,6 +11,7 @@ import { ProjectPager } from "@/components/ProjectPager";
 import { ProjectProcess } from "@/components/ProjectProcess";
 import { ProjectSectionNav } from "@/components/ProjectSectionNav";
 import { ProjectSnapshot } from "@/components/ProjectSnapshot";
+import { ProjectTechnicalOverview } from "@/components/ProjectTechnicalOverview";
 import { RelatedProjects } from "@/components/RelatedProjects";
 import { getProjectBySlug, projects } from "@/content/projects";
 import { getDictionary, isLocale } from "@/lib/i18n";
@@ -117,7 +118,15 @@ export default async function ProjectDetailsPage({
         dictionary={dictionary}
       />
 
+      <ProjectTechnicalOverview
+        project={project}
+        locale={locale}
+        dictionary={dictionary}
+      />
+
       <ProjectLinks project={project} dictionary={dictionary} />
+
+      <ProjectEmbed project={project} locale={locale} />
 
       <ProjectProcess
         project={project}
@@ -136,8 +145,6 @@ export default async function ProjectDetailsPage({
         locale={locale}
         dictionary={dictionary}
       />
-
-      <ProjectEmbed project={project} locale={locale} />
 
       <ProjectPager
         currentProjectSlug={project.slug}

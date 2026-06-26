@@ -1,4 +1,5 @@
 import { Project } from "@/content/projects";
+import { getResolvedProjectLinks } from "@/lib/project-links";
 import { Locale } from "@/types/locale";
 
 type ProjectEmbedProps = {
@@ -6,101 +7,108 @@ type ProjectEmbedProps = {
   locale: Locale;
 };
 
-const embedCopy = {
+const projectEmbedCopy: Record<
+  Locale,
+  {
+    eyebrow: string;
+    title: string;
+    description: string;
+    browserLabel: string;
+    openLive: string;
+    unavailableTitle: string;
+    unavailableDescription: string;
+  }
+> = {
   en: {
-    eyebrow: "Live Preview",
+    eyebrow: "Live preview",
     title: "Embedded project preview",
-    availableDescription:
-      "This section shows the project directly inside the portfolio. You can also open it in a separate tab.",
-    unavailableTitle: "Preview is not available yet",
+    description:
+      "When a project has a deployed live version, it can be previewed directly inside the portfolio case study.",
+    browserLabel: "Live browser preview",
+    openLive: "Open live version",
+    unavailableTitle: "Live preview is not connected yet",
     unavailableDescription:
-      "This project does not have a deployed preview link yet. Once the project is published, it will be embedded here.",
-    openProject: "Open Project",
-    comingSoon: "Coming soon",
+      "This area is prepared for a future embedded preview. Once the project is deployed, the live URL can be connected here.",
   },
   pl: {
     eyebrow: "Podgląd live",
     title: "Osadzony podgląd projektu",
-    availableDescription:
-      "Ta sekcja pokazuje projekt bezpośrednio wewnątrz portfolio. Możesz też otworzyć go w osobnej karcie.",
-    unavailableTitle: "Podgląd nie jest jeszcze dostępny",
+    description:
+      "Jeśli projekt ma wdrożoną wersję live, można go podejrzeć bezpośrednio w case study portfolio.",
+    browserLabel: "Podgląd live w przeglądarce",
+    openLive: "Otwórz wersję live",
+    unavailableTitle: "Podgląd live nie jest jeszcze podpięty",
     unavailableDescription:
-      "Ten projekt nie ma jeszcze wdrożonego linku do podglądu. Po publikacji projektu zostanie on osadzony w tym miejscu.",
-    openProject: "Otwórz projekt",
-    comingSoon: "Wkrótce",
+      "Ten obszar jest przygotowany pod przyszły osadzony podgląd. Po wdrożeniu projektu można tutaj podłączyć adres live.",
   },
 };
 
 export function ProjectEmbed({ project, locale }: ProjectEmbedProps) {
-  const copy = embedCopy[locale];
+  const copy = projectEmbedCopy[locale];
+  const resolvedLinks = getResolvedProjectLinks(project);
 
   return (
-    <section className="mt-16">
-      <div className="mb-6">
+    <section
+      id="project-live-preview"
+      aria-labelledby="project-live-preview-heading"
+      className="mt-16 scroll-mt-32"
+    >
+      <div className="mb-8">
         <p className="text-sm font-medium uppercase tracking-[0.3em] text-cyan-400">
           {copy.eyebrow}
         </p>
 
-        <h2 className="mt-4 text-3xl font-bold tracking-tight text-white">
+        <h2
+          id="project-live-preview-heading"
+          className="mt-4 text-3xl font-bold tracking-tight text-white"
+        >
           {copy.title}
         </h2>
 
-        <p className="mt-3 max-w-2xl text-slate-300">
-          {project.embedUrl
-            ? copy.availableDescription
-            : copy.unavailableDescription}
-        </p>
+        <p className="mt-3 max-w-2xl text-slate-300">{copy.description}</p>
       </div>
 
-      {project.embedUrl ? (
-        <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-2xl shadow-cyan-950/20">
-          <div className="flex items-center justify-between border-b border-white/10 bg-slate-900 px-4 py-3">
-            <div className="flex items-center gap-2">
-              <span className="h-3 w-3 rounded-full bg-red-400" />
-              <span className="h-3 w-3 rounded-full bg-yellow-400" />
-              <span className="h-3 w-3 rounded-full bg-green-400" />
+      {resolvedLinks.hasEmbedUrl ? (
+        <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-4">
+          <div className="overflow-hidden rounded-2xl border border-white/10 bg-slate-950">
+            <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
+              <div aria-hidden="true" className="flex gap-2">
+                <span className="h-3 w-3 rounded-full bg-red-400" />
+                <span className="h-3 w-3 rounded-full bg-yellow-400" />
+                <span className="h-3 w-3 rounded-full bg-green-400" />
+              </div>
+
+              <span className="truncate pl-4 text-xs text-slate-500">
+                {copy.browserLabel}
+              </span>
             </div>
 
-            <p className="hidden text-xs text-slate-400 md:block">
-              {project.title}
-            </p>
-
-            {project.liveUrl ? (
-              <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="text-xs font-semibold text-cyan-300 transition hover:text-cyan-200"
-              >
-                {copy.openProject}
-              </a>
-            ) : null}
-          </div>
-
-          <div className="aspect-16/10 bg-slate-950">
             <iframe
-              src={project.embedUrl}
-              title={`${project.title} preview`}
-              className="h-full w-full"
+              title={`${project.title} ${copy.browserLabel}`}
+              src={resolvedLinks.embedUrl}
+              className="h-140 w-full bg-white"
               loading="lazy"
             />
           </div>
+
+          <a
+            href={resolvedLinks.liveUrl || resolvedLinks.embedUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-6 inline-flex rounded-full bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
+          >
+            {copy.openLive}
+          </a>
         </div>
       ) : (
         <div className="rounded-3xl border border-dashed border-white/15 bg-white/5 p-8">
-          <div className="flex min-h-80 flex-col items-center justify-center rounded-2xl bg-slate-900 px-6 py-16 text-center">
-            <div className="rounded-full bg-cyan-400/10 px-4 py-2 text-sm font-semibold text-cyan-300">
-              {copy.comingSoon}
-            </div>
+          <h3 className="text-2xl font-semibold tracking-tight text-white">
+            {copy.unavailableTitle}
+          </h3>
 
-            <h3 className="mt-6 text-2xl font-semibold text-white">
-              {copy.unavailableTitle}
-            </h3>
-
-            <p className="mt-4 max-w-xl text-slate-300">
-              {copy.unavailableDescription}
-            </p>
-          </div>
+          <p className="mt-4 max-w-2xl text-sm leading-6 text-slate-300">
+            {copy.unavailableDescription}
+          </p>
         </div>
       )}
     </section>

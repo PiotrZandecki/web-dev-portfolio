@@ -1,5 +1,6 @@
 import { siteConfig } from "@/config/site";
 import { Project } from "@/content/projects";
+import { getResolvedProjectLinks } from "@/lib/project-links";
 import { getSiteUrl } from "@/lib/site-url";
 import { Locale } from "@/types/locale";
 
@@ -220,7 +221,11 @@ export function getProjectsPageStructuredData(
 export function getProjectStructuredData(locale: Locale, project: Project) {
   const projectUrl = getProjectUrl(locale, project);
   const projectsUrl = getLocalizedUrl(locale, "projects/");
-  const relatedLinks = [project.liveUrl, project.sourceUrl].filter(Boolean);
+  const resolvedLinks = getResolvedProjectLinks(project);
+
+  const relatedLinks = [resolvedLinks.liveUrl, resolvedLinks.sourceUrl].filter(
+    Boolean,
+  );
 
   return [
     {

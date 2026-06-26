@@ -1,7 +1,6 @@
-import { siteConfig } from "@/config/site";
 import { Project } from "@/content/projects";
 import { Dictionary } from "@/lib/i18n";
-import { getSiteUrl } from "@/lib/site-url";
+import { getResolvedProjectLinks } from "@/lib/project-links";
 
 type ProjectLinksProps = {
   project: Project;
@@ -17,17 +16,6 @@ function getExternalLinkProps(href: string) {
   };
 }
 
-function getResolvedProjectLinks(project: Project) {
-  const isPortfolioProject = project.slug === "web-dev-portfolio";
-
-  return {
-    liveUrl: project.liveUrl || (isPortfolioProject ? getSiteUrl() : undefined),
-    sourceUrl:
-      project.sourceUrl ||
-      (isPortfolioProject ? siteConfig.repositoryUrl : undefined),
-  };
-}
-
 export function ProjectLinks({ project, dictionary }: ProjectLinksProps) {
   const resolvedLinks = getResolvedProjectLinks(project);
 
@@ -36,11 +24,13 @@ export function ProjectLinks({ project, dictionary }: ProjectLinksProps) {
       label: dictionary.common.liveDemo,
       description: dictionary.projectLinks.liveDescription,
       href: resolvedLinks.liveUrl,
+      isAvailable: resolvedLinks.hasLiveUrl,
     },
     {
       label: dictionary.common.sourceCode,
       description: dictionary.projectLinks.sourceDescription,
       href: resolvedLinks.sourceUrl,
+      isAvailable: resolvedLinks.hasSourceUrl,
     },
   ];
 
@@ -61,39 +51,41 @@ export function ProjectLinks({ project, dictionary }: ProjectLinksProps) {
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">
-        {links.map((link) => {
-          const hasHref = Boolean(link.href);
+        {links.map((link) => (
+          <article
+            key={link.label}
+            className="rounded-3xl border border-white/10 bg-white/5 p-6 transition hover:border-cyan-400/30 hover:bg-white/[0.07]"
+          >
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <h3 className="text-xl font-semibold text-white">
+                  {link.label}
+                </h3>
 
-          return (
-            <article
-              key={link.label}
-              className="rounded-3xl border border-white/10 bg-white/5 p-6"
-            >
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <h3 className="text-xl font-semibold text-white">
-                    {link.label}
-                  </h3>
-
-                  <p className="mt-3 text-sm leading-6 text-slate-300">
-                    {link.description}
-                  </p>
-                </div>
-
-                <span
-                  className={`shrink-0 rounded-full px-3 py-1 text-xs font-semibold ${
-                    hasHref
-                      ? "bg-cyan-400/10 text-cyan-300"
-                      : "bg-white/10 text-slate-400"
-                  }`}
-                >
-                  {hasHref
-                    ? dictionary.projectLinks.available
-                    : dictionary.projectLinks.notAvailable}
-                </span>
+                <p className="mt-3 text-sm leading-6 text-slate-300">
+                  {link.description}
+                </p>
               </div>
 
-              {link.href ? (
+              <span
+                className={`shrink-0 rounded-full px-3 py-1 text-xs font-semibold ${
+                  link.isAvailable
+                    ? "bg-cyan-400/10 text-cyan-300"
+                    : "bg-white/10 text-slate-400"
+                }`}
+              >
+                {link.isAvailable
+                  ? dictionary.projectLinks.available
+                  : dictionary.projectLinks.notAvailable}
+              </span>
+            </div>
+
+            {link.isAvailable ? (
+              <>
+                <p className="mt-6 break-all rounded-2xl bg-slate-950 p-4 text-sm text-slate-400">
+                  {link.href}
+                </p>
+
                 <a
                   href={link.href}
                   {...getExternalLinkProps(link.href)}
@@ -102,14 +94,14 @@ export function ProjectLinks({ project, dictionary }: ProjectLinksProps) {
                 >
                   {dictionary.projectLinks.openLink}
                 </a>
-              ) : (
-                <div className="mt-6 rounded-2xl border border-dashed border-white/15 bg-slate-900 p-4 text-sm leading-6 text-slate-400">
-                  {dictionary.projectLinks.placeholder}
-                </div>
-              )}
-            </article>
-          );
-        })}
+              </>
+            ) : (
+              <div className="mt-6 rounded-2xl border border-dashed border-white/15 bg-slate-950 p-4 text-sm leading-6 text-slate-400">
+                {dictionary.projectLinks.placeholder}
+              </div>
+            )}
+          </article>
+        ))}
       </div>
     </section>
   );

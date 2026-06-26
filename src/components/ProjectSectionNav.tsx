@@ -10,9 +10,11 @@ const projectSectionNavCopy: Record<
     label: string;
     overview: string;
     snapshot: string;
+    technical: string;
     links: string;
+    livePreview: string;
     process: string;
-    preview: string;
+    visualPreview: string;
     caseStudy: string;
   }
 > = {
@@ -20,18 +22,22 @@ const projectSectionNavCopy: Record<
     label: "Case study navigation",
     overview: "Overview",
     snapshot: "Snapshot",
+    technical: "Technical",
     links: "Links",
+    livePreview: "Live preview",
     process: "Process",
-    preview: "Preview",
+    visualPreview: "Visual preview",
     caseStudy: "Case study",
   },
   pl: {
     label: "Nawigacja case study",
     overview: "Opis",
     snapshot: "Podsumowanie",
+    technical: "Technicznie",
     links: "Linki",
+    livePreview: "Live preview",
     process: "Proces",
-    preview: "Podgląd",
+    visualPreview: "Podgląd",
     caseStudy: "Case study",
   },
 };
@@ -49,15 +55,23 @@ export function ProjectSectionNav({ locale }: ProjectSectionNavProps) {
       href: "#project-snapshot",
     },
     {
+      label: copy.technical,
+      href: "#project-technical",
+    },
+    {
       label: copy.links,
       href: "#project-links",
+    },
+    {
+      label: copy.livePreview,
+      href: "#project-live-preview",
     },
     {
       label: copy.process,
       href: "#project-process",
     },
     {
-      label: copy.preview,
+      label: copy.visualPreview,
       href: "#project-preview",
     },
     {

@@ -33,6 +33,9 @@ All notable changes to this project will be documented in this file.
 - Added JSON-LD structured data for About, Services and Contact pages.
 - Added dedicated localized Stack page.
 - Added Stack page to sitemap and documentation.
+- Added shared project link resolver for live demo, source code and embed URLs.
+- Added technical overview section to project case study pages.
+- Added embedded live preview area for project case study pages.
 
 ### Changed
 
@@ -42,6 +45,8 @@ All notable changes to this project will be documented in this file.
 - Redesigned project case study hero sections with large visual previews.
 - Expanded project case study navigation.
 - Updated Header and Footer navigation to include Stack page.
+- Improved project links section with clearer availability states and visible URLs.
+- Updated project structured data to use resolved live and source links.
 
 ### Planned
 
