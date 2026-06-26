@@ -12,6 +12,8 @@ All notable changes to this project will be documented in this file.
 - Added services navigation link.
 - Added Z-TECH work process section.
 - Added final homepage CTA section.
+- Added FAQ section on the homepage.
+- Added FAQ navigation link.
 
 ### Planned
 

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ContactCta } from "@/components/ContactCta";
+import { FaqSection } from "@/components/FaqSection";
 import { FeaturedProject } from "@/components/FeaturedProject";
 import { FinalCta } from "@/components/FinalCta";
 import { HeroSection } from "@/components/HeroSection";
@@ -118,6 +119,8 @@ export default async function HomePage({ params }: HomePageProps) {
           ))}
         </div>
       </section>
+
+      <FaqSection locale={locale} />
 
       <FinalCta locale={locale} />
 
