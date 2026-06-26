@@ -19,19 +19,25 @@ export const metadata: Metadata = {
   publisher: siteConfig.author,
   category: "portfolio",
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      {
+        url: "/favicon.svg",
+        type: "image/svg+xml",
+      },
+    ],
+    shortcut: "/favicon.svg",
   },
   manifest: "/manifest.webmanifest",
   alternates: {
-    canonical: "/en",
+    canonical: "/en/",
     languages: {
-      en: "/en",
-      pl: "/pl",
+      en: "/en/",
+      pl: "/pl/",
     },
   },
   openGraph: {
     type: "website",
-    url: "/en",
+    url: "/en/",
     siteName: siteConfig.name,
     title: `${siteConfig.name} | Web Developer Portfolio`,
     description: siteConfig.description,

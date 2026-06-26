@@ -2,6 +2,12 @@
 
 Bilingual web developer portfolio built with Next.js, TypeScript and Tailwind CSS.
 
+Live site:
+
+```txt
+https://zandeckidev.netlify.app
+```
+
 The portfolio is designed as a central hub for smaller web development projects. Each project has its own page, case study sections, technology stack, links area and prepared space for embedded live previews.
 
 ## Author
@@ -17,6 +23,7 @@ Z-TECH Piotr Zandecki
 - Static export
 - i18n routing with `/en` and `/pl`
 - SEO routes: sitemap, robots, manifest, Open Graph image
+- Netlify deployment
 
 ## Local development
 
@@ -50,15 +57,15 @@ NEXT_PUBLIC_GITHUB_URL=
 NEXT_PUBLIC_REPOSITORY_URL=
 ```
 
-For production deployment, set these values in the hosting provider panel.
+For production deployment, set these values in Netlify Environment Variables.
 
-Example:
+Production values used for this project:
 
 ```env
-NEXT_PUBLIC_SITE_URL=https://your-domain.com
-NEXT_PUBLIC_CONTACT_EMAIL=your-email@example.com
-NEXT_PUBLIC_GITHUB_URL=https://github.com/your-login
-NEXT_PUBLIC_REPOSITORY_URL=https://github.com/your-login/web-dev-portfolio
+NEXT_PUBLIC_SITE_URL=https://zandeckidev.netlify.app
+NEXT_PUBLIC_CONTACT_EMAIL=p.zandecki24@gmail.com
+NEXT_PUBLIC_GITHUB_URL=https://github.com/PiotrZandecki
+NEXT_PUBLIC_REPOSITORY_URL=https://github.com/PiotrZandecki/web-dev-portfolio
 ```
 
 ## Available routes
@@ -103,8 +110,6 @@ out
 
 ## Netlify deployment
 
-Recommended deployment target: Netlify.
-
 Build settings:
 
 ```txt
@@ -112,7 +117,7 @@ Build command: npm run build
 Publish directory: out
 ```
 
-These values are also stored in `netlify.toml`.
+These values are stored in `netlify.toml`.
 
 Before deployment:
 
@@ -125,3 +130,17 @@ Before deployment:
    - `NEXT_PUBLIC_REPOSITORY_URL`
 4. Run production build.
 5. Check both language versions after deployment.
+
+## Final check URLs
+
+```txt
+https://zandeckidev.netlify.app
+https://zandeckidev.netlify.app/en/
+https://zandeckidev.netlify.app/pl/
+https://zandeckidev.netlify.app/en/projects/
+https://zandeckidev.netlify.app/pl/projects/
+https://zandeckidev.netlify.app/robots.txt
+https://zandeckidev.netlify.app/sitemap.xml
+https://zandeckidev.netlify.app/manifest.webmanifest
+https://zandeckidev.netlify.app/opengraph-image
+```
