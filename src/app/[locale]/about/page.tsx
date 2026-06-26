@@ -3,10 +3,12 @@ import { notFound } from "next/navigation";
 import { AboutSection } from "@/components/AboutSection";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FinalCta } from "@/components/FinalCta";
+import { JsonLd } from "@/components/JsonLd";
 import { PageIntro } from "@/components/PageIntro";
 import { SkillsSection } from "@/components/SkillsSection";
 import { WorkProcessSection } from "@/components/WorkProcessSection";
 import { getDictionary, isLocale } from "@/lib/i18n";
+import { getAboutPageStructuredData } from "@/lib/structured-data";
 import { locales, Locale } from "@/types/locale";
 
 type AboutPageProps = {
@@ -104,6 +106,8 @@ export default async function AboutPage({ params }: AboutPageProps) {
       tabIndex={-1}
       className="mx-auto max-w-6xl px-6 py-20"
     >
+      <JsonLd data={getAboutPageStructuredData(locale)} />
+
       <Breadcrumbs items={breadcrumbItems} />
 
       <PageIntro

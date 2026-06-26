@@ -29,6 +29,8 @@ All notable changes to this project will be documented in this file.
 - Added service package section to services page.
 - Added project snapshot section on project case study pages.
 - Added previous/next project navigation on project case study pages.
+- Added expanded contact page with contact methods and project inquiry guidance.
+- Added JSON-LD structured data for About, Services and Contact pages.
 
 ### Changed
 

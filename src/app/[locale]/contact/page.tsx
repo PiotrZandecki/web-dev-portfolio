@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { ContactCta } from "@/components/ContactCta";
+import { ContactMethodsSection } from "@/components/ContactMethodsSection";
+import { JsonLd } from "@/components/JsonLd";
 import { PageIntro } from "@/components/PageIntro";
-import { getDictionary, isLocale } from "@/lib/i18n";
+import { ProjectInquirySection } from "@/components/ProjectInquirySection";
+import { isLocale } from "@/lib/i18n";
+import { getContactPageStructuredData } from "@/lib/structured-data";
 import { locales, Locale } from "@/types/locale";
 
 type ContactPageProps = {
@@ -82,7 +85,6 @@ export default async function ContactPage({ params }: ContactPageProps) {
     notFound();
   }
 
-  const dictionary = getDictionary(locale);
   const copy = contactPageCopy[locale];
 
   const breadcrumbItems = [
@@ -101,6 +103,8 @@ export default async function ContactPage({ params }: ContactPageProps) {
       tabIndex={-1}
       className="mx-auto max-w-6xl px-6 py-20"
     >
+      <JsonLd data={getContactPageStructuredData(locale)} />
+
       <Breadcrumbs items={breadcrumbItems} />
 
       <PageIntro
@@ -109,7 +113,9 @@ export default async function ContactPage({ params }: ContactPageProps) {
         description={copy.description}
       />
 
-      <ContactCta locale={locale} dictionary={dictionary} />
+      <ContactMethodsSection locale={locale} />
+
+      <ProjectInquirySection locale={locale} />
     </main>
   );
 }
