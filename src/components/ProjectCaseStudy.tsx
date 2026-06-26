@@ -33,13 +33,16 @@ export function ProjectCaseStudy({
   ];
 
   return (
-    <section className="mt-16">
+    <section aria-labelledby="project-case-study-heading" className="mt-16">
       <div className="mb-8">
         <p className="text-sm font-medium uppercase tracking-[0.3em] text-cyan-400">
           {dictionary.projectSections.caseStudy}
         </p>
 
-        <h2 className="mt-4 text-3xl font-bold tracking-tight text-white">
+        <h2
+          id="project-case-study-heading"
+          className="mt-4 text-3xl font-bold tracking-tight text-white"
+        >
           {dictionary.projectSections.title}
         </h2>
 
@@ -52,7 +55,7 @@ export function ProjectCaseStudy({
         {sections.map((section) => (
           <article
             key={section.title}
-            className="rounded-3xl border border-white/10 bg-white/5 p-6"
+            className="rounded-3xl border border-white/10 bg-white/5 p-6 transition hover:border-cyan-400/30 hover:bg-white/[0.07]"
           >
             <h3 className="text-xl font-semibold text-white">
               {section.title}

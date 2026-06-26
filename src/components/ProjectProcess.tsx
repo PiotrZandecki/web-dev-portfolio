@@ -14,13 +14,16 @@ export function ProjectProcess({
   dictionary,
 }: ProjectProcessProps) {
   return (
-    <section className="mt-16">
+    <section aria-labelledby="project-process-heading" className="mt-16">
       <div className="mb-8">
         <p className="text-sm font-medium uppercase tracking-[0.3em] text-cyan-400">
           {dictionary.projectProcess.eyebrow}
         </p>
 
-        <h2 className="mt-4 text-3xl font-bold tracking-tight text-white">
+        <h2
+          id="project-process-heading"
+          className="mt-4 text-3xl font-bold tracking-tight text-white"
+        >
           {dictionary.projectProcess.title}
         </h2>
 
@@ -29,11 +32,11 @@ export function ProjectProcess({
         </p>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-3">
+      <ol className="grid gap-6 md:grid-cols-3">
         {project.process.map((step, index) => (
-          <article
+          <li
             key={step.title.en}
-            className="rounded-3xl border border-white/10 bg-white/5 p-6"
+            className="rounded-3xl border border-white/10 bg-white/5 p-6 transition hover:border-cyan-400/30 hover:bg-white/[0.07]"
           >
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-cyan-400 text-sm font-bold text-slate-950">
               {index + 1}
@@ -46,9 +49,9 @@ export function ProjectProcess({
             <p className="mt-3 text-sm leading-6 text-slate-300">
               {step.description[locale]}
             </p>
-          </article>
+          </li>
         ))}
-      </div>
+      </ol>
     </section>
   );
 }

@@ -14,13 +14,16 @@ export function ProjectMockups({
   dictionary,
 }: ProjectMockupsProps) {
   return (
-    <section className="mt-16">
+    <section aria-labelledby="project-mockups-heading" className="mt-16">
       <div className="mb-8">
         <p className="text-sm font-medium uppercase tracking-[0.3em] text-cyan-400">
           {dictionary.projectMockups.eyebrow}
         </p>
 
-        <h2 className="mt-4 text-3xl font-bold tracking-tight text-white">
+        <h2
+          id="project-mockups-heading"
+          className="mt-4 text-3xl font-bold tracking-tight text-white"
+        >
           {dictionary.projectMockups.title}
         </h2>
 
@@ -29,14 +32,17 @@ export function ProjectMockups({
         </p>
       </div>
 
-      <div className="grid gap-6 lg:grid-cols-3">
+      <ul className="grid gap-6 lg:grid-cols-3">
         {project.mockups.map((mockup) => (
-          <article
+          <li
             key={mockup.title.en}
-            className="overflow-hidden rounded-3xl border border-white/10 bg-white/5"
+            className="overflow-hidden rounded-3xl border border-white/10 bg-white/5 transition hover:border-cyan-400/30 hover:bg-white/[0.07]"
           >
             <div className="border-b border-white/10 bg-slate-950/80 p-4">
-              <div className="overflow-hidden rounded-2xl border border-white/10 bg-slate-900">
+              <div
+                aria-hidden="true"
+                className="overflow-hidden rounded-2xl border border-white/10 bg-slate-900"
+              >
                 <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
                   <div className="flex gap-2">
                     <span className="h-2.5 w-2.5 rounded-full bg-red-400" />
@@ -73,9 +79,9 @@ export function ProjectMockups({
                 {mockup.description[locale]}
               </p>
             </div>
-          </article>
+          </li>
         ))}
-      </div>
+      </ul>
     </section>
   );
 }
