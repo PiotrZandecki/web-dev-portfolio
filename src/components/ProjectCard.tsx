@@ -15,9 +15,12 @@ export function ProjectCard({ project, locale, dictionary }: ProjectCardProps) {
     project.technologies.length - visibleTechnologies.length;
 
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/5 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:bg-white/[0.07]">
+    <article className="group flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/5 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:bg-white/[0.07] focus-within:border-cyan-400/60">
       <div className="border-b border-white/10 bg-slate-950/80 p-4">
-        <div className="overflow-hidden rounded-2xl border border-white/10 bg-slate-900">
+        <div
+          aria-hidden="true"
+          className="overflow-hidden rounded-2xl border border-white/10 bg-slate-900"
+        >
           <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
             <div className="flex gap-2">
               <span className="h-2.5 w-2.5 rounded-full bg-red-400" />
@@ -61,22 +64,25 @@ export function ProjectCard({ project, locale, dictionary }: ProjectCardProps) {
           {project.shortDescription[locale]}
         </p>
 
-        <div className="mt-6 flex flex-wrap gap-2">
+        <ul
+          aria-label={dictionary.common.technologies}
+          className="mt-6 flex flex-wrap gap-2"
+        >
           {visibleTechnologies.map((technology) => (
-            <span
+            <li
               key={technology}
               className="rounded-full bg-slate-900 px-3 py-1 text-xs text-slate-300"
             >
               {technology}
-            </span>
+            </li>
           ))}
 
           {hiddenTechnologiesCount > 0 ? (
-            <span className="rounded-full bg-slate-900 px-3 py-1 text-xs text-slate-400">
+            <li className="rounded-full bg-slate-900 px-3 py-1 text-xs text-slate-400">
               +{hiddenTechnologiesCount}
-            </span>
+            </li>
           ) : null}
-        </div>
+        </ul>
 
         <div className="mt-7 flex items-center justify-between gap-4 border-t border-white/10 pt-5">
           <div>
@@ -88,6 +94,7 @@ export function ProjectCard({ project, locale, dictionary }: ProjectCardProps) {
 
           <Link
             href={`/${locale}/projects/${project.slug}`}
+            aria-label={`${dictionary.common.viewProject}: ${project.title}`}
             className="rounded-full bg-cyan-400 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
           >
             {dictionary.common.viewProject}

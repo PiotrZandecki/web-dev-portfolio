@@ -15,7 +15,7 @@ export function FeaturedProject({
   dictionary,
 }: FeaturedProjectProps) {
   return (
-    <article className="overflow-hidden rounded-3xl border border-cyan-400/20 bg-cyan-400/4">
+    <article className="overflow-hidden rounded-3xl border border-cyan-400/4 shadow-2xl shadow-cyan-950/20">
       <div className="grid gap-0 lg:grid-cols-[1.05fr_0.95fr]">
         <div className="p-8 md:p-10">
           <div className="flex flex-wrap items-center gap-2">
@@ -40,20 +40,24 @@ export function FeaturedProject({
             {project.shortDescription[locale]}
           </p>
 
-          <div className="mt-7 flex flex-wrap gap-2">
+          <ul
+            aria-label={dictionary.common.technologies}
+            className="mt-7 flex flex-wrap gap-2"
+          >
             {project.technologies.map((technology) => (
-              <span
+              <li
                 key={technology}
                 className="rounded-full bg-slate-900 px-3 py-1 text-xs text-slate-300"
               >
                 {technology}
-              </span>
+              </li>
             ))}
-          </div>
+          </ul>
 
           <div className="mt-9 flex flex-wrap gap-4">
             <Link
               href={`/${locale}/projects/${project.slug}`}
+              aria-label={`${dictionary.common.viewProject}: ${project.title}`}
               className="rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
             >
               {dictionary.common.viewProject}
@@ -61,7 +65,7 @@ export function FeaturedProject({
 
             <Link
               href={`/${locale}/projects`}
-              className="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40"
+              className="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/5"
             >
               {dictionary.common.viewProjects}
             </Link>
@@ -69,7 +73,10 @@ export function FeaturedProject({
         </div>
 
         <div className="border-t border-white/10 bg-slate-950/70 p-6 lg:border-l lg:border-t-0">
-          <div className="overflow-hidden rounded-2xl border border-white/10 bg-slate-900">
+          <div
+            aria-hidden="true"
+            className="overflow-hidden rounded-2xl border border-white/10 bg-slate-900"
+          >
             <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
               <div className="flex gap-2">
                 <span className="h-3 w-3 rounded-full bg-red-400" />
@@ -96,6 +103,7 @@ export function FeaturedProject({
                 <p className="text-sm font-semibold text-white">
                   {dictionary.featuredProject.previewTitle}
                 </p>
+
                 <p className="mt-2 text-sm leading-6 text-slate-400">
                   {dictionary.featuredProject.previewDescription}
                 </p>

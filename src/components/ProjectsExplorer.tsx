@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useId, useMemo, useState } from "react";
 import { Project, ProjectStatus } from "@/content/projects";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Dictionary } from "@/lib/i18n";
@@ -19,6 +19,10 @@ export function ProjectsExplorer({
   locale,
   dictionary,
 }: ProjectsExplorerProps) {
+  const searchInputId = useId();
+  const statusSelectId = useId();
+  const categorySelectId = useId();
+
   const [searchTerm, setSearchTerm] = useState("");
   const [statusFilter, setStatusFilter] = useState<StatusFilter>("all");
   const [categoryFilter, setCategoryFilter] = useState("all");
@@ -28,7 +32,9 @@ export function ProjectsExplorer({
       projects.map((project) => project.category[locale]),
     );
 
-    return Array.from(uniqueCategories);
+    return Array.from(uniqueCategories).sort((firstCategory, secondCategory) =>
+      firstCategory.localeCompare(secondCategory, locale),
+    );
   }, [projects, locale]);
 
   const filteredProjects = useMemo(() => {
@@ -47,6 +53,8 @@ export function ProjectsExplorer({
         project.shortDescription[locale],
         project.description[locale],
         project.technologies.join(" "),
+        project.highlights[locale].join(" "),
+        project.features[locale].join(" "),
       ]
         .join(" ")
         .toLowerCase();
@@ -65,6 +73,11 @@ export function ProjectsExplorer({
     { value: "inProgress", label: dictionary.status.inProgress },
   ];
 
+  const hasActiveFilters =
+    searchTerm.trim().length > 0 ||
+    statusFilter !== "all" ||
+    categoryFilter !== "all";
+
   function clearFilters() {
     setSearchTerm("");
     setStatusFilter("all");
@@ -72,29 +85,37 @@ export function ProjectsExplorer({
   }
 
   return (
-    <section className="mt-12">
+    <section className="mt-12" aria-label={dictionary.projectsPage.title}>
       <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
         <div className="grid gap-4 lg:grid-cols-[1.2fr_0.8fr_0.8fr_auto] lg:items-end">
-          <label className="block">
-            <span className="text-sm font-medium text-slate-300">
+          <div>
+            <label
+              htmlFor={searchInputId}
+              className="text-sm font-medium text-slate-300"
+            >
               {dictionary.projectsExplorer.searchLabel}
-            </span>
+            </label>
 
             <input
+              id={searchInputId}
               type="search"
               value={searchTerm}
               onChange={(event) => setSearchTerm(event.target.value)}
               placeholder={dictionary.projectsExplorer.searchPlaceholder}
               className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-950 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-400/60"
             />
-          </label>
+          </div>
 
-          <label className="block">
-            <span className="text-sm font-medium text-slate-300">
+          <div>
+            <label
+              htmlFor={statusSelectId}
+              className="text-sm font-medium text-slate-300"
+            >
               {dictionary.projectsExplorer.statusLabel}
-            </span>
+            </label>
 
             <select
+              id={statusSelectId}
               value={statusFilter}
               onChange={(event) =>
                 setStatusFilter(event.target.value as StatusFilter)
@@ -107,14 +128,18 @@ export function ProjectsExplorer({
                 </option>
               ))}
             </select>
-          </label>
+          </div>
 
-          <label className="block">
-            <span className="text-sm font-medium text-slate-300">
+          <div>
+            <label
+              htmlFor={categorySelectId}
+              className="text-sm font-medium text-slate-300"
+            >
               {dictionary.projectsExplorer.categoryLabel}
-            </span>
+            </label>
 
             <select
+              id={categorySelectId}
               value={categoryFilter}
               onChange={(event) => setCategoryFilter(event.target.value)}
               className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-950 px-4 py-3 text-sm text-white outline-none transition focus:border-cyan-400/60"
@@ -129,18 +154,22 @@ export function ProjectsExplorer({
                 </option>
               ))}
             </select>
-          </label>
+          </div>
 
           <button
             type="button"
             onClick={clearFilters}
-            className="rounded-2xl border border-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:border-white/40"
+            disabled={!hasActiveFilters}
+            className="rounded-2xl border border-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:border-white/40 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:border-white/10"
           >
             {dictionary.projectsExplorer.clearFilters}
           </button>
         </div>
 
-        <div className="mt-6 flex flex-col gap-3 border-t border-white/10 pt-5 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+        <div
+          className="mt-6 flex flex-col gap-3 border-t border-white/10 pt-5 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between"
+          aria-live="polite"
+        >
           <p>
             {dictionary.projectsExplorer.resultsPrefix}{" "}
             <span className="font-semibold text-white">
