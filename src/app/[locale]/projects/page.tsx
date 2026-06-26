@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
+import { ProjectComparisonMatrix } from "@/components/ProjectComparisonMatrix";
+import { ProjectDeliveryDashboard } from "@/components/ProjectDeliveryDashboard";
+import { ProjectDeliveryPipeline } from "@/components/ProjectDeliveryPipeline";
 import { ProjectsExplorer } from "@/components/ProjectsExplorer";
 import { ProjectSummaryBar } from "@/components/ProjectSummaryBar";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -72,6 +75,12 @@ export default async function ProjectsPage({ params }: ProjectsPageProps) {
         title={dictionary.projectsPage.title}
         description={dictionary.projectsPage.description}
       />
+
+      <ProjectDeliveryDashboard projects={projects} locale={locale} />
+
+      <ProjectDeliveryPipeline locale={locale} />
+
+      <ProjectComparisonMatrix projects={projects} locale={locale} />
 
       <ProjectSummaryBar dictionary={dictionary} />
 

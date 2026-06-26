@@ -41,6 +41,10 @@ All notable changes to this project will be documented in this file.
 - Added project roadmap section.
 - Added project-specific implementation details.
 - Added project testing and review section.
+- Added project readiness helper for portfolio delivery status.
+- Added project delivery dashboard on the projects page.
+- Added project technical comparison matrix.
+- Added project delivery pipeline section.
 
 ### Changed
 
@@ -54,6 +58,7 @@ All notable changes to this project will be documented in this file.
 - Updated project structured data to use resolved live and source links.
 - Improved technical presentation of project cards and case study pages.
 - Expanded project pages into deeper technical case studies.
+- Redesigned projects page into a portfolio delivery control center.
 
 ### Planned
 
