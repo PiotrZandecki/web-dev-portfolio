@@ -18,7 +18,7 @@ export function Header({ locale, dictionary }: HeaderProps) {
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/85 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
         <Link
           href={`/${locale}`}
@@ -41,6 +41,18 @@ export function Header({ locale, dictionary }: HeaderProps) {
 
         <LanguageSwitcher currentLocale={locale} />
       </div>
+
+      <nav className="mx-auto flex max-w-6xl gap-3 overflow-x-auto px-6 pb-4 text-sm text-slate-300 md:hidden">
+        {navigationItems.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            className="shrink-0 rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:border-cyan-400/40 hover:text-white"
+          >
+            {item.label}
+          </Link>
+        ))}
+      </nav>
     </header>
   );
 }
