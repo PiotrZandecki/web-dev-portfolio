@@ -24,6 +24,12 @@ All notable changes to this project will be documented in this file.
 - Added Services and Contact pages to sitemap.
 - Added dedicated localized About page.
 - Added About page to sitemap and documentation.
+- Added dedicated homepage project showcase component.
+
+### Changed
+
+- Redesigned homepage hero section with stronger Z-TECH positioning.
+- Reordered homepage sections for a more business-oriented flow.
 
 ### Planned
 
