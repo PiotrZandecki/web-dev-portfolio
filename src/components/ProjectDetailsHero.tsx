@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ProjectLinkStatusBadges } from "@/components/ProjectLinkStatusBadges";
 import { Project } from "@/content/projects";
 import { Dictionary } from "@/lib/i18n";
 import { Locale } from "@/types/locale";
@@ -48,6 +49,10 @@ export function ProjectDetailsHero({
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
             {project.description[locale]}
           </p>
+
+          <div className="mt-8">
+            <ProjectLinkStatusBadges project={project} locale={locale} />
+          </div>
 
           <div className="mt-8 flex flex-wrap gap-2">
             {project.technologies.map((technology) => (

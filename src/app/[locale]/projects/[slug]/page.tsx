@@ -9,6 +9,8 @@ import { ProjectLinks } from "@/components/ProjectLinks";
 import { ProjectMockups } from "@/components/ProjectMockups";
 import { ProjectPager } from "@/components/ProjectPager";
 import { ProjectProcess } from "@/components/ProjectProcess";
+import { ProjectQualityChecklist } from "@/components/ProjectQualityChecklist";
+import { ProjectRoadmapSection } from "@/components/ProjectRoadmapSection";
 import { ProjectSectionNav } from "@/components/ProjectSectionNav";
 import { ProjectSnapshot } from "@/components/ProjectSnapshot";
 import { ProjectTechnicalOverview } from "@/components/ProjectTechnicalOverview";
@@ -124,6 +126,8 @@ export default async function ProjectDetailsPage({
         dictionary={dictionary}
       />
 
+      <ProjectQualityChecklist project={project} locale={locale} />
+
       <ProjectLinks project={project} dictionary={dictionary} />
 
       <ProjectEmbed project={project} locale={locale} />
@@ -145,6 +149,8 @@ export default async function ProjectDetailsPage({
         locale={locale}
         dictionary={dictionary}
       />
+
+      <ProjectRoadmapSection project={project} locale={locale} />
 
       <ProjectPager
         currentProjectSlug={project.slug}

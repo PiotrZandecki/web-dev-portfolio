@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ProjectLinkStatusBadges } from "@/components/ProjectLinkStatusBadges";
 import { Project } from "@/content/projects";
 import { Dictionary } from "@/lib/i18n";
 import { Locale } from "@/types/locale";
@@ -49,6 +50,10 @@ export function ProjectCard({ project, locale, dictionary }: ProjectCardProps) {
         <p className="mt-4 flex-1 text-sm leading-6 text-slate-300">
           {project.shortDescription[locale]}
         </p>
+
+        <div className="mt-6">
+          <ProjectLinkStatusBadges project={project} locale={locale} compact />
+        </div>
 
         <ul
           aria-label={dictionary.common.technologies}

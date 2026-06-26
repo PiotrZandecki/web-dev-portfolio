@@ -11,11 +11,13 @@ const projectSectionNavCopy: Record<
     overview: string;
     snapshot: string;
     technical: string;
+    quality: string;
     links: string;
     livePreview: string;
     process: string;
     visualPreview: string;
     caseStudy: string;
+    roadmap: string;
   }
 > = {
   en: {
@@ -23,22 +25,26 @@ const projectSectionNavCopy: Record<
     overview: "Overview",
     snapshot: "Snapshot",
     technical: "Technical",
+    quality: "Quality",
     links: "Links",
     livePreview: "Live preview",
     process: "Process",
     visualPreview: "Visual preview",
     caseStudy: "Case study",
+    roadmap: "Roadmap",
   },
   pl: {
     label: "Nawigacja case study",
     overview: "Opis",
     snapshot: "Podsumowanie",
     technical: "Technicznie",
+    quality: "Jakość",
     links: "Linki",
     livePreview: "Live preview",
     process: "Proces",
     visualPreview: "Podgląd",
     caseStudy: "Case study",
+    roadmap: "Roadmap",
   },
 };
 
@@ -59,6 +65,10 @@ export function ProjectSectionNav({ locale }: ProjectSectionNavProps) {
       href: "#project-technical",
     },
     {
+      label: copy.quality,
+      href: "#project-quality",
+    },
+    {
       label: copy.links,
       href: "#project-links",
     },
@@ -77,6 +87,10 @@ export function ProjectSectionNav({ locale }: ProjectSectionNavProps) {
     {
       label: copy.caseStudy,
       href: "#project-case-study",
+    },
+    {
+      label: copy.roadmap,
+      href: "#project-roadmap",
     },
   ];
 

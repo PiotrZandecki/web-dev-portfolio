@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ProjectLinkStatusBadges } from "@/components/ProjectLinkStatusBadges";
 import { Project } from "@/content/projects";
 import { Dictionary } from "@/lib/i18n";
 import { Locale } from "@/types/locale";
@@ -42,6 +43,10 @@ export function FeaturedProject({
           <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-300">
             {project.shortDescription[locale]}
           </p>
+
+          <div className="mt-7">
+            <ProjectLinkStatusBadges project={project} locale={locale} />
+          </div>
 
           <ul
             aria-label={dictionary.common.technologies}

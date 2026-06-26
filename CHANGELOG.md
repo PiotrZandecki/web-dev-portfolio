@@ -36,6 +36,9 @@ All notable changes to this project will be documented in this file.
 - Added shared project link resolver for live demo, source code and embed URLs.
 - Added technical overview section to project case study pages.
 - Added embedded live preview area for project case study pages.
+- Added project link status badges on project cards, featured project and project hero.
+- Added project quality checklist section.
+- Added project roadmap section.
 
 ### Changed
 
@@ -47,6 +50,7 @@ All notable changes to this project will be documented in this file.
 - Updated Header and Footer navigation to include Stack page.
 - Improved project links section with clearer availability states and visible URLs.
 - Updated project structured data to use resolved live and source links.
+- Improved technical presentation of project cards and case study pages.
 
 ### Planned
 
