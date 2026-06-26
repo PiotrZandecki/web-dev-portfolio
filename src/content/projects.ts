@@ -11,6 +11,7 @@ export type Project = {
   description: Record<Locale, string>;
   technologies: string[];
   highlights: Record<Locale, string[]>;
+  embedUrl?: string;
   liveUrl?: string;
   sourceUrl?: string;
 };
