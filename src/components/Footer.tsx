@@ -65,7 +65,7 @@ export function Footer({ locale, dictionary }: FooterProps) {
     },
     {
       label: dictionary.navigation.about,
-      href: `/${locale}/#about`,
+      href: `/${locale}/about/`,
     },
     {
       label: copy.process,

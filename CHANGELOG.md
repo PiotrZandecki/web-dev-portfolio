@@ -22,6 +22,8 @@ All notable changes to this project will be documented in this file.
 - Added dedicated localized Services page.
 - Added dedicated localized Contact page.
 - Added Services and Contact pages to sitemap.
+- Added dedicated localized About page.
+- Added About page to sitemap and documentation.
 
 ### Planned
 

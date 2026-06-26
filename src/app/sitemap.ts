@@ -17,6 +17,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: locale === "en" ? 1 : 0.9,
     },
     {
+      url: `${siteUrl}/${locale}/about/`,
+      lastModified: currentDate,
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
+    },
+    {
       url: `${siteUrl}/${locale}/projects/`,
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
