@@ -7,6 +7,7 @@ export type Project = {
   title: string;
   status: ProjectStatus;
   year: string;
+  category: Record<Locale, string>;
   shortDescription: Record<Locale, string>;
   description: Record<Locale, string>;
   technologies: string[];
@@ -26,6 +27,10 @@ export const projects: Project[] = [
     title: "Private Space",
     status: "inProgress",
     year: "2026",
+    category: {
+      en: "Productivity App",
+      pl: "Aplikacja produktywności",
+    },
     shortDescription: {
       en: "A personal productivity app for managing notes, lists and plans in one clean dashboard.",
       pl: "Osobista aplikacja produktywności do zarządzania notatkami, listami i planami w jednym przejrzystym panelu.",
@@ -107,6 +112,10 @@ export const projects: Project[] = [
     title: "Aurora Beauty",
     status: "completed",
     year: "2026",
+    category: {
+      en: "Business Website",
+      pl: "Strona firmowa",
+    },
     shortDescription: {
       en: "A modern business website concept for a beauty brand with responsive layout and polished visual style.",
       pl: "Nowoczesna strona firmowa dla marki beauty z responsywnym layoutem i dopracowaną warstwą wizualną.",
@@ -188,6 +197,10 @@ export const projects: Project[] = [
     title: "Web Dev Portfolio",
     status: "inProgress",
     year: "2026",
+    category: {
+      en: "Portfolio Website",
+      pl: "Strona portfolio",
+    },
     shortDescription: {
       en: "A bilingual portfolio website used as a central hub for smaller web development projects.",
       pl: "Dwujęzyczne portfolio pełniące rolę centralnego miejsca dla mniejszych projektów web development.",
