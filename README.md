@@ -10,6 +10,7 @@ The portfolio is designed as a central hub for smaller web development projects.
 - TypeScript
 - Tailwind CSS
 - App Router
+- Static export
 - i18n routing with `/en` and `/pl`
 - SEO routes: sitemap, robots, manifest, Open Graph image
 
@@ -59,16 +60,17 @@ NEXT_PUBLIC_LINKEDIN_URL=https://www.linkedin.com/in/your-profile
 ## Available routes
 
 ```txt
-/en
-/pl
-/en/projects
-/pl/projects
-/en/projects/private-space
-/pl/projects/private-space
-/en/projects/aurora-beauty
-/pl/projects/aurora-beauty
-/en/projects/web-dev-portfolio
-/pl/projects/web-dev-portfolio
+/
+ /en/
+ /pl/
+ /en/projects/
+ /pl/projects/
+ /en/projects/private-space/
+ /pl/projects/private-space/
+ /en/projects/aurora-beauty/
+ /pl/projects/aurora-beauty/
+ /en/projects/web-dev-portfolio/
+ /pl/projects/web-dev-portfolio/
 ```
 
 ## SEO routes
@@ -89,31 +91,29 @@ npm run lint
 npm run build
 ```
 
-Then verify locally:
-
-```bash
-npm run dev
-```
-
-Check:
+The production static output is generated into:
 
 ```txt
-http://localhost:3000/en
-http://localhost:3000/pl
-http://localhost:3000/robots.txt
-http://localhost:3000/sitemap.xml
-http://localhost:3000/manifest.webmanifest
-http://localhost:3000/opengraph-image
+out
 ```
 
-## Deployment notes
+## Netlify deployment
 
-Recommended deployment target: Vercel.
+Recommended deployment target: Netlify.
+
+Build settings:
+
+```txt
+Build command: npm run build
+Publish directory: out
+```
+
+These values are also stored in `netlify.toml`.
 
 Before deployment:
 
 1. Push the repository to GitHub.
-2. Import the repository in Vercel.
+2. Import the repository in Netlify.
 3. Add environment variables:
    - `NEXT_PUBLIC_SITE_URL`
    - `NEXT_PUBLIC_CONTACT_EMAIL`

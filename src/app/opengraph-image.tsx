@@ -8,6 +8,8 @@ import { ImageResponse } from "next/og";
  * Inline style objects are the expected and supported approach here.
  */
 
+export const dynamic = "force-static";
+
 export const alt = "Piotr.dev Web Developer Portfolio";
 
 export const size = {
