@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
 import { ProjectsExplorer } from "@/components/ProjectsExplorer";
 import { ProjectSummaryBar } from "@/components/ProjectSummaryBar";
@@ -46,6 +47,16 @@ export default async function ProjectsPage({ params }: ProjectsPageProps) {
 
   const dictionary = getDictionary(locale);
 
+  const breadcrumbItems = [
+    {
+      label: dictionary.navigation.home,
+      href: `/${locale}/`,
+    },
+    {
+      label: dictionary.navigation.projects,
+    },
+  ];
+
   return (
     <main
       id="main-content"
@@ -53,6 +64,8 @@ export default async function ProjectsPage({ params }: ProjectsPageProps) {
       className="mx-auto max-w-6xl px-6 py-20"
     >
       <JsonLd data={getProjectsPageStructuredData(locale, projects)} />
+
+      <Breadcrumbs items={breadcrumbItems} />
 
       <SectionHeader
         eyebrow={dictionary.projectsPage.eyebrow}

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
 import { ProjectCaseStudy } from "@/components/ProjectCaseStudy";
 import { ProjectDetailsHero } from "@/components/ProjectDetailsHero";
@@ -76,6 +76,20 @@ export default async function ProjectDetailsPage({
 
   const dictionary = getDictionary(locale);
 
+  const breadcrumbItems = [
+    {
+      label: dictionary.navigation.home,
+      href: `/${locale}/`,
+    },
+    {
+      label: dictionary.navigation.projects,
+      href: `/${locale}/projects/`,
+    },
+    {
+      label: project.title,
+    },
+  ];
+
   return (
     <main
       id="main-content"
@@ -84,12 +98,7 @@ export default async function ProjectDetailsPage({
     >
       <JsonLd data={getProjectStructuredData(locale, project)} />
 
-      <Link
-        href={`/${locale}/projects/`}
-        className="text-sm font-semibold text-cyan-300 transition hover:text-cyan-200"
-      >
-        ← {dictionary.common.backToProjects}
-      </Link>
+      <Breadcrumbs items={breadcrumbItems} />
 
       <ProjectDetailsHero
         project={project}
