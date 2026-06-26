@@ -77,7 +77,7 @@ export function ProjectEmbed({ project, locale }: ProjectEmbedProps) {
             ) : null}
           </div>
 
-          <div className="aspect-[16/10] bg-slate-950">
+          <div className="aspect-16/10 bg-slate-950">
             <iframe
               src={project.embedUrl}
               title={`${project.title} preview`}

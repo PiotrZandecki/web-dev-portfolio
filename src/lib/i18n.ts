@@ -18,6 +18,7 @@ export type Dictionary = {
     technologies: string;
     highlights: string;
     projectDetails: string;
+    year: string;
   };
   status: {
     completed: string;
@@ -42,6 +43,15 @@ export type Dictionary = {
     eyebrow: string;
     title: string;
     description: string;
+  };
+  projectSections: {
+    caseStudy: string;
+    title: string;
+    description: string;
+    features: string;
+    whatILearned: string;
+    challenges: string;
+    nextSteps: string;
   };
   footer: {
     rights: string;
@@ -68,6 +78,7 @@ const dictionaries: Record<Locale, Dictionary> = {
       technologies: "Technologies",
       highlights: "Highlights",
       projectDetails: "Project details",
+      year: "Year",
     },
     status: {
       completed: "Completed",
@@ -102,6 +113,16 @@ const dictionaries: Record<Locale, Dictionary> = {
       description:
         "Each project has its own page with description, features, technologies and links. This section will grow together with my skills and portfolio.",
     },
+    projectSections: {
+      caseStudy: "Case Study",
+      title: "How this project was built",
+      description:
+        "A short breakdown of the project scope, features, technical decisions and next development steps.",
+      features: "Features",
+      whatILearned: "What I learned",
+      challenges: "Challenges",
+      nextSteps: "Next steps",
+    },
     footer: {
       rights: "All rights reserved.",
       builtWith: "Built with Next.js, TypeScript and Tailwind CSS.",
@@ -125,6 +146,7 @@ const dictionaries: Record<Locale, Dictionary> = {
       technologies: "Technologie",
       highlights: "Najważniejsze elementy",
       projectDetails: "Szczegóły projektu",
+      year: "Rok",
     },
     status: {
       completed: "Ukończony",
@@ -158,6 +180,16 @@ const dictionaries: Record<Locale, Dictionary> = {
       title: "Moje projekty web development",
       description:
         "Każdy projekt ma własną podstronę z opisem, funkcjami, technologiami i linkami. Ta sekcja będzie rozwijać się razem z moimi umiejętnościami i portfolio.",
+    },
+    projectSections: {
+      caseStudy: "Case Study",
+      title: "Jak został zbudowany ten projekt",
+      description:
+        "Krótki opis zakresu projektu, funkcji, decyzji technicznych oraz kolejnych kroków rozwoju.",
+      features: "Funkcje",
+      whatILearned: "Czego się nauczyłem",
+      challenges: "Wyzwania",
+      nextSteps: "Kolejne kroki",
     },
     footer: {
       rights: "Wszelkie prawa zastrzeżone.",

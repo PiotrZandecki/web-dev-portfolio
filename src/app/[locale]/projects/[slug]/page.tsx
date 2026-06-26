@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ProjectCaseStudy } from "@/components/ProjectCaseStudy";
 import { ProjectEmbed } from "@/components/ProjectEmbed";
 import { getProjectBySlug, projects } from "@/content/projects";
 import { getDictionary, isLocale } from "@/lib/i18n";
@@ -95,7 +96,7 @@ export default async function ProjectDetailsPage({
           </div>
 
           <div className="mt-8">
-            <p className="text-sm text-slate-400">Year</p>
+            <p className="text-sm text-slate-400">{dictionary.common.year}</p>
             <p className="mt-2 font-semibold text-white">{project.year}</p>
           </div>
 
@@ -131,6 +132,12 @@ export default async function ProjectDetailsPage({
           </div>
         </aside>
       </section>
+
+      <ProjectCaseStudy
+        project={project}
+        locale={locale}
+        dictionary={dictionary}
+      />
 
       <ProjectEmbed project={project} locale={locale} />
     </main>
