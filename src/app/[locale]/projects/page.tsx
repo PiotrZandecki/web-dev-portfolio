@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { ProjectCard } from "@/components/ProjectCard";
+import { ProjectSummaryBar } from "@/components/ProjectSummaryBar";
 import { SectionHeader } from "@/components/SectionHeader";
 import { projects } from "@/content/projects";
 import { getDictionary, isLocale } from "@/lib/i18n";
@@ -27,7 +28,9 @@ export default async function ProjectsPage({ params }: ProjectsPageProps) {
         description={dictionary.projectsPage.description}
       />
 
-      <div className="grid gap-6 md:grid-cols-3">
+      <ProjectSummaryBar dictionary={dictionary} />
+
+      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {projects.map((project) => (
           <ProjectCard
             key={project.slug}

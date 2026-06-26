@@ -45,6 +45,17 @@ export type Dictionary = {
     title: string;
     description: string;
   };
+  featuredProject: {
+    eyebrow: string;
+    previewTitle: string;
+    previewDescription: string;
+  };
+  projectsSummary: {
+    total: string;
+    completed: string;
+    inProgress: string;
+    languages: string;
+  };
   skillsSection: {
     eyebrow: string;
     title: string;
@@ -127,6 +138,18 @@ const dictionaries: Record<Locale, Dictionary> = {
       title: "My web development projects",
       description:
         "Each project has its own page with description, features, technologies and links. This section will grow together with my skills and portfolio.",
+    },
+    featuredProject: {
+      eyebrow: "Featured",
+      previewTitle: "Designed as a portfolio case study",
+      previewDescription:
+        "Each project page combines overview, features, lessons learned, challenges and a future embedded live preview.",
+    },
+    projectsSummary: {
+      total: "Total projects",
+      completed: "Completed",
+      inProgress: "In progress",
+      languages: "Languages",
     },
     skillsSection: {
       eyebrow: "Skills",
@@ -212,6 +235,18 @@ const dictionaries: Record<Locale, Dictionary> = {
       title: "Moje projekty web development",
       description:
         "Każdy projekt ma własną podstronę z opisem, funkcjami, technologiami i linkami. Ta sekcja będzie rozwijać się razem z moimi umiejętnościami i portfolio.",
+    },
+    featuredProject: {
+      eyebrow: "Wyróżniony",
+      previewTitle: "Zaprojektowany jako case study do portfolio",
+      previewDescription:
+        "Każda podstrona projektu łączy opis, funkcje, wnioski z nauki, wyzwania i miejsce na przyszły osadzony podgląd live.",
+    },
+    projectsSummary: {
+      total: "Liczba projektów",
+      completed: "Ukończone",
+      inProgress: "W trakcie",
+      languages: "Języki",
     },
     skillsSection: {
       eyebrow: "Umiejętności",

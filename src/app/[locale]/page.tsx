@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ContactCta } from "@/components/ContactCta";
+import { FeaturedProject } from "@/components/FeaturedProject";
 import { HeroSection } from "@/components/HeroSection";
 import { ProjectCard } from "@/components/ProjectCard";
 import { SkillsSection } from "@/components/SkillsSection";
@@ -21,7 +22,7 @@ export default async function HomePage({ params }: HomePageProps) {
   }
 
   const dictionary = getDictionary(locale);
-  const featuredProjects = projects.slice(0, 3);
+  const [featuredProject, ...otherProjects] = projects;
 
   return (
     <main>
@@ -69,8 +70,14 @@ export default async function HomePage({ params }: HomePageProps) {
           </Link>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
-          {featuredProjects.map((project) => (
+        <FeaturedProject
+          project={featuredProject}
+          locale={locale}
+          dictionary={dictionary}
+        />
+
+        <div className="mt-6 grid gap-6 md:grid-cols-2">
+          {otherProjects.map((project) => (
             <ProjectCard
               key={project.slug}
               project={project}
