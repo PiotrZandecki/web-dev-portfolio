@@ -11,7 +11,9 @@ const projectSectionNavCopy: Record<
     overview: string;
     snapshot: string;
     technical: string;
+    implementation: string;
     quality: string;
+    testing: string;
     links: string;
     livePreview: string;
     process: string;
@@ -25,7 +27,9 @@ const projectSectionNavCopy: Record<
     overview: "Overview",
     snapshot: "Snapshot",
     technical: "Technical",
+    implementation: "Implementation",
     quality: "Quality",
+    testing: "Testing",
     links: "Links",
     livePreview: "Live preview",
     process: "Process",
@@ -38,7 +42,9 @@ const projectSectionNavCopy: Record<
     overview: "Opis",
     snapshot: "Podsumowanie",
     technical: "Technicznie",
+    implementation: "Implementacja",
     quality: "Jakość",
+    testing: "Testy",
     links: "Linki",
     livePreview: "Live preview",
     process: "Proces",
@@ -65,8 +71,16 @@ export function ProjectSectionNav({ locale }: ProjectSectionNavProps) {
       href: "#project-technical",
     },
     {
+      label: copy.implementation,
+      href: "#project-implementation",
+    },
+    {
       label: copy.quality,
       href: "#project-quality",
+    },
+    {
+      label: copy.testing,
+      href: "#project-testing",
     },
     {
       label: copy.links,

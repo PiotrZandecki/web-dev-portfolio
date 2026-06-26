@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { ProjectCaseStudy } from "@/components/ProjectCaseStudy";
 import { ProjectDetailsHero } from "@/components/ProjectDetailsHero";
 import { ProjectEmbed } from "@/components/ProjectEmbed";
+import { ProjectImplementationSection } from "@/components/ProjectImplementationSection";
 import { ProjectLinks } from "@/components/ProjectLinks";
 import { ProjectMockups } from "@/components/ProjectMockups";
 import { ProjectPager } from "@/components/ProjectPager";
@@ -14,6 +15,7 @@ import { ProjectRoadmapSection } from "@/components/ProjectRoadmapSection";
 import { ProjectSectionNav } from "@/components/ProjectSectionNav";
 import { ProjectSnapshot } from "@/components/ProjectSnapshot";
 import { ProjectTechnicalOverview } from "@/components/ProjectTechnicalOverview";
+import { ProjectTestingSection } from "@/components/ProjectTestingSection";
 import { RelatedProjects } from "@/components/RelatedProjects";
 import { getProjectBySlug, projects } from "@/content/projects";
 import { getDictionary, isLocale } from "@/lib/i18n";
@@ -126,7 +128,11 @@ export default async function ProjectDetailsPage({
         dictionary={dictionary}
       />
 
+      <ProjectImplementationSection project={project} locale={locale} />
+
       <ProjectQualityChecklist project={project} locale={locale} />
+
+      <ProjectTestingSection project={project} locale={locale} />
 
       <ProjectLinks project={project} dictionary={dictionary} />
 
