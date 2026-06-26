@@ -56,6 +56,17 @@ export type Dictionary = {
     inProgress: string;
     languages: string;
   };
+  projectLinks: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    liveDescription: string;
+    sourceDescription: string;
+    available: string;
+    notAvailable: string;
+    openLink: string;
+    placeholder: string;
+  };
   skillsSection: {
     eyebrow: string;
     title: string;
@@ -150,6 +161,21 @@ const dictionaries: Record<Locale, Dictionary> = {
       completed: "Completed",
       inProgress: "In progress",
       languages: "Languages",
+    },
+    projectLinks: {
+      eyebrow: "Project links",
+      title: "Live version and source code",
+      description:
+        "This section collects external links connected with the project. When a project is deployed or published, the links will appear here.",
+      liveDescription:
+        "A deployed version of the project that can be opened and tested in the browser.",
+      sourceDescription:
+        "The source code repository with the project structure, components and implementation details.",
+      available: "Available",
+      notAvailable: "Pending",
+      openLink: "Open link",
+      placeholder:
+        "This link has not been added yet. It will be updated after deployment or repository publication.",
     },
     skillsSection: {
       eyebrow: "Skills",
@@ -247,6 +273,21 @@ const dictionaries: Record<Locale, Dictionary> = {
       completed: "Ukończone",
       inProgress: "W trakcie",
       languages: "Języki",
+    },
+    projectLinks: {
+      eyebrow: "Linki projektu",
+      title: "Wersja live i kod źródłowy",
+      description:
+        "Ta sekcja zbiera zewnętrzne linki związane z projektem. Po wdrożeniu lub opublikowaniu projektu linki pojawią się tutaj.",
+      liveDescription:
+        "Wdrożona wersja projektu, którą można otworzyć i przetestować w przeglądarce.",
+      sourceDescription:
+        "Repozytorium z kodem źródłowym, strukturą projektu, komponentami i szczegółami implementacji.",
+      available: "Dostępne",
+      notAvailable: "Oczekuje",
+      openLink: "Otwórz link",
+      placeholder:
+        "Ten link nie został jeszcze dodany. Zostanie uzupełniony po deployu albo publikacji repozytorium.",
     },
     skillsSection: {
       eyebrow: "Umiejętności",
