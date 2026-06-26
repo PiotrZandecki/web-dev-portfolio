@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
+import { ProjectAssetManifest } from "@/components/ProjectAssetManifest";
 import { ProjectCaseStudy } from "@/components/ProjectCaseStudy";
 import { ProjectDetailsHero } from "@/components/ProjectDetailsHero";
 import { ProjectEmbed } from "@/components/ProjectEmbed";
@@ -11,6 +12,7 @@ import { ProjectMockups } from "@/components/ProjectMockups";
 import { ProjectPager } from "@/components/ProjectPager";
 import { ProjectProcess } from "@/components/ProjectProcess";
 import { ProjectQualityChecklist } from "@/components/ProjectQualityChecklist";
+import { ProjectReleaseStatus } from "@/components/ProjectReleaseStatus";
 import { ProjectRoadmapSection } from "@/components/ProjectRoadmapSection";
 import { ProjectSectionNav } from "@/components/ProjectSectionNav";
 import { ProjectSnapshot } from "@/components/ProjectSnapshot";
@@ -127,6 +129,10 @@ export default async function ProjectDetailsPage({
         locale={locale}
         dictionary={dictionary}
       />
+
+      <ProjectReleaseStatus project={project} locale={locale} />
+
+      <ProjectAssetManifest project={project} locale={locale} />
 
       <ProjectImplementationSection project={project} locale={locale} />
 

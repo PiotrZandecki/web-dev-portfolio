@@ -45,6 +45,8 @@ All notable changes to this project will be documented in this file.
 - Added project delivery dashboard on the projects page.
 - Added project technical comparison matrix.
 - Added project delivery pipeline section.
+- Added project release status details.
+- Added project asset manifest section.
 
 ### Changed
 
@@ -59,6 +61,7 @@ All notable changes to this project will be documented in this file.
 - Improved technical presentation of project cards and case study pages.
 - Expanded project pages into deeper technical case studies.
 - Redesigned projects page into a portfolio delivery control center.
+- Expanded project pages with release and asset-level documentation.
 
 ### Planned
 
