@@ -1,7 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ProjectLinkStatusBadges } from "@/components/ProjectLinkStatusBadges";
 import { Project } from "@/content/projects";
 import { Dictionary } from "@/lib/i18n";
+import { getResolvedProjectLinks } from "@/lib/project-links";
 import { Locale } from "@/types/locale";
 
 type ProjectDetailsHeroProps = {
@@ -10,12 +12,40 @@ type ProjectDetailsHeroProps = {
   dictionary: Dictionary;
 };
 
+const heroActionCopy: Record<
+  Locale,
+  {
+    liveDemo: string;
+    sourceCode: string;
+    allProjects: string;
+    pendingLive: string;
+    pendingSource: string;
+  }
+> = {
+  en: {
+    liveDemo: "Open live demo",
+    sourceCode: "View source code",
+    allProjects: "All projects",
+    pendingLive: "Live demo pending",
+    pendingSource: "Source code pending",
+  },
+  pl: {
+    liveDemo: "Otwórz live demo",
+    sourceCode: "Zobacz kod źródłowy",
+    allProjects: "Wszystkie projekty",
+    pendingLive: "Live demo oczekuje",
+    pendingSource: "Kod źródłowy oczekuje",
+  },
+};
+
 export function ProjectDetailsHero({
   project,
   locale,
   dictionary,
 }: ProjectDetailsHeroProps) {
   const previewImage = project.mockups[0];
+  const links = getResolvedProjectLinks(project);
+  const copy = heroActionCopy[locale];
 
   return (
     <section
@@ -52,6 +82,45 @@ export function ProjectDetailsHero({
 
           <div className="mt-8">
             <ProjectLinkStatusBadges project={project} locale={locale} />
+          </div>
+
+          <div className="mt-8 flex flex-wrap gap-3">
+            {links.hasLiveUrl ? (
+              <a
+                href={links.liveUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-full bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
+              >
+                {copy.liveDemo}
+              </a>
+            ) : (
+              <span className="rounded-full bg-white/10 px-5 py-3 text-sm font-semibold text-slate-400">
+                {copy.pendingLive}
+              </span>
+            )}
+
+            {links.hasSourceUrl ? (
+              <a
+                href={links.sourceUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/5"
+              >
+                {copy.sourceCode}
+              </a>
+            ) : (
+              <span className="rounded-full border border-white/10 px-5 py-3 text-sm font-semibold text-slate-500">
+                {copy.pendingSource}
+              </span>
+            )}
+
+            <Link
+              href={`/${locale}/projects/`}
+              className="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-5 py-3 text-sm font-semibold text-cyan-200 transition hover:border-cyan-300/50 hover:bg-cyan-400/15"
+            >
+              {copy.allProjects}
+            </Link>
           </div>
 
           <div className="mt-8 flex flex-wrap gap-2">

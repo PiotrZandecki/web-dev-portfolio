@@ -74,6 +74,9 @@ All notable changes to this project will be documented in this file.
 - Expanded project pages with release and asset-level documentation.
 - Expanded projects page into a maintainable production-ready portfolio system.
 - Improved production hardening with fallback pages and release checks.
+- Reordered project pages so live demo, source code and preview appear before deeper technical documentation.
+- Reordered projects page so the project explorer appears before internal production and maintenance sections.
+- Simplified project case study navigation for a clearer production reading flow.
 
 ### Planned
 

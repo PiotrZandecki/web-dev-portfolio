@@ -5,6 +5,8 @@ import { JsonLd } from "@/components/JsonLd";
 import { ProjectComparisonMatrix } from "@/components/ProjectComparisonMatrix";
 import { ProjectDeliveryDashboard } from "@/components/ProjectDeliveryDashboard";
 import { ProjectDeliveryPipeline } from "@/components/ProjectDeliveryPipeline";
+import { ProjectMaintenanceGuide } from "@/components/ProjectMaintenanceGuide";
+import { ProjectProductionGate } from "@/components/ProjectProductionGate";
 import { ProjectsExplorer } from "@/components/ProjectsExplorer";
 import { ProjectSummaryBar } from "@/components/ProjectSummaryBar";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -76,12 +78,6 @@ export default async function ProjectsPage({ params }: ProjectsPageProps) {
         description={dictionary.projectsPage.description}
       />
 
-      <ProjectDeliveryDashboard projects={projects} locale={locale} />
-
-      <ProjectDeliveryPipeline locale={locale} />
-
-      <ProjectComparisonMatrix projects={projects} locale={locale} />
-
       <ProjectSummaryBar dictionary={dictionary} />
 
       <ProjectsExplorer
@@ -89,6 +85,16 @@ export default async function ProjectsPage({ params }: ProjectsPageProps) {
         locale={locale}
         dictionary={dictionary}
       />
+
+      <ProjectDeliveryDashboard projects={projects} locale={locale} />
+
+      <ProjectComparisonMatrix projects={projects} locale={locale} />
+
+      <ProjectProductionGate projects={projects} locale={locale} />
+
+      <ProjectDeliveryPipeline locale={locale} />
+
+      <ProjectMaintenanceGuide locale={locale} />
     </main>
   );
 }

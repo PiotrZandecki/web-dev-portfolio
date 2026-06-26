@@ -8,9 +8,7 @@ import { ProjectDetailsHero } from "@/components/ProjectDetailsHero";
 import { ProjectEmbed } from "@/components/ProjectEmbed";
 import { ProjectImplementationSection } from "@/components/ProjectImplementationSection";
 import { ProjectLinks } from "@/components/ProjectLinks";
-import { ProjectMockups } from "@/components/ProjectMockups";
 import { ProjectPager } from "@/components/ProjectPager";
-import { ProjectProcess } from "@/components/ProjectProcess";
 import { ProjectQualityChecklist } from "@/components/ProjectQualityChecklist";
 import { ProjectReleaseStatus } from "@/components/ProjectReleaseStatus";
 import { ProjectRoadmapSection } from "@/components/ProjectRoadmapSection";
@@ -118,6 +116,10 @@ export default async function ProjectDetailsPage({
 
       <ProjectSectionNav locale={locale} />
 
+      <ProjectLinks project={project} dictionary={dictionary} />
+
+      <ProjectEmbed project={project} locale={locale} />
+
       <ProjectSnapshot
         project={project}
         locale={locale}
@@ -130,31 +132,15 @@ export default async function ProjectDetailsPage({
         dictionary={dictionary}
       />
 
-      <ProjectReleaseStatus project={project} locale={locale} />
-
-      <ProjectAssetManifest project={project} locale={locale} />
-
       <ProjectImplementationSection project={project} locale={locale} />
-
-      <ProjectQualityChecklist project={project} locale={locale} />
 
       <ProjectTestingSection project={project} locale={locale} />
 
-      <ProjectLinks project={project} dictionary={dictionary} />
+      <ProjectQualityChecklist project={project} locale={locale} />
 
-      <ProjectEmbed project={project} locale={locale} />
+      <ProjectReleaseStatus project={project} locale={locale} />
 
-      <ProjectProcess
-        project={project}
-        locale={locale}
-        dictionary={dictionary}
-      />
-
-      <ProjectMockups
-        project={project}
-        locale={locale}
-        dictionary={dictionary}
-      />
+      <ProjectAssetManifest project={project} locale={locale} />
 
       <ProjectCaseStudy
         project={project}

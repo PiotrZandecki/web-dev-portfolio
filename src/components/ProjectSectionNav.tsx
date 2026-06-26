@@ -9,17 +9,14 @@ const projectSectionNavCopy: Record<
   {
     label: string;
     overview: string;
-    snapshot: string;
-    technical: string;
-    release: string;
-    assets: string;
-    implementation: string;
-    quality: string;
-    testing: string;
     links: string;
     livePreview: string;
-    process: string;
-    visualPreview: string;
+    snapshot: string;
+    technical: string;
+    implementation: string;
+    review: string;
+    release: string;
+    assets: string;
     caseStudy: string;
     roadmap: string;
   }
@@ -27,34 +24,28 @@ const projectSectionNavCopy: Record<
   en: {
     label: "Case study navigation",
     overview: "Overview",
-    snapshot: "Snapshot",
-    technical: "Technical",
-    release: "Release",
-    assets: "Assets",
-    implementation: "Implementation",
-    quality: "Quality",
-    testing: "Testing",
     links: "Links",
     livePreview: "Live preview",
-    process: "Process",
-    visualPreview: "Visual preview",
+    snapshot: "Snapshot",
+    technical: "Technical",
+    implementation: "Implementation",
+    review: "Review",
+    release: "Release",
+    assets: "Assets",
     caseStudy: "Case study",
     roadmap: "Roadmap",
   },
   pl: {
     label: "Nawigacja case study",
     overview: "Opis",
-    snapshot: "Podsumowanie",
-    technical: "Technicznie",
-    release: "Release",
-    assets: "Assety",
-    implementation: "Implementacja",
-    quality: "Jakość",
-    testing: "Testy",
     links: "Linki",
     livePreview: "Live preview",
-    process: "Proces",
-    visualPreview: "Podgląd",
+    snapshot: "Podsumowanie",
+    technical: "Technicznie",
+    implementation: "Implementacja",
+    review: "Przegląd",
+    release: "Release",
+    assets: "Assety",
     caseStudy: "Case study",
     roadmap: "Roadmap",
   },
@@ -69,34 +60,6 @@ export function ProjectSectionNav({ locale }: ProjectSectionNavProps) {
       href: "#project-overview",
     },
     {
-      label: copy.snapshot,
-      href: "#project-snapshot",
-    },
-    {
-      label: copy.technical,
-      href: "#project-technical",
-    },
-    {
-      label: copy.release,
-      href: "#project-release",
-    },
-    {
-      label: copy.assets,
-      href: "#project-assets",
-    },
-    {
-      label: copy.implementation,
-      href: "#project-implementation",
-    },
-    {
-      label: copy.quality,
-      href: "#project-quality",
-    },
-    {
-      label: copy.testing,
-      href: "#project-testing",
-    },
-    {
       label: copy.links,
       href: "#project-links",
     },
@@ -105,12 +68,28 @@ export function ProjectSectionNav({ locale }: ProjectSectionNavProps) {
       href: "#project-live-preview",
     },
     {
-      label: copy.process,
-      href: "#project-process",
+      label: copy.snapshot,
+      href: "#project-snapshot",
     },
     {
-      label: copy.visualPreview,
-      href: "#project-preview",
+      label: copy.technical,
+      href: "#project-technical",
+    },
+    {
+      label: copy.implementation,
+      href: "#project-implementation",
+    },
+    {
+      label: copy.review,
+      href: "#project-testing",
+    },
+    {
+      label: copy.release,
+      href: "#project-release",
+    },
+    {
+      label: copy.assets,
+      href: "#project-assets",
     },
     {
       label: copy.caseStudy,
