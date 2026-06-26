@@ -7,12 +7,14 @@ import { FaqSection } from "@/components/FaqSection";
 import { FeaturedProject } from "@/components/FeaturedProject";
 import { FinalCta } from "@/components/FinalCta";
 import { HeroSection } from "@/components/HeroSection";
+import { JsonLd } from "@/components/JsonLd";
 import { ProjectCard } from "@/components/ProjectCard";
 import { ServicesSection } from "@/components/ServicesSection";
 import { SkillsSection } from "@/components/SkillsSection";
 import { WorkProcessSection } from "@/components/WorkProcessSection";
 import { projects } from "@/content/projects";
 import { getDictionary, isLocale } from "@/lib/i18n";
+import { getHomeStructuredData } from "@/lib/structured-data";
 
 type HomePageProps = {
   params: Promise<{
@@ -55,6 +57,8 @@ export default async function HomePage({ params }: HomePageProps) {
 
   return (
     <main id="main-content" tabIndex={-1}>
+      <JsonLd data={getHomeStructuredData(locale)} />
+
       <HeroSection locale={locale} dictionary={dictionary} />
 
       <AboutSection locale={locale} />

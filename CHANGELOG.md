@@ -15,6 +15,7 @@ All notable changes to this project will be documented in this file.
 - Added FAQ section on the homepage.
 - Added FAQ navigation link.
 - Added expanded About section with highlights and project principles.
+- Added JSON-LD structured data for homepage, projects page and project case studies.
 
 ### Planned
 

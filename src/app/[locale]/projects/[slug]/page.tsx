@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { JsonLd } from "@/components/JsonLd";
 import { ProjectCaseStudy } from "@/components/ProjectCaseStudy";
 import { ProjectDetailsHero } from "@/components/ProjectDetailsHero";
 import { ProjectEmbed } from "@/components/ProjectEmbed";
@@ -10,6 +11,7 @@ import { ProjectProcess } from "@/components/ProjectProcess";
 import { RelatedProjects } from "@/components/RelatedProjects";
 import { getProjectBySlug, projects } from "@/content/projects";
 import { getDictionary, isLocale } from "@/lib/i18n";
+import { getProjectStructuredData } from "@/lib/structured-data";
 import { locales } from "@/types/locale";
 
 type ProjectDetailsPageProps = {
@@ -50,8 +52,8 @@ export async function generateMetadata({
     description: project.shortDescription[locale],
     alternates: {
       languages: {
-        en: `/en/projects/${project.slug}`,
-        pl: `/pl/projects/${project.slug}`,
+        en: `/en/projects/${project.slug}/`,
+        pl: `/pl/projects/${project.slug}/`,
       },
     },
   };
@@ -80,8 +82,10 @@ export default async function ProjectDetailsPage({
       tabIndex={-1}
       className="mx-auto max-w-6xl px-6 py-20"
     >
+      <JsonLd data={getProjectStructuredData(locale, project)} />
+
       <Link
-        href={`/${locale}/projects`}
+        href={`/${locale}/projects/`}
         className="text-sm font-semibold text-cyan-300 transition hover:text-cyan-200"
       >
         ← {dictionary.common.backToProjects}
