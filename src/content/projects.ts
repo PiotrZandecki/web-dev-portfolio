@@ -2,20 +2,35 @@ import { Locale } from "@/types/locale";
 
 export type ProjectStatus = "completed" | "inProgress";
 
+type LocalizedText = Record<Locale, string>;
+type LocalizedList = Record<Locale, string[]>;
+
+export type ProjectProcessStep = {
+  title: LocalizedText;
+  description: LocalizedText;
+};
+
+export type ProjectMockup = {
+  title: LocalizedText;
+  description: LocalizedText;
+};
+
 export type Project = {
   slug: string;
   title: string;
   status: ProjectStatus;
   year: string;
-  category: Record<Locale, string>;
-  shortDescription: Record<Locale, string>;
-  description: Record<Locale, string>;
+  category: LocalizedText;
+  shortDescription: LocalizedText;
+  description: LocalizedText;
   technologies: string[];
-  highlights: Record<Locale, string[]>;
-  features: Record<Locale, string[]>;
-  whatILearned: Record<Locale, string[]>;
-  challenges: Record<Locale, string[]>;
-  nextSteps: Record<Locale, string[]>;
+  highlights: LocalizedList;
+  features: LocalizedList;
+  whatILearned: LocalizedList;
+  challenges: LocalizedList;
+  nextSteps: LocalizedList;
+  process: ProjectProcessStep[];
+  mockups: ProjectMockup[];
   embedUrl?: string;
   liveUrl?: string;
   sourceUrl?: string;
@@ -106,6 +121,70 @@ export const projects: Project[] = [
         "Przygotować aplikację do deploya i osadzenia w portfolio.",
       ],
     },
+    process: [
+      {
+        title: {
+          en: "Structure planning",
+          pl: "Planowanie struktury",
+        },
+        description: {
+          en: "The project started with separating the application into notes, lists and plans so each feature could grow independently.",
+          pl: "Projekt rozpoczął się od podziału aplikacji na notatki, listy i plany, żeby każda funkcja mogła rozwijać się niezależnie.",
+        },
+      },
+      {
+        title: {
+          en: "Local data handling",
+          pl: "Obsługa danych lokalnych",
+        },
+        description: {
+          en: "The next step was building a predictable localStorage layer and reducing UI flashes during loading.",
+          pl: "Kolejnym krokiem było przygotowanie przewidywalnej warstwy localStorage i ograniczenie migania interfejsu podczas ładowania.",
+        },
+      },
+      {
+        title: {
+          en: "Feature refinement",
+          pl: "Dopracowanie funkcji",
+        },
+        description: {
+          en: "The project was improved with priorities, sorting options and cleaner reusable components.",
+          pl: "Projekt został rozwinięty o priorytety, opcje sortowania i czystsze komponenty wielokrotnego użytku.",
+        },
+      },
+    ],
+    mockups: [
+      {
+        title: {
+          en: "Dashboard overview",
+          pl: "Widok dashboardu",
+        },
+        description: {
+          en: "A central place for quickly accessing notes, lists and plans.",
+          pl: "Centralne miejsce do szybkiego dostępu do notatek, list i planów.",
+        },
+      },
+      {
+        title: {
+          en: "Lists module",
+          pl: "Moduł list",
+        },
+        description: {
+          en: "A task-focused view prepared for priorities, sorting and completion states.",
+          pl: "Widok list przygotowany pod priorytety, sortowanie i oznaczanie wykonania.",
+        },
+      },
+      {
+        title: {
+          en: "Notes module",
+          pl: "Moduł notatek",
+        },
+        description: {
+          en: "A simple note management area focused on clean editing and local persistence.",
+          pl: "Prosty obszar zarządzania notatkami skupiony na edycji i lokalnym zapisie danych.",
+        },
+      },
+    ],
   },
   {
     slug: "aurora-beauty",
@@ -191,6 +270,70 @@ export const projects: Project[] = [
         "Dodać link do kodu źródłowego, jeśli repozytorium będzie publiczne.",
       ],
     },
+    process: [
+      {
+        title: {
+          en: "Brand direction",
+          pl: "Kierunek wizualny marki",
+        },
+        description: {
+          en: "The project started with defining a soft, modern and trustworthy visual direction for a beauty business.",
+          pl: "Projekt rozpoczął się od określenia miękkiego, nowoczesnego i wiarygodnego kierunku wizualnego dla biznesu beauty.",
+        },
+      },
+      {
+        title: {
+          en: "Section structure",
+          pl: "Struktura sekcji",
+        },
+        description: {
+          en: "The page was structured around services, trust signals, testimonials and clear calls to action.",
+          pl: "Strona została ułożona wokół usług, elementów budujących zaufanie, opinii klientów i czytelnych wezwań do działania.",
+        },
+      },
+      {
+        title: {
+          en: "Visual polish",
+          pl: "Dopracowanie wizualne",
+        },
+        description: {
+          en: "The final step focused on visual consistency, responsive behavior and image placement.",
+          pl: "Ostatni etap skupiał się na spójności wizualnej, responsywności i rozmieszczeniu grafik.",
+        },
+      },
+    ],
+    mockups: [
+      {
+        title: {
+          en: "Landing page hero",
+          pl: "Hero strony głównej",
+        },
+        description: {
+          en: "A first impression section focused on brand mood, clarity and service positioning.",
+          pl: "Pierwsza sekcja strony skupiona na nastroju marki, czytelności i pozycjonowaniu usług.",
+        },
+      },
+      {
+        title: {
+          en: "Services area",
+          pl: "Obszar usług",
+        },
+        description: {
+          en: "A structured place for presenting beauty services in a clean and understandable way.",
+          pl: "Uporządkowane miejsce do prezentacji usług beauty w czytelny i estetyczny sposób.",
+        },
+      },
+      {
+        title: {
+          en: "Testimonials section",
+          pl: "Sekcja opinii",
+        },
+        description: {
+          en: "A trust-building section prepared for client feedback and social proof.",
+          pl: "Sekcja budująca zaufanie, przygotowana pod opinie klientów i social proof.",
+        },
+      },
+    ],
   },
   {
     slug: "web-dev-portfolio",
@@ -278,6 +421,70 @@ export const projects: Project[] = [
         "Wdrożyć portfolio online.",
       ],
     },
+    process: [
+      {
+        title: {
+          en: "Architecture setup",
+          pl: "Przygotowanie architektury",
+        },
+        description: {
+          en: "The portfolio was structured around localized routes, reusable components and a shared project content model.",
+          pl: "Portfolio zostało oparte o lokalizowane trasy, komponenty wielokrotnego użytku i wspólny model treści projektów.",
+        },
+      },
+      {
+        title: {
+          en: "Project hub",
+          pl: "Hub projektów",
+        },
+        description: {
+          en: "The projects section was built as a central place for project cards, dynamic pages and future embedded previews.",
+          pl: "Sekcja projektów została zbudowana jako centralne miejsce dla kart projektów, dynamicznych podstron i przyszłych osadzonych podglądów.",
+        },
+      },
+      {
+        title: {
+          en: "Case study layout",
+          pl: "Layout case study",
+        },
+        description: {
+          en: "Each project page was expanded with process, links, lessons learned, challenges and next steps.",
+          pl: "Każda podstrona projektu została rozszerzona o proces, linki, wnioski z nauki, wyzwania i kolejne kroki.",
+        },
+      },
+    ],
+    mockups: [
+      {
+        title: {
+          en: "Homepage",
+          pl: "Strona główna",
+        },
+        description: {
+          en: "A portfolio landing page focused on clear positioning, featured work and skills.",
+          pl: "Landing page portfolio skupiony na jasnym pozycjonowaniu, wyróżnionych projektach i umiejętnościach.",
+        },
+      },
+      {
+        title: {
+          en: "Projects hub",
+          pl: "Hub projektów",
+        },
+        description: {
+          en: "A project overview page that collects all portfolio projects in one structured view.",
+          pl: "Strona zbierająca wszystkie projekty portfolio w jednym uporządkowanym widoku.",
+        },
+      },
+      {
+        title: {
+          en: "Project case study",
+          pl: "Case study projektu",
+        },
+        description: {
+          en: "A detail page prepared for project description, links, process, mockups and embedded previews.",
+          pl: "Podstrona szczegółów przygotowana pod opis projektu, linki, proces, mockupy i osadzone podglądy.",
+        },
+      },
+    ],
   },
 ];
 

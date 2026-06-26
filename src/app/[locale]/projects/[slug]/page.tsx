@@ -4,6 +4,8 @@ import { ProjectCaseStudy } from "@/components/ProjectCaseStudy";
 import { ProjectDetailsHero } from "@/components/ProjectDetailsHero";
 import { ProjectEmbed } from "@/components/ProjectEmbed";
 import { ProjectLinks } from "@/components/ProjectLinks";
+import { ProjectMockups } from "@/components/ProjectMockups";
+import { ProjectProcess } from "@/components/ProjectProcess";
 import { getProjectBySlug, projects } from "@/content/projects";
 import { getDictionary, isLocale } from "@/lib/i18n";
 import { locales } from "@/types/locale";
@@ -57,6 +59,18 @@ export default async function ProjectDetailsPage({
       />
 
       <ProjectLinks project={project} dictionary={dictionary} />
+
+      <ProjectProcess
+        project={project}
+        locale={locale}
+        dictionary={dictionary}
+      />
+
+      <ProjectMockups
+        project={project}
+        locale={locale}
+        dictionary={dictionary}
+      />
 
       <ProjectCaseStudy
         project={project}

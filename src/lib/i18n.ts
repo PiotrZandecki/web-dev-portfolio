@@ -20,6 +20,7 @@ export type Dictionary = {
     highlights: string;
     projectDetails: string;
     year: string;
+    type: string;
   };
   status: {
     completed: string;
@@ -66,6 +67,17 @@ export type Dictionary = {
     notAvailable: string;
     openLink: string;
     placeholder: string;
+  };
+  projectProcess: {
+    eyebrow: string;
+    title: string;
+    description: string;
+  };
+  projectMockups: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    browserLabel: string;
   };
   skillsSection: {
     eyebrow: string;
@@ -116,6 +128,7 @@ const dictionaries: Record<Locale, Dictionary> = {
       highlights: "Highlights",
       projectDetails: "Project details",
       year: "Year",
+      type: "Type",
     },
     status: {
       completed: "Completed",
@@ -177,6 +190,19 @@ const dictionaries: Record<Locale, Dictionary> = {
       placeholder:
         "This link has not been added yet. It will be updated after deployment or repository publication.",
     },
+    projectProcess: {
+      eyebrow: "Process",
+      title: "Project development process",
+      description:
+        "A simple breakdown of how the project is planned, structured and improved during development.",
+    },
+    projectMockups: {
+      eyebrow: "Visual preview",
+      title: "Screens and interface areas",
+      description:
+        "This section is prepared for screenshots, mockups or visual highlights that will show the project interface in context.",
+      browserLabel: "Preview window",
+    },
     skillsSection: {
       eyebrow: "Skills",
       title: "Technologies I work with",
@@ -228,6 +254,7 @@ const dictionaries: Record<Locale, Dictionary> = {
       highlights: "Najważniejsze elementy",
       projectDetails: "Szczegóły projektu",
       year: "Rok",
+      type: "Typ",
     },
     status: {
       completed: "Ukończony",
@@ -288,6 +315,19 @@ const dictionaries: Record<Locale, Dictionary> = {
       openLink: "Otwórz link",
       placeholder:
         "Ten link nie został jeszcze dodany. Zostanie uzupełniony po deployu albo publikacji repozytorium.",
+    },
+    projectProcess: {
+      eyebrow: "Proces",
+      title: "Proces tworzenia projektu",
+      description:
+        "Prosty podział pokazujący, jak projekt jest planowany, porządkowany i rozwijany w trakcie pracy.",
+    },
+    projectMockups: {
+      eyebrow: "Podgląd wizualny",
+      title: "Ekrany i obszary interfejsu",
+      description:
+        "Ta sekcja jest przygotowana pod screeny, mockupy lub wizualne wyróżniki pokazujące interfejs projektu w kontekście.",
+      browserLabel: "Okno podglądu",
     },
     skillsSection: {
       eyebrow: "Umiejętności",
