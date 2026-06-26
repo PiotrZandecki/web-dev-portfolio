@@ -33,7 +33,7 @@ export default async function LocaleLayout({
       <ScrollToTop />
       <Header locale={locale} dictionary={dictionary} />
       {children}
-      <Footer dictionary={dictionary} />
+      <Footer locale={locale} dictionary={dictionary} />
     </div>
   );
 }

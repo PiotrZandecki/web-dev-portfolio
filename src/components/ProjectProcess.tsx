@@ -14,7 +14,11 @@ export function ProjectProcess({
   dictionary,
 }: ProjectProcessProps) {
   return (
-    <section aria-labelledby="project-process-heading" className="mt-16">
+    <section
+      id="project-process"
+      aria-labelledby="project-process-heading"
+      className="mt-16 scroll-mt-32"
+    >
       <div className="mb-8">
         <p className="text-sm font-medium uppercase tracking-[0.3em] text-cyan-400">
           {dictionary.projectProcess.eyebrow}

@@ -33,7 +33,11 @@ export function ProjectCaseStudy({
   ];
 
   return (
-    <section aria-labelledby="project-case-study-heading" className="mt-16">
+    <section
+      id="project-case-study"
+      aria-labelledby="project-case-study-heading"
+      className="mt-16 scroll-mt-32"
+    >
       <div className="mb-8">
         <p className="text-sm font-medium uppercase tracking-[0.3em] text-cyan-400">
           {dictionary.projectSections.caseStudy}

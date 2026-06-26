@@ -8,6 +8,7 @@ import { ProjectEmbed } from "@/components/ProjectEmbed";
 import { ProjectLinks } from "@/components/ProjectLinks";
 import { ProjectMockups } from "@/components/ProjectMockups";
 import { ProjectProcess } from "@/components/ProjectProcess";
+import { ProjectSectionNav } from "@/components/ProjectSectionNav";
 import { RelatedProjects } from "@/components/RelatedProjects";
 import { getProjectBySlug, projects } from "@/content/projects";
 import { getDictionary, isLocale } from "@/lib/i18n";
@@ -105,6 +106,8 @@ export default async function ProjectDetailsPage({
         locale={locale}
         dictionary={dictionary}
       />
+
+      <ProjectSectionNav locale={locale} />
 
       <ProjectLinks project={project} dictionary={dictionary} />
 

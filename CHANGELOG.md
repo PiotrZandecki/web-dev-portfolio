@@ -17,6 +17,8 @@ All notable changes to this project will be documented in this file.
 - Added expanded About section with highlights and project principles.
 - Added JSON-LD structured data for homepage, projects page and project case studies.
 - Added visible breadcrumbs on projects and project case study pages.
+- Added section navigation for project case study pages.
+- Added expanded localized footer with navigation and external links.
 
 ### Planned
 

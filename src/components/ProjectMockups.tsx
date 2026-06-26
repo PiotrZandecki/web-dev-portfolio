@@ -15,7 +15,11 @@ export function ProjectMockups({
   dictionary,
 }: ProjectMockupsProps) {
   return (
-    <section aria-labelledby="project-mockups-heading" className="mt-16">
+    <section
+      id="project-preview"
+      aria-labelledby="project-mockups-heading"
+      className="mt-16 scroll-mt-32"
+    >
       <div className="mb-8">
         <p className="text-sm font-medium uppercase tracking-[0.3em] text-cyan-400">
           {dictionary.projectMockups.eyebrow}

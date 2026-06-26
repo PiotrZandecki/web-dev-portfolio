@@ -45,7 +45,7 @@ export function ProjectLinks({ project, dictionary }: ProjectLinksProps) {
   ];
 
   return (
-    <section className="mt-16">
+    <section id="project-links" className="mt-16 scroll-mt-32">
       <div className="mb-6">
         <p className="text-sm font-medium uppercase tracking-[0.3em] text-cyan-400">
           {dictionary.projectLinks.eyebrow}
