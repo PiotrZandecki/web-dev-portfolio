@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Project } from "@/content/projects";
 import { Dictionary } from "@/lib/i18n";
 import { Locale } from "@/types/locale";
@@ -32,42 +33,22 @@ export function ProjectMockups({
         </p>
       </div>
 
-      <ul className="grid gap-6 lg:grid-cols-3">
+      <ul className="grid gap-6">
         {project.mockups.map((mockup) => (
           <li
             key={mockup.title.en}
             className="overflow-hidden rounded-3xl border border-white/10 bg-white/5 transition hover:border-cyan-400/30 hover:bg-white/[0.07]"
           >
             <div className="border-b border-white/10 bg-slate-950/80 p-4">
-              <div
-                aria-hidden="true"
-                className="overflow-hidden rounded-2xl border border-white/10 bg-slate-900"
-              >
-                <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
-                  <div className="flex gap-2">
-                    <span className="h-2.5 w-2.5 rounded-full bg-red-400" />
-                    <span className="h-2.5 w-2.5 rounded-full bg-yellow-400" />
-                    <span className="h-2.5 w-2.5 rounded-full bg-green-400" />
-                  </div>
-
-                  <span className="text-xs text-slate-500">
-                    {dictionary.projectMockups.browserLabel}
-                  </span>
-                </div>
-
-                <div className="space-y-3 p-4">
-                  <div className="h-3 w-2/3 rounded-full bg-cyan-400/30" />
-                  <div className="h-3 w-full rounded-full bg-white/10" />
-                  <div className="h-3 w-5/6 rounded-full bg-white/10" />
-
-                  <div className="grid grid-cols-2 gap-2 pt-3">
-                    <div className="h-16 rounded-xl bg-cyan-400/10" />
-                    <div className="h-16 rounded-xl bg-white/10" />
-                    <div className="h-16 rounded-xl bg-white/10" />
-                    <div className="h-16 rounded-xl bg-cyan-400/10" />
-                  </div>
-                </div>
-              </div>
+              <Image
+                src={mockup.imageSrc}
+                alt={mockup.title[locale]}
+                width={1200}
+                height={760}
+                sizes="(min-width: 1024px) 1152px, calc(100vw - 48px)"
+                className="aspect-1200/760 w-full rounded-2xl border border-white/10 object-cover"
+                priority={project.slug === "web-dev-portfolio"}
+              />
             </div>
 
             <div className="p-6">

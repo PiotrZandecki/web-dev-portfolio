@@ -13,6 +13,7 @@ export type ProjectProcessStep = {
 export type ProjectMockup = {
   title: LocalizedText;
   description: LocalizedText;
+  imageSrc: string;
 };
 
 export type Project = {
@@ -163,26 +164,7 @@ export const projects: Project[] = [
           en: "A central screen for quickly accessing notes, lists and plans.",
           pl: "Centralny ekran umożliwiający szybki dostęp do notatek, list i planów.",
         },
-      },
-      {
-        title: {
-          en: "Lists module",
-          pl: "Moduł list",
-        },
-        description: {
-          en: "A task-oriented view prepared for priorities, sorting and completion states.",
-          pl: "Widok zadań przygotowany pod priorytety, sortowanie i oznaczanie wykonania.",
-        },
-      },
-      {
-        title: {
-          en: "Notes module",
-          pl: "Moduł notatek",
-        },
-        description: {
-          en: "A focused area for creating, editing and storing notes locally.",
-          pl: "Prosty obszar do tworzenia, edytowania i lokalnego zapisywania notatek.",
-        },
+        imageSrc: "/project-previews/private-space-dashboard.svg",
       },
     ],
   },
@@ -312,26 +294,7 @@ export const projects: Project[] = [
           en: "A first-impression section focused on brand mood, positioning and clarity.",
           pl: "Pierwsza sekcja strony skupiona na nastroju marki, pozycjonowaniu i czytelności.",
         },
-      },
-      {
-        title: {
-          en: "Services area",
-          pl: "Obszar usług",
-        },
-        description: {
-          en: "A structured section for presenting beauty services in a clean and understandable way.",
-          pl: "Uporządkowana sekcja prezentująca usługi beauty w czysty i zrozumiały sposób.",
-        },
-      },
-      {
-        title: {
-          en: "Testimonials",
-          pl: "Opinie klientów",
-        },
-        description: {
-          en: "A trust-building section prepared for customer feedback and social proof.",
-          pl: "Sekcja budująca zaufanie, przygotowana pod opinie klientów i social proof.",
-        },
+        imageSrc: "/project-previews/aurora-beauty-home.svg",
       },
     ],
   },
@@ -456,33 +419,14 @@ export const projects: Project[] = [
     mockups: [
       {
         title: {
-          en: "Homepage",
-          pl: "Strona główna",
+          en: "Portfolio homepage",
+          pl: "Strona główna portfolio",
         },
         description: {
           en: "A landing page focused on positioning, featured work, skills and contact.",
           pl: "Landing page skupiony na pozycjonowaniu, wyróżnionych projektach, umiejętnościach i kontakcie.",
         },
-      },
-      {
-        title: {
-          en: "Projects hub",
-          pl: "Hub projektów",
-        },
-        description: {
-          en: "A structured overview of all portfolio projects with search and filters.",
-          pl: "Uporządkowany widok wszystkich projektów portfolio z wyszukiwarką i filtrami.",
-        },
-      },
-      {
-        title: {
-          en: "Project case study",
-          pl: "Case study projektu",
-        },
-        description: {
-          en: "A detail page prepared for project overview, links, process, mockups and embedded previews.",
-          pl: "Podstrona szczegółów przygotowana pod opis projektu, linki, proces, mockupy i osadzone podglądy.",
-        },
+        imageSrc: "/project-previews/web-dev-portfolio-home.svg",
       },
     ],
   },

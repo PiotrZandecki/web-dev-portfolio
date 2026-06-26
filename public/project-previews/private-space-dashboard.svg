@@ -1,0 +1,32 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" rx="40" fill="#020617"/>
+  <rect x="1" y="1" width="1198" height="758" rx="39" stroke="#22D3EE" stroke-opacity="0.18" stroke-width="2"/>
+  <rect x="56" y="56" width="1088" height="648" rx="28" fill="#0F172A"/>
+  <rect x="56" y="56" width="1088" height="72" rx="28" fill="#111827"/>
+  <circle cx="96" cy="92" r="10" fill="#F87171"/>
+  <circle cx="128" cy="92" r="10" fill="#FBBF24"/>
+  <circle cx="160" cy="92" r="10" fill="#34D399"/>
+  <text x="96" y="178" fill="#F8FAFC" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700">Private Space</text>
+  <text x="96" y="220" fill="#94A3B8" font-family="Arial, Helvetica, sans-serif" font-size="22">Personal productivity dashboard</text>
+  <rect x="96" y="270" width="300" height="310" rx="24" fill="#020617"/>
+  <rect x="128" y="304" width="130" height="18" rx="9" fill="#22D3EE" fill-opacity="0.8"/>
+  <rect x="128" y="352" width="210" height="14" rx="7" fill="#334155"/>
+  <rect x="128" y="390" width="180" height="14" rx="7" fill="#334155"/>
+  <rect x="128" y="448" width="230" height="54" rx="16" fill="#22D3EE" fill-opacity="0.12"/>
+  <text x="152" y="482" fill="#A5F3FC" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">Notes</text>
+  <rect x="450" y="270" width="300" height="310" rx="24" fill="#020617"/>
+  <rect x="482" y="304" width="120" height="18" rx="9" fill="#22D3EE" fill-opacity="0.8"/>
+  <rect x="482" y="350" width="230" height="48" rx="16" fill="#111827"/>
+  <rect x="482" y="418" width="230" height="48" rx="16" fill="#111827"/>
+  <rect x="482" y="486" width="230" height="48" rx="16" fill="#111827"/>
+  <text x="506" y="380" fill="#CBD5E1" font-family="Arial, Helvetica, sans-serif" font-size="17">Priority lists</text>
+  <text x="506" y="448" fill="#CBD5E1" font-family="Arial, Helvetica, sans-serif" font-size="17">Sorting</text>
+  <text x="506" y="516" fill="#CBD5E1" font-family="Arial, Helvetica, sans-serif" font-size="17">Local data</text>
+  <rect x="804" y="270" width="300" height="310" rx="24" fill="#020617"/>
+  <rect x="836" y="304" width="120" height="18" rx="9" fill="#22D3EE" fill-opacity="0.8"/>
+  <circle cx="880" cy="404" r="54" fill="#22D3EE" fill-opacity="0.12"/>
+  <circle cx="880" cy="404" r="28" fill="#22D3EE" fill-opacity="0.45"/>
+  <rect x="836" y="500" width="210" height="14" rx="7" fill="#334155"/>
+  <rect x="836" y="534" width="160" height="14" rx="7" fill="#334155"/>
+  <text x="96" y="650" fill="#64748B" font-family="Arial, Helvetica, sans-serif" font-size="20">Next.js • TypeScript • Tailwind CSS • Local Storage</text>
+</svg>

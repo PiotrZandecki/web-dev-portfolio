@@ -1,0 +1,27 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" rx="40" fill="#140A12"/>
+  <rect x="1" y="1" width="1198" height="758" rx="39" stroke="#F9A8D4" stroke-opacity="0.28" stroke-width="2"/>
+  <rect x="56" y="56" width="1088" height="648" rx="28" fill="#24111F"/>
+  <rect x="56" y="56" width="1088" height="72" rx="28" fill="#301426"/>
+  <circle cx="96" cy="92" r="10" fill="#F87171"/>
+  <circle cx="128" cy="92" r="10" fill="#FBBF24"/>
+  <circle cx="160" cy="92" r="10" fill="#34D399"/>
+  <text x="96" y="182" fill="#FFF7ED" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700">Aurora Beauty</text>
+  <text x="96" y="226" fill="#FBCFE8" font-family="Arial, Helvetica, sans-serif" font-size="23">Elegant business website for a beauty brand</text>
+  <rect x="96" y="282" width="470" height="270" rx="28" fill="#3B1730"/>
+  <circle cx="202" cy="392" r="74" fill="#F9A8D4" fill-opacity="0.22"/>
+  <circle cx="254" cy="420" r="74" fill="#F0ABFC" fill-opacity="0.14"/>
+  <rect x="620" y="282" width="210" height="270" rx="28" fill="#1F1020"/>
+  <rect x="652" y="322" width="110" height="16" rx="8" fill="#F9A8D4"/>
+  <rect x="652" y="370" width="132" height="12" rx="6" fill="#9D6A86"/>
+  <rect x="652" y="404" width="106" height="12" rx="6" fill="#9D6A86"/>
+  <rect x="652" y="462" width="122" height="44" rx="22" fill="#F9A8D4"/>
+  <text x="682" y="490" fill="#3B1730" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Book</text>
+  <rect x="866" y="282" width="238" height="270" rx="28" fill="#1F1020"/>
+  <rect x="898" y="322" width="130" height="16" rx="8" fill="#F9A8D4"/>
+  <rect x="898" y="372" width="166" height="52" rx="18" fill="#3B1730"/>
+  <rect x="898" y="444" width="166" height="52" rx="18" fill="#3B1730"/>
+  <text x="920" y="405" fill="#FBCFE8" font-family="Arial, Helvetica, sans-serif" font-size="16">Services</text>
+  <text x="920" y="477" fill="#FBCFE8" font-family="Arial, Helvetica, sans-serif" font-size="16">Testimonials</text>
+  <text x="96" y="650" fill="#F9A8D4" fill-opacity="0.75" font-family="Arial, Helvetica, sans-serif" font-size="20">Responsive layout • Services • Testimonials • Visual consistency</text>
+</svg>
