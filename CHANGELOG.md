@@ -14,6 +14,7 @@ All notable changes to this project will be documented in this file.
 - Added final homepage CTA section.
 - Added FAQ section on the homepage.
 - Added FAQ navigation link.
+- Added expanded About section with highlights and project principles.
 
 ### Planned
 

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { AboutSection } from "@/components/AboutSection";
 import { ContactCta } from "@/components/ContactCta";
 import { FaqSection } from "@/components/FaqSection";
 import { FeaturedProject } from "@/components/FeaturedProject";
@@ -56,21 +57,7 @@ export default async function HomePage({ params }: HomePageProps) {
     <main id="main-content" tabIndex={-1}>
       <HeroSection locale={locale} dictionary={dictionary} />
 
-      <section id="about" className="mx-auto max-w-6xl px-6 py-20">
-        <div className="rounded-3xl border border-white/10 bg-white/5 p-8 md:p-10">
-          <p className="text-sm font-medium uppercase tracking-[0.3em] text-cyan-400">
-            {dictionary.home.aboutEyebrow}
-          </p>
-
-          <h2 className="mt-4 text-4xl font-bold tracking-tight text-white">
-            {dictionary.home.aboutTitle}
-          </h2>
-
-          <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300">
-            {dictionary.home.aboutDescription}
-          </p>
-        </div>
-      </section>
+      <AboutSection locale={locale} />
 
       <ServicesSection locale={locale} />
 
