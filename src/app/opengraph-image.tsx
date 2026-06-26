@@ -1,6 +1,12 @@
 import { ImageResponse } from "next/og";
 
-export const runtime = "edge";
+/**
+ * This file intentionally uses inline styles.
+ *
+ * Next.js Open Graph image generation with ImageResponse does not use
+ * Tailwind classes or external CSS in the same way as regular app components.
+ * Inline style objects are the expected and supported approach here.
+ */
 
 export const alt = "Piotr.dev Web Developer Portfolio";
 
