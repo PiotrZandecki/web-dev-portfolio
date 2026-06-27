@@ -76,7 +76,7 @@ docs/RELEASE_1_1_0.md
 The project was previously deployed on Netlify:
 
 ```txt
-https://zandeckidev.netlify.app
+https://zandeckidev.pl
 ```
 
 If Netlify deploy credits are unavailable, the project can be deployed through another static hosting provider because it uses static export.

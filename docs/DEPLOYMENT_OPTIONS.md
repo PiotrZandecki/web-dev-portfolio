@@ -7,7 +7,7 @@ The portfolio is configured as a static export, so it can be deployed on multipl
 Current production URL:
 
 ```txt
-https://zandeckidev.netlify.app
+https://zandeckidev.pl
 ```
 
 Current primary deployment platform:

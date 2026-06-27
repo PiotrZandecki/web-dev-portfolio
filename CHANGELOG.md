@@ -66,4 +66,4 @@ All notable changes to this project will be documented in this file.
 ### Deployment
 
 - Deployed to Netlify.
-- Production URL: https://zandeckidev.netlify.app
+- Production URL: https://zandeckidev.pl

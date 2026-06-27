@@ -11,7 +11,7 @@ v1.1.0
 Live site:
 
 ```txt
-https://zandeckidev.netlify.app
+https://zandeckidev.pl
 ```
 
 The portfolio is designed as a central hub for web development projects. Each project has its own page, case study sections, technology stack, links area, release documentation and prepared space for embedded live previews.
@@ -84,7 +84,7 @@ For production deployment, set these values in the hosting provider environment 
 Production values used for this project:
 
 ```env
-NEXT_PUBLIC_SITE_URL=https://zandeckidev.netlify.app
+NEXT_PUBLIC_SITE_URL=https://zandeckidev.pl
 NEXT_PUBLIC_CONTACT_EMAIL=p.zandecki24@gmail.com
 NEXT_PUBLIC_GITHUB_URL=https://github.com/PiotrZandecki
 NEXT_PUBLIC_REPOSITORY_URL=https://github.com/PiotrZandecki/web-dev-portfolio
@@ -185,21 +185,21 @@ NEXT_PUBLIC_REPOSITORY_URL=https://github.com/PiotrZandecki/web-dev-portfolio
 ## Final check URLs
 
 ```txt
-https://zandeckidev.netlify.app
-https://zandeckidev.netlify.app/en/
-https://zandeckidev.netlify.app/pl/
-https://zandeckidev.netlify.app/en/about/
-https://zandeckidev.netlify.app/pl/about/
-https://zandeckidev.netlify.app/en/projects/
-https://zandeckidev.netlify.app/pl/projects/
-https://zandeckidev.netlify.app/en/services/
-https://zandeckidev.netlify.app/pl/services/
-https://zandeckidev.netlify.app/en/stack/
-https://zandeckidev.netlify.app/pl/stack/
-https://zandeckidev.netlify.app/en/contact/
-https://zandeckidev.netlify.app/pl/contact/
-https://zandeckidev.netlify.app/robots.txt
-https://zandeckidev.netlify.app/sitemap.xml
-https://zandeckidev.netlify.app/manifest.webmanifest
-https://zandeckidev.netlify.app/opengraph-image
+https://zandeckidev.pl
+https://zandeckidev.pl/en/
+https://zandeckidev.pl/pl/
+https://zandeckidev.pl/en/about/
+https://zandeckidev.pl/pl/about/
+https://zandeckidev.pl/en/projects/
+https://zandeckidev.pl/pl/projects/
+https://zandeckidev.pl/en/services/
+https://zandeckidev.pl/pl/services/
+https://zandeckidev.pl/en/stack/
+https://zandeckidev.pl/pl/stack/
+https://zandeckidev.pl/en/contact/
+https://zandeckidev.pl/pl/contact/
+https://zandeckidev.pl/robots.txt
+https://zandeckidev.pl/sitemap.xml
+https://zandeckidev.pl/manifest.webmanifest
+https://zandeckidev.pl/opengraph-image
 ```
