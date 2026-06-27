@@ -31,64 +31,64 @@ export type ProjectReleaseDetails = {
 export const projectReleaseDetails: Record<string, ProjectReleaseDetails> = {
   "private-space": {
     releaseTitle: {
-      en: "Prepared for future deployment and repository connection.",
-      pl: "Przygotowane pod przyszłe wdrożenie i podpięcie repozytorium.",
+      en: "Prepared as a portfolio case study with a planned live demo.",
+      pl: "Przygotowane jako case study portfolio z planowanym live demo.",
     },
     releaseDescription: {
-      en: "Private Space is currently presented as a technical case study with designed preview assets. The portfolio structure is ready for live and source links once the project is deployed or made public.",
-      pl: "Private Space jest aktualnie prezentowane jako techniczne case study z zaprojektowanymi assetami preview. Struktura portfolio jest gotowa na linki live i source po wdrożeniu projektu albo upublicznieniu repozytorium.",
+      en: "Private Space is currently presented as a technical case study with designed preview assets. The project is ready for a future public demo under a dedicated subdomain and can receive source links when the repository is prepared for publication.",
+      pl: "Private Space jest aktualnie prezentowane jako techniczne case study z zaprojektowanymi assetami preview. Projekt jest gotowy na przyszłe publiczne demo pod dedykowaną subdomeną i może otrzymać link do kodu, gdy repozytorium będzie przygotowane do publikacji.",
     },
     liveDemo: {
-      status: "pending",
+      status: "prepared",
       title: {
         en: "Live demo",
         pl: "Wersja live",
       },
       description: {
-        en: "A public deployment link has not been connected yet.",
-        pl: "Publiczny link do wdrożenia nie został jeszcze podpięty.",
+        en: "A public live demo is planned as the next release step.",
+        pl: "Publiczne live demo jest zaplanowane jako kolejny etap release.",
       },
       label: {
-        en: "Pending deployment",
-        pl: "Oczekuje na wdrożenie",
+        en: "Planned demo",
+        pl: "Demo planowane",
       },
       notes: {
         en: [
           "The project is ready to receive a future live URL.",
-          "The embedded preview area will become active after deployment.",
-          "The case study already contains the technical presentation structure.",
+          "A dedicated subdomain can be connected when the demo is published.",
+          "The case study already presents the technical structure and product direction.",
         ],
         pl: [
           "Projekt jest gotowy na przyszły adres live.",
-          "Osadzony podgląd stanie się aktywny po wdrożeniu.",
-          "Case study ma już przygotowaną strukturę prezentacji technicznej.",
+          "Dedykowana subdomena może zostać podłączona po publikacji demo.",
+          "Case study już prezentuje strukturę techniczną i kierunek produktu.",
         ],
       },
     },
     sourceCode: {
-      status: "pending",
+      status: "prepared",
       title: {
         en: "Source code",
         pl: "Kod źródłowy",
       },
       description: {
-        en: "The public source repository has not been connected yet.",
-        pl: "Publiczne repozytorium z kodem nie zostało jeszcze podpięte.",
+        en: "The source area is prepared for a future public repository link.",
+        pl: "Obszar kodu źródłowego jest przygotowany pod przyszły link do publicznego repozytorium.",
       },
       label: {
-        en: "Repository pending",
-        pl: "Repozytorium oczekuje",
+        en: "Repository planned",
+        pl: "Repozytorium planowane",
       },
       notes: {
         en: [
           "The portfolio has a prepared source code area.",
           "A repository URL can be added later without changing the page layout.",
-          "The technical notes already explain the implementation direction.",
+          "The implementation notes already explain the technical direction.",
         ],
         pl: [
           "Portfolio ma przygotowany obszar na kod źródłowy.",
           "Adres repozytorium można dodać później bez zmiany layoutu strony.",
-          "Notatki techniczne opisują już kierunek implementacji.",
+          "Notatki implementacyjne opisują już kierunek techniczny.",
         ],
       },
     },
@@ -103,19 +103,19 @@ export const projectReleaseDetails: Record<string, ProjectReleaseDetails> = {
         pl: "Zaprojektowany podgląd SVG jest podpięty do prezentacji w portfolio.",
       },
       label: {
-        en: "Designed preview connected",
-        pl: "Zaprojektowany preview podpięty",
+        en: "Preview available",
+        pl: "Preview dostępne",
       },
       notes: {
         en: [
           "The preview communicates the dashboard-based direction.",
-          "It can be replaced with a real screenshot after deployment.",
-          "The asset is stored in public project previews.",
+          "It can be replaced with a real screenshot after public demo deployment.",
+          "The asset is stored in the public project previews directory.",
         ],
         pl: [
           "Preview komunikuje dashboardowy kierunek projektu.",
-          "Można je później zastąpić realnym screenshotem po wdrożeniu.",
-          "Asset znajduje się w publicznych preview projektów.",
+          "Można je później zastąpić realnym screenshotem po wdrożeniu publicznego demo.",
+          "Asset znajduje się w publicznym katalogu preview projektów.",
         ],
       },
     },
@@ -125,13 +125,13 @@ export const projectReleaseDetails: Record<string, ProjectReleaseDetails> = {
       checks: {
         en: [
           "Project can be represented as a static case study.",
-          "Preview assets are available from public directory.",
-          "Future live/source links can be added through project data.",
+          "Preview assets are available from the public directory.",
+          "Future live and source links can be added through project data.",
         ],
         pl: [
           "Projekt może być prezentowany jako statyczne case study.",
           "Assety preview są dostępne z katalogu public.",
-          "Przyszłe linki live/source można dodać przez dane projektu.",
+          "Przyszłe linki live i source można dodać przez dane projektu.",
         ],
       },
     },
@@ -139,64 +139,64 @@ export const projectReleaseDetails: Record<string, ProjectReleaseDetails> = {
 
   "aurora-beauty": {
     releaseTitle: {
-      en: "Presented as a completed website case study with pending external links.",
-      pl: "Prezentowane jako ukończone case study strony z oczekującymi linkami zewnętrznymi.",
+      en: "Presented as a completed website case study with a planned live preview.",
+      pl: "Prezentowane jako ukończone case study strony z planowanym live preview.",
     },
     releaseDescription: {
-      en: "Aurora Beauty is presented as a completed business website project. The case study is ready for a future live deployment link and repository link if the source becomes public.",
-      pl: "Aurora Beauty jest prezentowane jako ukończony projekt strony firmowej. Case study jest gotowe na przyszły link do wdrożenia i repozytorium, jeśli kod zostanie upubliczniony.",
+      en: "Aurora Beauty is presented as a completed business website project. The case study is ready for a future live preview under a dedicated subdomain and can receive a source repository link if the code becomes public.",
+      pl: "Aurora Beauty jest prezentowane jako ukończony projekt strony firmowej. Case study jest gotowe na przyszły live preview pod dedykowaną subdomeną i może otrzymać link do repozytorium, jeśli kod zostanie upubliczniony.",
     },
     liveDemo: {
-      status: "pending",
+      status: "prepared",
       title: {
         en: "Live demo",
         pl: "Wersja live",
       },
       description: {
-        en: "A public live URL has not been connected yet.",
-        pl: "Publiczny adres live nie został jeszcze podpięty.",
+        en: "A public live preview is planned for a dedicated project subdomain.",
+        pl: "Publiczny live preview jest zaplanowany pod dedykowaną subdomeną projektu.",
       },
       label: {
-        en: "Live URL pending",
-        pl: "Adres live oczekuje",
+        en: "Live preview planned",
+        pl: "Live preview planowane",
       },
       notes: {
         en: [
-          "The project is marked as completed from a portfolio case study perspective.",
-          "The live demo card is prepared for a future deployment.",
+          "The project is completed from a portfolio case study perspective.",
+          "The live demo area is prepared for a future deployment.",
           "The current visual preview keeps the project presentable before live publication.",
         ],
         pl: [
-          "Projekt jest oznaczony jako ukończony z perspektywy case study w portfolio.",
-          "Karta live demo jest przygotowana pod przyszłe wdrożenie.",
+          "Projekt jest ukończony z perspektywy case study w portfolio.",
+          "Obszar live demo jest przygotowany pod przyszłe wdrożenie.",
           "Aktualny preview wizualny pozwala prezentować projekt przed publikacją live.",
         ],
       },
     },
     sourceCode: {
-      status: "pending",
+      status: "prepared",
       title: {
         en: "Source code",
         pl: "Kod źródłowy",
       },
       description: {
-        en: "The source code is not connected as a public repository.",
-        pl: "Kod źródłowy nie jest podpięty jako publiczne repozytorium.",
+        en: "The source area is prepared if the repository becomes public later.",
+        pl: "Obszar kodu źródłowego jest przygotowany na wypadek późniejszej publikacji repozytorium.",
       },
       label: {
-        en: "Source pending",
-        pl: "Kod oczekuje",
+        en: "Source prepared",
+        pl: "Kod przygotowany",
       },
       notes: {
         en: [
           "The case study explains the structure and implementation focus.",
           "The source area is ready if the repository is made public.",
-          "The project can remain portfolio-only if the source is private.",
+          "The project can remain portfolio-only if the source stays private.",
         ],
         pl: [
           "Case study opisuje strukturę i kierunek implementacji.",
           "Obszar source jest gotowy, jeśli repozytorium zostanie upublicznione.",
-          "Projekt może pozostać tylko w portfolio, jeśli kod jest prywatny.",
+          "Projekt może pozostać tylko w portfolio, jeśli kod zostanie prywatny.",
         ],
       },
     },
@@ -211,19 +211,19 @@ export const projectReleaseDetails: Record<string, ProjectReleaseDetails> = {
         pl: "Zaprojektowany podgląd wizualny jest podpięty i pasuje do kierunku strony beauty.",
       },
       label: {
-        en: "Preview connected",
-        pl: "Preview podpięty",
+        en: "Preview available",
+        pl: "Preview dostępne",
       },
       notes: {
         en: [
           "The preview communicates the visual direction of the website.",
           "It supports the project card, featured sections and case study.",
-          "It can be replaced with a real screenshot later.",
+          "It can be replaced with a real production screenshot later.",
         ],
         pl: [
           "Preview komunikuje kierunek wizualny strony.",
           "Wspiera kartę projektu, sekcje featured i case study.",
-          "Może zostać później zastąpiony realnym screenshotem.",
+          "Może zostać później zastąpiony realnym screenshotem produkcyjnym.",
         ],
       },
     },
@@ -234,12 +234,12 @@ export const projectReleaseDetails: Record<string, ProjectReleaseDetails> = {
         en: [
           "Responsive presentation is documented.",
           "Visual preview is available.",
-          "Future deployment and source links can be attached.",
+          "Future deployment and source links can be attached through project data.",
         ],
         pl: [
           "Responsywna prezentacja jest opisana.",
           "Preview wizualny jest dostępny.",
-          "Przyszłe linki deployment/source można podpiąć.",
+          "Przyszłe linki deployment i source można podpiąć przez dane projektu.",
         ],
       },
     },
@@ -247,12 +247,12 @@ export const projectReleaseDetails: Record<string, ProjectReleaseDetails> = {
 
   "web-dev-portfolio": {
     releaseTitle: {
-      en: "Fully connected live portfolio with source repository.",
-      pl: "W pełni podpięte portfolio live z repozytorium źródłowym.",
+      en: "Live production portfolio connected to a custom domain.",
+      pl: "Produkcyjne portfolio live podpięte pod własną domenę.",
     },
     releaseDescription: {
-      en: "Web Dev Portfolio is the main production project. It has a live Netlify deployment, source repository, designed previews, static export setup and production-oriented technical documentation.",
-      pl: "Web Dev Portfolio to główny projekt produkcyjny. Ma wdrożenie live na Netlify, repozytorium źródłowe, zaprojektowane preview, konfigurację statycznego exportu i dokumentację techniczną pod produkcję.",
+      en: "Web Dev Portfolio is the main production project. It is deployed on Cloudflare Pages, connected to zandeckidev.pl, linked to its source repository and prepared as a maintainable hub for future frontend case studies.",
+      pl: "Web Dev Portfolio to główny projekt produkcyjny. Jest wdrożone na Cloudflare Pages, podpięte do zandeckidev.pl, połączone z repozytorium źródłowym i przygotowane jako utrzymywalny hub dla przyszłych frontendowych case studies.",
     },
     liveDemo: {
       status: "connected",
@@ -261,22 +261,22 @@ export const projectReleaseDetails: Record<string, ProjectReleaseDetails> = {
         pl: "Wersja live",
       },
       description: {
-        en: "The production deployment is connected and available publicly.",
-        pl: "Produkcyjne wdrożenie jest podpięte i publicznie dostępne.",
+        en: "The production deployment is connected and publicly available under a custom domain.",
+        pl: "Produkcyjne wdrożenie jest podpięte i publicznie dostępne pod własną domeną.",
       },
       label: {
-        en: "Live on Netlify",
-        pl: "Live na Netlify",
+        en: "Live on Cloudflare Pages",
+        pl: "Live na Cloudflare Pages",
       },
       notes: {
         en: [
           "The project is deployed as a static site.",
-          "The live URL is resolved from production environment configuration.",
+          "The live URL is connected to zandeckidev.pl.",
           "The case study can embed the live site preview.",
         ],
         pl: [
           "Projekt jest wdrożony jako strona statyczna.",
-          "Adres live jest rozwiązywany z konfiguracji środowiska produkcyjnego.",
+          "Adres live jest podpięty do zandeckidev.pl.",
           "Case study może osadzić podgląd strony live.",
         ],
       },
@@ -288,8 +288,8 @@ export const projectReleaseDetails: Record<string, ProjectReleaseDetails> = {
         pl: "Kod źródłowy",
       },
       description: {
-        en: "The repository URL is connected through environment configuration.",
-        pl: "Adres repozytorium jest podpięty przez konfigurację środowiska.",
+        en: "The public source repository is connected and available from the project links.",
+        pl: "Publiczne repozytorium źródłowe jest podpięte i dostępne z linków projektu.",
       },
       label: {
         en: "Repository connected",
@@ -297,12 +297,12 @@ export const projectReleaseDetails: Record<string, ProjectReleaseDetails> = {
       },
       notes: {
         en: [
-          "The source link is resolved from environment variables.",
+          "The source link points to the GitHub repository.",
           "The repository documents the project structure and deployment workflow.",
           "The source card is visible in the technical project sections.",
         ],
         pl: [
-          "Link do kodu jest rozwiązywany ze zmiennych środowiskowych.",
+          "Link do kodu prowadzi do repozytorium GitHub.",
           "Repozytorium dokumentuje strukturę projektu i workflow deploymentu.",
           "Karta source jest widoczna w technicznych sekcjach projektu.",
         ],
@@ -319,8 +319,8 @@ export const projectReleaseDetails: Record<string, ProjectReleaseDetails> = {
         pl: "Zaprojektowany preview dla portfolio jest podpięty.",
       },
       label: {
-        en: "Preview connected",
-        pl: "Preview podpięty",
+        en: "Preview available",
+        pl: "Preview dostępne",
       },
       notes: {
         en: [
@@ -342,13 +342,13 @@ export const projectReleaseDetails: Record<string, ProjectReleaseDetails> = {
         en: [
           "ESLint check before deployment.",
           "Next.js production build.",
-          "Static export for Netlify.",
+          "Static export for Cloudflare Pages.",
           "Sitemap, robots, manifest and Open Graph routes.",
         ],
         pl: [
           "Kontrola ESLint przed wdrożeniem.",
           "Build produkcyjny Next.js.",
-          "Statyczny export pod Netlify.",
+          "Statyczny export pod Cloudflare Pages.",
           "Sitemap, robots, manifest i trasy Open Graph.",
         ],
       },

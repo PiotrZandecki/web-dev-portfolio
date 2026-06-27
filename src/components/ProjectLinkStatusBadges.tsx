@@ -15,7 +15,8 @@ const statusCopy: Record<
     source: string;
     preview: string;
     available: string;
-    pending: string;
+    planned: string;
+    previewAvailable: string;
   }
 > = {
   en: {
@@ -23,14 +24,16 @@ const statusCopy: Record<
     source: "Source",
     preview: "Preview",
     available: "Available",
-    pending: "Pending",
+    planned: "Planned",
+    previewAvailable: "Preview available",
   },
   pl: {
     live: "Live",
     source: "Kod",
     preview: "Preview",
     available: "Dostępne",
-    pending: "Oczekuje",
+    planned: "Planowane",
+    previewAvailable: "Preview dostępne",
   },
 };
 
@@ -46,14 +49,17 @@ export function ProjectLinkStatusBadges({
     {
       label: copy.live,
       isAvailable: resolvedLinks.hasLiveUrl,
+      unavailableLabel: copy.planned,
     },
     {
       label: copy.source,
       isAvailable: resolvedLinks.hasSourceUrl,
+      unavailableLabel: copy.planned,
     },
     {
       label: copy.preview,
       isAvailable: project.mockups.length > 0,
+      unavailableLabel: copy.planned,
     },
   ];
 
@@ -67,11 +73,11 @@ export function ProjectLinkStatusBadges({
               ? "border-cyan-400/20 bg-cyan-400/10 text-cyan-300"
               : "border-white/10 bg-white/5 text-slate-400"
           } ${compact ? "text-[11px]" : ""}`}
-          title={item.isAvailable ? copy.available : copy.pending}
+          title={item.isAvailable ? copy.available : item.unavailableLabel}
         >
           <span>{item.label}</span>
           <span className="ml-2" aria-hidden="true">
-            {item.isAvailable ? "✓" : "—"}
+            {item.isAvailable ? "✓" : "planned"}
           </span>
         </li>
       ))}

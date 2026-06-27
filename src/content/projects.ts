@@ -112,14 +112,14 @@ export const projects: Project[] = [
     },
     nextSteps: {
       en: [
+        "Prepare a public live demo under a dedicated subdomain.",
         "Add stronger search and filtering across modules.",
         "Improve empty states and onboarding messages.",
-        "Prepare deployment and connect the project with the portfolio preview area.",
       ],
       pl: [
+        "Przygotować publiczne live demo pod dedykowaną subdomeną.",
         "Dodać mocniejsze wyszukiwanie i filtrowanie między modułami.",
         "Dopracować puste stany i komunikaty wprowadzające.",
-        "Przygotować deploy i połączyć projekt z obszarem podglądu w portfolio.",
       ],
     },
     process: [
@@ -242,13 +242,13 @@ export const projects: Project[] = [
     },
     nextSteps: {
       en: [
-        "Add the final live deployment link.",
-        "Prepare real screenshots for the portfolio case study.",
+        "Publish the project as a live preview under a dedicated subdomain.",
+        "Replace the designed preview with real production screenshots.",
         "Add the source code link if the repository becomes public.",
       ],
       pl: [
-        "Dodać finalny link do wersji live.",
-        "Przygotować prawdziwe screeny do case study w portfolio.",
+        "Opublikować projekt jako live preview pod dedykowaną subdomeną.",
+        "Zastąpić zaprojektowany preview prawdziwymi screenshotami produkcyjnymi.",
         "Dodać link do kodu źródłowego, jeśli repozytorium będzie publiczne.",
       ],
     },
@@ -301,33 +301,40 @@ export const projects: Project[] = [
   {
     slug: "web-dev-portfolio",
     title: "Web Dev Portfolio",
-    status: "inProgress",
+    status: "completed",
     year: "2026",
     category: {
       en: "Portfolio Website",
       pl: "Strona portfolio",
     },
     shortDescription: {
-      en: "A bilingual portfolio website that works as a central hub for smaller frontend projects and case studies.",
-      pl: "Dwujęzyczne portfolio pełniące rolę centralnego huba dla mniejszych projektów frontendowych i case studies.",
+      en: "A production bilingual portfolio website deployed under a custom domain and built as a hub for frontend projects and case studies.",
+      pl: "Produkcyjne dwujęzyczne portfolio wdrożone pod własną domeną i zbudowane jako hub dla projektów frontendowych oraz case studies.",
     },
     description: {
-      en: "Web Dev Portfolio is a bilingual website designed to present frontend projects, skills and development progress. It uses localized routes, reusable components and dynamic project pages to create a scalable project hub.",
-      pl: "Web Dev Portfolio to dwujęzyczna strona zaprojektowana do prezentowania projektów frontendowych, umiejętności i postępów w nauce. Wykorzystuje lokalizowane trasy, komponenty wielokrotnego użytku i dynamiczne podstrony projektów, tworząc skalowalny hub portfolio.",
+      en: "Web Dev Portfolio is the production portfolio you are currently browsing. It presents frontend projects, services and case studies through bilingual routes, reusable components, dynamic project pages, static export and Cloudflare Pages deployment under a custom domain.",
+      pl: "Web Dev Portfolio to produkcyjne portfolio, które właśnie przeglądasz. Prezentuje projekty frontendowe, usługi i case studies przez dwujęzyczne trasy, komponenty wielokrotnego użytku, dynamiczne podstrony projektów, statyczny export i deployment na Cloudflare Pages pod własną domeną.",
     },
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "i18n"],
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "i18n",
+      "Static Export",
+      "Cloudflare Pages",
+    ],
     highlights: {
       en: [
+        "Production deployment under zandeckidev.pl",
         "Polish and English language versions",
-        "Dynamic project pages",
-        "Reusable portfolio components",
-        "SEO and deployment-ready structure",
+        "Dynamic project case study pages",
+        "SEO routes and static export workflow",
       ],
       pl: [
+        "Produkcyjne wdrożenie pod zandeckidev.pl",
         "Polska i angielska wersja językowa",
-        "Dynamiczne podstrony projektów",
-        "Komponenty portfolio wielokrotnego użytku",
-        "Struktura przygotowana pod SEO i deployment",
+        "Dynamiczne podstrony case study projektów",
+        "Trasy SEO i workflow statycznego exportu",
       ],
     },
     features: {
@@ -335,13 +342,13 @@ export const projects: Project[] = [
         "Bilingual routing with dedicated Polish and English pages.",
         "Project hub with filtering, search and dynamic case studies.",
         "Reusable components for cards, summaries, sections and project details.",
-        "Prepared areas for live previews, source links and future project screenshots.",
+        "Static export deployment on Cloudflare Pages with a custom domain.",
       ],
       pl: [
         "Dwujęzyczny routing z osobnymi stronami po polsku i angielsku.",
         "Hub projektów z filtrowaniem, wyszukiwarką i dynamicznymi case studies.",
         "Komponenty wielokrotnego użytku dla kart, podsumowań, sekcji i szczegółów projektów.",
-        "Przygotowane miejsca na podglądy live, linki do kodu i przyszłe screeny projektów.",
+        "Statyczny deployment na Cloudflare Pages z własną domeną.",
       ],
     },
     whatILearned: {
@@ -372,15 +379,13 @@ export const projects: Project[] = [
     },
     nextSteps: {
       en: [
-        "Add real production links and source code links.",
-        "Replace placeholder mockups with real screenshots.",
-        "Deploy the portfolio and connect environment variables.",
+        "Replace designed previews with real production screenshots where available.",
+        "Add live demos for Private Space and Aurora Beauty under dedicated subdomains.",
         "Continue adding new frontend projects as separate case studies.",
       ],
       pl: [
-        "Dodać prawdziwe linki produkcyjne i linki do kodu źródłowego.",
-        "Zastąpić placeholdery mockupów prawdziwymi screenami.",
-        "Wdrożyć portfolio i podłączyć zmienne środowiskowe.",
+        "Zastąpić zaprojektowane preview prawdziwymi screenshotami produkcyjnymi tam, gdzie będą dostępne.",
+        "Dodać live demo dla Private Space i Aurora Beauty pod dedykowanymi subdomenami.",
         "Dodawać kolejne projekty frontendowe jako osobne case studies.",
       ],
     },
@@ -407,12 +412,12 @@ export const projects: Project[] = [
       },
       {
         title: {
-          en: "Deployment readiness",
-          pl: "Przygotowanie do deploymentu",
+          en: "Production deployment",
+          pl: "Deployment produkcyjny",
         },
         description: {
-          en: "The final phase focused on metadata, sitemap, robots, manifest, Open Graph image and production checks.",
-          pl: "Końcowy etap skupił się na metadanych, sitemapie, robots, manifeście, obrazie Open Graph i testach produkcyjnych.",
+          en: "The final phase connected the portfolio to Cloudflare Pages, a custom domain, metadata, sitemap, robots, manifest, Open Graph image and production checks.",
+          pl: "Końcowy etap połączył portfolio z Cloudflare Pages, własną domeną, metadanymi, sitemapą, robots, manifestem, obrazem Open Graph i kontrolami produkcyjnymi.",
         },
       },
     ],
@@ -423,12 +428,15 @@ export const projects: Project[] = [
           pl: "Strona główna portfolio",
         },
         description: {
-          en: "A landing page focused on positioning, featured work, skills and contact.",
-          pl: "Landing page skupiony na pozycjonowaniu, wyróżnionych projektach, umiejętnościach i kontakcie.",
+          en: "A production portfolio homepage focused on positioning, featured work, services and contact.",
+          pl: "Produkcyjna strona główna portfolio skupiona na pozycjonowaniu, wyróżnionych projektach, usługach i kontakcie.",
         },
         imageSrc: "/project-previews/web-dev-portfolio-home.svg",
       },
     ],
+    liveUrl: "https://zandeckidev.pl",
+    sourceUrl: "https://github.com/PiotrZandecki/web-dev-portfolio",
+    embedUrl: "https://zandeckidev.pl",
   },
 ];
 
