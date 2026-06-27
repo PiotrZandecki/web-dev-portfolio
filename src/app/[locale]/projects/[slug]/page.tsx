@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { AnimatedCodePreview } from "@/components/AnimatedCodePreview";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
 import { ProjectAssetManifest } from "@/components/ProjectAssetManifest";
@@ -139,6 +140,8 @@ export default async function ProjectDetailsPage({
       <ProjectQualityChecklist project={project} locale={locale} />
 
       <ProjectReleaseStatus project={project} locale={locale} />
+
+      <AnimatedCodePreview project={project} locale={locale} />
 
       <ProjectAssetManifest project={project} locale={locale} />
 

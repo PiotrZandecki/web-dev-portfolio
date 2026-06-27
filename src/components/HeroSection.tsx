@@ -65,71 +65,71 @@ export function HeroSection({ locale, dictionary }: HeroSectionProps) {
     >
       <div
         aria-hidden="true"
-        className="absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-cyan-400/20 blur-3xl"
+        className="absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-cyan-400/20 blur-3xl zt-float-slow"
       />
       <div
         aria-hidden="true"
-        className="absolute right-0 top-40 h-96 w-96 rounded-full bg-blue-500/10 blur-3xl"
+        className="absolute right-0 top-40 h-96 w-96 rounded-full bg-blue-500/10 blur-3xl zt-float-slower"
       />
       <div
         aria-hidden="true"
-        className="absolute bottom-0 left-0 h-80 w-80 rounded-full bg-cyan-900/20 blur-3xl"
+        className="absolute bottom-0 left-0 h-80 w-80 rounded-full bg-cyan-900/20 blur-3xl zt-soft-pulse"
       />
 
       <div className="relative mx-auto grid max-w-6xl gap-10 px-6 py-24 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-28">
         <div>
-          <p className="mb-6 inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-cyan-300">
+          <p className="mb-6 inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-cyan-300 zt-fade-up">
             {copy.availability}
           </p>
 
           <h1
             id="hero-heading"
-            className="max-w-4xl text-5xl font-bold tracking-tight text-white md:text-7xl"
+            className="max-w-4xl text-5xl font-bold tracking-tight text-white md:text-7xl zt-fade-up zt-delay-100"
           >
             {copy.title}
           </h1>
 
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300 zt-fade-up zt-delay-200">
             {copy.description}
           </p>
 
-          <div className="mt-10 flex flex-wrap gap-4">
+          <div className="mt-10 flex flex-wrap gap-4 zt-fade-up zt-delay-300">
             <Link
               href={`/${locale}/projects/`}
-              className="rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-950/40 transition hover:bg-cyan-300"
+              className="zt-button-press rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-950/40 transition hover:bg-cyan-300"
             >
               {copy.primaryCta}
             </Link>
 
             <Link
               href={`/${locale}/services/`}
-              className="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/5"
+              className="zt-button-press rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/5"
             >
               {copy.secondaryCta}
             </Link>
 
             <Link
               href={`/${locale}/contact/`}
-              className="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-6 py-3 text-sm font-semibold text-cyan-200 transition hover:border-cyan-300/50 hover:bg-cyan-400/15"
+              className="zt-button-press rounded-full border border-cyan-400/20 bg-cyan-400/10 px-6 py-3 text-sm font-semibold text-cyan-200 transition hover:border-cyan-300/50 hover:bg-cyan-400/15"
             >
               {copy.contactCta}
             </Link>
           </div>
 
-          <dl className="mt-12 grid max-w-3xl gap-4 sm:grid-cols-3">
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+          <dl className="mt-12 grid max-w-3xl gap-4 sm:grid-cols-3 zt-fade-up zt-delay-400">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-4 transition hover:border-cyan-400/25 hover:bg-white/[0.07]">
               <dt className="text-sm text-slate-400">{copy.stackLabel}</dt>
               <dd className="mt-1 text-xl font-bold text-white">Next.js</dd>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-4 transition hover:border-cyan-400/25 hover:bg-white/[0.07]">
               <dt className="text-sm text-slate-400">
                 {dictionary.projectsSummary.languages}
               </dt>
               <dd className="mt-1 text-xl font-bold text-white">PL / EN</dd>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-4 transition hover:border-cyan-400/25 hover:bg-white/[0.07]">
               <dt className="text-sm text-slate-400">{copy.deliveryLabel}</dt>
               <dd className="mt-1 text-xl font-bold text-white">
                 {copy.deliveryValue}
@@ -140,7 +140,7 @@ export function HeroSection({ locale, dictionary }: HeroSectionProps) {
 
         <aside
           aria-label={`${siteConfig.name} project focus`}
-          className="rounded-3xl border border-white/10 bg-white/5 p-4 shadow-2xl shadow-cyan-950/30 backdrop-blur"
+          className="zt-card-glow zt-fade-up zt-delay-500 rounded-3xl border border-white/10 bg-white/5 p-4 shadow-2xl shadow-cyan-950/30 backdrop-blur"
         >
           <div className="rounded-2xl border border-white/10 bg-slate-950 p-6">
             <div className="flex items-center justify-between border-b border-white/10 pb-4">
@@ -169,7 +169,7 @@ export function HeroSection({ locale, dictionary }: HeroSectionProps) {
               {copy.highlights.map((item) => (
                 <li
                   key={item}
-                  className="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm font-medium text-slate-300"
+                  className="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm font-medium text-slate-300 transition hover:border-cyan-400/25 hover:bg-white/[0.07]"
                 >
                   <span
                     aria-hidden="true"

@@ -8,7 +8,6 @@ import { ProjectDeliveryPipeline } from "@/components/ProjectDeliveryPipeline";
 import { ProjectMaintenanceGuide } from "@/components/ProjectMaintenanceGuide";
 import { ProjectProductionGate } from "@/components/ProjectProductionGate";
 import { ProjectsExplorer } from "@/components/ProjectsExplorer";
-import { ProjectSummaryBar } from "@/components/ProjectSummaryBar";
 import { SectionHeader } from "@/components/SectionHeader";
 import { projects } from "@/content/projects";
 import { getDictionary, isLocale } from "@/lib/i18n";
@@ -78,6 +77,12 @@ export default async function ProjectsPage({ params }: ProjectsPageProps) {
         description={dictionary.projectsPage.description}
       />
 
+      <ProjectsExplorer
+        projects={projects}
+        locale={locale}
+        dictionary={dictionary}
+      />
+
       <ProjectDeliveryDashboard projects={projects} locale={locale} />
 
       <ProjectProductionGate projects={projects} locale={locale} />
@@ -87,14 +92,6 @@ export default async function ProjectsPage({ params }: ProjectsPageProps) {
       <ProjectComparisonMatrix projects={projects} locale={locale} />
 
       <ProjectMaintenanceGuide locale={locale} />
-
-      <ProjectSummaryBar dictionary={dictionary} />
-
-      <ProjectsExplorer
-        projects={projects}
-        locale={locale}
-        dictionary={dictionary}
-      />
     </main>
   );
 }

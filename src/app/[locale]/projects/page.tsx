@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { AnimatedSection } from "@/components/AnimatedSection";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
 import { ProjectComparisonMatrix } from "@/components/ProjectComparisonMatrix";
@@ -8,7 +9,6 @@ import { ProjectDeliveryPipeline } from "@/components/ProjectDeliveryPipeline";
 import { ProjectMaintenanceGuide } from "@/components/ProjectMaintenanceGuide";
 import { ProjectProductionGate } from "@/components/ProjectProductionGate";
 import { ProjectsExplorer } from "@/components/ProjectsExplorer";
-import { ProjectSummaryBar } from "@/components/ProjectSummaryBar";
 import { SectionHeader } from "@/components/SectionHeader";
 import { projects } from "@/content/projects";
 import { getDictionary, isLocale } from "@/lib/i18n";
@@ -70,31 +70,43 @@ export default async function ProjectsPage({ params }: ProjectsPageProps) {
     >
       <JsonLd data={getProjectsPageStructuredData(locale, projects)} />
 
-      <Breadcrumbs items={breadcrumbItems} />
+      <AnimatedSection>
+        <Breadcrumbs items={breadcrumbItems} />
 
-      <SectionHeader
-        eyebrow={dictionary.projectsPage.eyebrow}
-        title={dictionary.projectsPage.title}
-        description={dictionary.projectsPage.description}
-      />
+        <SectionHeader
+          eyebrow={dictionary.projectsPage.eyebrow}
+          title={dictionary.projectsPage.title}
+          description={dictionary.projectsPage.description}
+        />
+      </AnimatedSection>
 
-      <ProjectSummaryBar dictionary={dictionary} />
+      <AnimatedSection delay={0.05}>
+        <ProjectsExplorer
+          projects={projects}
+          locale={locale}
+          dictionary={dictionary}
+        />
+      </AnimatedSection>
 
-      <ProjectsExplorer
-        projects={projects}
-        locale={locale}
-        dictionary={dictionary}
-      />
+      <AnimatedSection delay={0.05}>
+        <ProjectDeliveryDashboard projects={projects} locale={locale} />
+      </AnimatedSection>
 
-      <ProjectDeliveryDashboard projects={projects} locale={locale} />
+      <AnimatedSection delay={0.05}>
+        <ProjectProductionGate projects={projects} locale={locale} />
+      </AnimatedSection>
 
-      <ProjectComparisonMatrix projects={projects} locale={locale} />
+      <AnimatedSection delay={0.05}>
+        <ProjectDeliveryPipeline locale={locale} />
+      </AnimatedSection>
 
-      <ProjectProductionGate projects={projects} locale={locale} />
+      <AnimatedSection delay={0.05}>
+        <ProjectComparisonMatrix projects={projects} locale={locale} />
+      </AnimatedSection>
 
-      <ProjectDeliveryPipeline locale={locale} />
-
-      <ProjectMaintenanceGuide locale={locale} />
+      <AnimatedSection delay={0.05}>
+        <ProjectMaintenanceGuide locale={locale} />
+      </AnimatedSection>
     </main>
   );
 }

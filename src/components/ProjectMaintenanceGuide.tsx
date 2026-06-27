@@ -20,106 +20,106 @@ const maintenanceCopy: Record<
   }
 > = {
   en: {
-    eyebrow: "Maintenance system",
-    title: "Adding a new project is now a repeatable workflow.",
+    eyebrow: "Growth system",
+    title: "A portfolio built to keep evolving.",
     description:
-      "The portfolio is structured so future projects can be added by extending content files, connecting preview assets and filling technical documentation sections.",
+      "This portfolio is not meant to be a frozen showcase. It is a place for continuous learning, testing new ideas, improving existing projects and staying up to date with modern frontend development.",
     sections: [
       {
-        title: "1. Project entry",
+        title: "1. Learn continuously",
         description:
-          "The main project data powers cards, filters, case study pages, metadata and structured data.",
+          "Each project is a chance to practice real frontend decisions instead of only collecting static screenshots.",
         items: [
-          "Add a new object in src/content/projects.ts",
-          "Provide PL / EN descriptions",
-          "Add technologies, highlights, features and roadmap",
+          "Explore new frontend patterns and implementation ideas",
+          "Compare different ways to structure reusable components",
+          "Turn lessons from each project into stronger case studies",
         ],
       },
       {
-        title: "2. Visual preview",
+        title: "2. Improve the stack",
         description:
-          "Each project should have a visual preview before or after deployment.",
+          "The technology stack should stay practical, modern and aligned with real deployment needs.",
         items: [
-          "Add SVG or screenshot to public/project-previews",
-          "Connect imageSrc in the project mockups array",
-          "Use 1200 × 760 format for consistency",
+          "Review framework, styling and deployment choices",
+          "Keep the project structure clean and maintainable",
+          "Update tooling when it brings real value to the workflow",
         ],
       },
       {
-        title: "3. Technical notes",
+        title: "3. Refine existing work",
         description:
-          "Project-specific technical sections make the case study stronger than a simple project card.",
+          "A finished project can still become better through polish, accessibility, performance and clearer presentation.",
         items: [
-          "Update projectTechnicalDetails.ts",
-          "Add implementation areas",
-          "Add testing and review areas",
+          "Improve UI details, responsiveness and interaction quality",
+          "Replace previews with real screenshots when available",
+          "Keep case studies clear, useful and easy to review",
         ],
       },
       {
-        title: "4. Release notes",
+        title: "4. Build forward",
         description:
-          "Release details explain what is live, what is pending and what is prepared for future deployment.",
+          "New projects should expand the portfolio with different use cases, stronger demos and more complete frontend experience.",
         items: [
-          "Update projectReleaseDetails.ts",
-          "Document live/source/preview status",
-          "Add build command and release checks",
+          "Add new projects that show different frontend skills",
+          "Connect live demos and source links where possible",
+          "Use the portfolio as a long-term record of progress",
         ],
       },
     ],
-    footerTitle: "The goal: add projects without redesigning the portfolio.",
+    footerTitle: "The goal: keep learning and stay up to date.",
     footerDescription:
-      "Once the structure is ready, future work should mostly mean adding new project entries, screenshots, links and technical notes.",
+      "Z-TECH should grow together with my skills: through new projects, updated stack decisions, fresh experiments, better case studies and continuous improvements to the production portfolio.",
   },
   pl: {
-    eyebrow: "System utrzymania",
-    title: "Dodawanie nowego projektu jest teraz powtarzalnym workflow.",
+    eyebrow: "System rozwoju",
+    title: "Portfolio zbudowane tak, żeby stale się rozwijało.",
     description:
-      "Portfolio jest zbudowane tak, żeby przyszłe projekty można było dodawać przez rozszerzanie plików contentowych, podpięcie assetów preview i uzupełnienie sekcji dokumentacji technicznej.",
+      "To portfolio nie ma być zamkniętą, statyczną wizytówką. Ma być miejscem ciągłej nauki, testowania nowych pomysłów, dopracowywania istniejących projektów i bycia na bieżąco z nowoczesnym frontend developmentem.",
     sections: [
       {
-        title: "1. Wpis projektu",
+        title: "1. Uczyć się regularnie",
         description:
-          "Główne dane projektu zasilają karty, filtry, case study, metadane i structured data.",
+          "Każdy projekt jest okazją do ćwiczenia realnych decyzji frontendowych, a nie tylko dodania kolejnego screena do portfolio.",
         items: [
-          "Dodaj nowy obiekt w src/content/projects.ts",
-          "Uzupełnij opisy PL / EN",
-          "Dodaj technologie, highlights, features i roadmapę",
+          "Testować nowe wzorce frontendowe i pomysły implementacyjne",
+          "Porównywać różne sposoby budowania komponentów wielokrotnego użytku",
+          "Przekuwać wnioski z projektów w mocniejsze case studies",
         ],
       },
       {
-        title: "2. Preview wizualny",
+        title: "2. Rozwijać stack",
         description:
-          "Każdy projekt powinien mieć preview wizualne przed albo po wdrożeniu.",
+          "Stack technologiczny powinien pozostać praktyczny, nowoczesny i dopasowany do realnych potrzeb wdrożeniowych.",
         items: [
-          "Dodaj SVG albo screenshot do public/project-previews",
-          "Podepnij imageSrc w tablicy mockups projektu",
-          "Używaj formatu 1200 × 760 dla spójności",
+          "Regularnie oceniać wybór frameworka, stylowania i deploymentu",
+          "Utrzymywać czystą i łatwą w rozwoju strukturę projektu",
+          "Aktualizować narzędzia wtedy, gdy faktycznie poprawiają workflow",
         ],
       },
       {
-        title: "3. Notatki techniczne",
+        title: "3. Dopracowywać istniejące projekty",
         description:
-          "Sekcje techniczne konkretnego projektu robią z case study coś mocniejszego niż zwykła karta projektu.",
+          "Ukończony projekt nadal może zyskać dzięki polishowi, dostępności, wydajności i lepszej prezentacji.",
         items: [
-          "Zaktualizuj projectTechnicalDetails.ts",
-          "Dodaj obszary implementacji",
-          "Dodaj obszary testów i przeglądu",
+          "Poprawiać detale UI, responsywność i jakość interakcji",
+          "Zastępować preview realnymi screenshotami, gdy będą dostępne",
+          "Utrzymywać case studies jako czytelne, konkretne i łatwe do oceny",
         ],
       },
       {
-        title: "4. Release notes",
+        title: "4. Budować dalej",
         description:
-          "Szczegóły release wyjaśniają, co jest live, co oczekuje i co jest przygotowane pod przyszłe wdrożenie.",
+          "Nowe projekty powinny poszerzać portfolio o różne przypadki użycia, mocniejsze demo i pełniejsze doświadczenie frontendowe.",
         items: [
-          "Zaktualizuj projectReleaseDetails.ts",
-          "Opisz status live/source/preview",
-          "Dodaj komendę build i kontrole release",
+          "Dodawać projekty pokazujące różne umiejętności frontendowe",
+          "Podpinać live demo i linki do kodu tam, gdzie to możliwe",
+          "Traktować portfolio jako długoterminowy zapis postępów",
         ],
       },
     ],
-    footerTitle: "Cel: dodawać projekty bez przebudowy portfolio.",
+    footerTitle: "Cel: uczyć się i być stale na bieżąco.",
     footerDescription:
-      "Gdy struktura jest gotowa, dalsza praca powinna polegać głównie na dodawaniu nowych wpisów projektów, screenshotów, linków i notatek technicznych.",
+      "Z-TECH ma rozwijać się razem z moimi umiejętnościami: przez nowe projekty, aktualizację stacku, świeże eksperymenty, lepsze case studies i ciągłe dopracowywanie produkcyjnego portfolio.",
   },
 };
 

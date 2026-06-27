@@ -1,5 +1,6 @@
 "use client";
 
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useId, useMemo, useState } from "react";
 import { Project, ProjectStatus } from "@/content/projects";
 import { ProjectCard } from "@/components/ProjectCard";
@@ -14,6 +15,24 @@ type ProjectsExplorerProps = {
 
 type StatusFilter = "all" | ProjectStatus;
 
+const cardVariants = {
+  hidden: {
+    opacity: 0,
+    y: 24,
+    scale: 0.98,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+  },
+  exit: {
+    opacity: 0,
+    y: 12,
+    scale: 0.98,
+  },
+};
+
 export function ProjectsExplorer({
   projects,
   locale,
@@ -22,6 +41,7 @@ export function ProjectsExplorer({
   const searchInputId = useId();
   const statusSelectId = useId();
   const categorySelectId = useId();
+  const shouldReduceMotion = useReducedMotion();
 
   const [searchTerm, setSearchTerm] = useState("");
   const [statusFilter, setStatusFilter] = useState<StatusFilter>("all");
@@ -86,7 +106,7 @@ export function ProjectsExplorer({
 
   return (
     <section className="mt-12" aria-label={dictionary.projectsPage.title}>
-      <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
+      <div className="rounded-3xl border border-white/10 bg-white/5 p-6 transition hover:border-cyan-400/20 hover:bg-white/6">
         <div className="grid gap-4 lg:grid-cols-[1.2fr_0.8fr_0.8fr_auto] lg:items-end">
           <div>
             <label
@@ -102,7 +122,7 @@ export function ProjectsExplorer({
               value={searchTerm}
               onChange={(event) => setSearchTerm(event.target.value)}
               placeholder={dictionary.projectsExplorer.searchPlaceholder}
-              className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-950 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-400/60"
+              className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-950 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-400/60 focus:shadow-[0_0_0_3px_rgb(34_211_238/0.08)]"
             />
           </div>
 
@@ -120,7 +140,7 @@ export function ProjectsExplorer({
               onChange={(event) =>
                 setStatusFilter(event.target.value as StatusFilter)
               }
-              className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-950 px-4 py-3 text-sm text-white outline-none transition focus:border-cyan-400/60"
+              className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-950 px-4 py-3 text-sm text-white outline-none transition focus:border-cyan-400/60 focus:shadow-[0_0_0_3px_rgb(34_211_238/0.08)]"
             >
               {statusOptions.map((option) => (
                 <option key={option.value} value={option.value}>
@@ -142,7 +162,7 @@ export function ProjectsExplorer({
               id={categorySelectId}
               value={categoryFilter}
               onChange={(event) => setCategoryFilter(event.target.value)}
-              className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-950 px-4 py-3 text-sm text-white outline-none transition focus:border-cyan-400/60"
+              className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-950 px-4 py-3 text-sm text-white outline-none transition focus:border-cyan-400/60 focus:shadow-[0_0_0_3px_rgb(34_211_238/0.08)]"
             >
               <option value="all">
                 {dictionary.projectsExplorer.allCategories}
@@ -160,7 +180,7 @@ export function ProjectsExplorer({
             type="button"
             onClick={clearFilters}
             disabled={!hasActiveFilters}
-            className="rounded-2xl border border-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:border-white/40 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:border-white/10"
+            className="zt-button-press rounded-2xl border border-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:border-cyan-400/40 hover:bg-cyan-400/10 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:border-white/10 disabled:hover:bg-transparent"
           >
             {dictionary.projectsExplorer.clearFilters}
           </button>
@@ -183,18 +203,41 @@ export function ProjectsExplorer({
       </div>
 
       {filteredProjects.length > 0 ? (
-        <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {filteredProjects.map((project) => (
-            <ProjectCard
-              key={project.slug}
-              project={project}
-              locale={locale}
-              dictionary={dictionary}
-            />
-          ))}
-        </div>
+        <motion.div
+          layout
+          className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3"
+        >
+          <AnimatePresence mode="popLayout">
+            {filteredProjects.map((project, index) => (
+              <motion.div
+                key={project.slug}
+                layout
+                variants={shouldReduceMotion ? undefined : cardVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                transition={{
+                  duration: 0.45,
+                  delay: shouldReduceMotion ? 0 : index * 0.06,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+              >
+                <ProjectCard
+                  project={project}
+                  locale={locale}
+                  dictionary={dictionary}
+                />
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       ) : (
-        <div className="mt-8 rounded-3xl border border-dashed border-white/15 bg-white/5 p-10 text-center">
+        <motion.div
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+          animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-8 rounded-3xl border border-dashed border-white/15 bg-white/5 p-10 text-center"
+        >
           <p className="text-2xl font-semibold text-white">
             {dictionary.projectsExplorer.emptyTitle}
           </p>
@@ -206,11 +249,11 @@ export function ProjectsExplorer({
           <button
             type="button"
             onClick={clearFilters}
-            className="mt-6 rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
+            className="zt-button-press mt-6 rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
           >
             {dictionary.projectsExplorer.clearFilters}
           </button>
-        </div>
+        </motion.div>
       )}
     </section>
   );

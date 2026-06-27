@@ -20,7 +20,7 @@ export function ProjectMockups({
       aria-labelledby="project-mockups-heading"
       className="mt-16 scroll-mt-32"
     >
-      <div className="mb-8">
+      <div className="mb-8 zt-fade-up">
         <p className="text-sm font-medium uppercase tracking-[0.3em] text-cyan-400">
           {dictionary.projectMockups.eyebrow}
         </p>
@@ -41,18 +41,20 @@ export function ProjectMockups({
         {project.mockups.map((mockup) => (
           <li
             key={mockup.title.en}
-            className="overflow-hidden rounded-3xl border border-white/10 bg-white/5 transition hover:border-cyan-400/30 hover:bg-white/[0.07]"
+            className="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/30 hover:bg-white/[0.07] hover:shadow-2xl hover:shadow-cyan-950/20"
           >
             <div className="border-b border-white/10 bg-slate-950/80 p-4">
-              <Image
-                src={mockup.imageSrc}
-                alt={mockup.title[locale]}
-                width={1200}
-                height={760}
-                sizes="(min-width: 1024px) 1152px, calc(100vw - 48px)"
-                className="aspect-1200/760 w-full rounded-2xl border border-white/10 object-cover"
-                priority={project.slug === "web-dev-portfolio"}
-              />
+              <div className="overflow-hidden rounded-2xl border border-white/10 bg-slate-900">
+                <Image
+                  src={mockup.imageSrc}
+                  alt={mockup.title[locale]}
+                  width={1200}
+                  height={760}
+                  sizes="(min-width: 1024px) 1152px, calc(100vw - 48px)"
+                  className="aspect-1200/760 w-full object-cover transition duration-500 ease-out group-hover:scale-[1.035] group-hover:-translate-y-1"
+                  priority={project.slug === "web-dev-portfolio"}
+                />
+              </div>
             </div>
 
             <div className="p-6">

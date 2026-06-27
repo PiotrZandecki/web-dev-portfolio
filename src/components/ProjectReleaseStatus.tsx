@@ -42,7 +42,7 @@ const releaseCopy: Record<
     statusLabels: {
       connected: "Connected",
       prepared: "Prepared",
-      pending: "Pending",
+      pending: "Planned",
     },
   },
   pl: {
@@ -60,21 +60,21 @@ const releaseCopy: Record<
     statusLabels: {
       connected: "Podpięte",
       prepared: "Przygotowane",
-      pending: "Oczekuje",
+      pending: "Planowane",
     },
   },
 };
 
 function getStatusClasses(status: ReleaseStatus) {
   if (status === "connected") {
-    return "bg-cyan-400/10 text-cyan-300";
+    return "bg-cyan-400/10 text-cyan-300 ring-1 ring-cyan-400/15";
   }
 
   if (status === "prepared") {
-    return "bg-blue-400/10 text-blue-300";
+    return "bg-blue-400/10 text-blue-300 ring-1 ring-blue-400/15";
   }
 
-  return "bg-white/10 text-slate-400";
+  return "bg-white/10 text-slate-400 ring-1 ring-white/10";
 }
 
 export function ProjectReleaseStatus({
@@ -163,7 +163,7 @@ export function ProjectReleaseStatus({
         {releaseCards.map((card) => (
           <article
             key={card.title.en}
-            className="flex h-full flex-col rounded-3xl border border-white/10 bg-white/5 p-6 transition hover:border-cyan-400/30 hover:bg-white/[0.07]"
+            className="group flex h-full flex-col rounded-3xl border border-white/10 bg-white/5 p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/30 hover:bg-white/[0.07] hover:shadow-2xl hover:shadow-cyan-950/20"
           >
             <div className="flex items-start justify-between gap-4">
               <div>
@@ -189,7 +189,7 @@ export function ProjectReleaseStatus({
               {card.description[locale]}
             </p>
 
-            <div className="mt-5 rounded-2xl bg-slate-950 p-4">
+            <div className="mt-5 rounded-2xl bg-slate-950 p-4 transition group-hover:bg-slate-950/90">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
                 {card.resolvedLabel}
               </p>
@@ -218,16 +218,19 @@ export function ProjectReleaseStatus({
                 href={card.actionHref}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-6 inline-flex w-fit rounded-full bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
+                className="zt-button-press mt-6 inline-flex w-fit items-center rounded-full bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
               >
                 {card.actionLabel}
+                <span aria-hidden="true" className="ml-2">
+                  →
+                </span>
               </a>
             ) : null}
           </article>
         ))}
       </div>
 
-      <div className="mt-6 rounded-3xl border border-cyan-400/20 bg-cyan-400/6 p-6">
+      <div className="mt-6 rounded-3xl border border-cyan-400/20 bg-cyan-400/6 p-6 transition hover:border-cyan-400/30 md:p-8">
         <div className="grid gap-6 md:grid-cols-[0.9fr_1.1fr] md:items-start">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-300">
@@ -256,7 +259,7 @@ export function ProjectReleaseStatus({
               {details.build.checks[locale].map((check) => (
                 <li
                   key={check}
-                  className="rounded-2xl border border-white/10 bg-slate-950/70 p-4 text-sm leading-6 text-slate-300"
+                  className="rounded-2xl border border-white/10 bg-slate-950/70 p-4 text-sm leading-6 text-slate-300 transition hover:border-cyan-400/20 hover:bg-slate-950"
                 >
                   {check}
                 </li>
