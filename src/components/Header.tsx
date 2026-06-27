@@ -15,26 +15,40 @@ export function Header({ locale, dictionary }: HeaderProps) {
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/85 backdrop-blur supports-backdrop-filter:bg-slate-950/70">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-cyan-400/25 to-transparent"
+      />
+
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
         <Link
           href={`/${locale}/`}
           aria-label={`${siteConfig.name} homepage`}
-          className="text-lg font-semibold tracking-tight text-white transition hover:text-cyan-200"
+          className="group inline-flex items-center gap-3 text-lg font-semibold tracking-tight text-white transition hover:text-cyan-200"
         >
-          {siteConfig.name}
+          <span className="relative flex h-8 w-8 items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 text-xs font-bold text-cyan-300 transition group-hover:border-cyan-400/40 group-hover:bg-cyan-400/15 group-hover:shadow-lg group-hover:shadow-cyan-950/30">
+            Z
+          </span>
+
+          <span>{siteConfig.name}</span>
         </Link>
 
         <nav
           aria-label={locale === "pl" ? "Główna nawigacja" : "Main navigation"}
-          className="hidden items-center gap-4 text-sm text-slate-300 xl:flex"
+          className="hidden items-center gap-1 text-sm text-slate-300 xl:flex"
         >
           {navigationItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="transition hover:text-white"
+              className="group relative rounded-full px-3 py-2 transition hover:text-white"
             >
-              {item.label}
+              <span>{item.label}</span>
+
+              <span
+                aria-hidden="true"
+                className="absolute inset-x-3 bottom-1 h-px origin-left scale-x-0 bg-cyan-300 transition duration-300 group-hover:scale-x-100"
+              />
             </Link>
           ))}
         </nav>
@@ -50,7 +64,7 @@ export function Header({ locale, dictionary }: HeaderProps) {
           <Link
             key={item.href}
             href={item.href}
-            className="shrink-0 rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:border-cyan-400/40 hover:text-white"
+            className="shrink-0 rounded-full border border-white/10 bg-white/5 px-4 py-2 transition hover:border-cyan-400/40 hover:bg-cyan-400/10 hover:text-white"
           >
             {item.label}
           </Link>

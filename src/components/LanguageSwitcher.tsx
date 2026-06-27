@@ -58,7 +58,7 @@ export function LanguageSwitcher({ currentLocale }: LanguageSwitcherProps) {
   return (
     <nav
       aria-label={copy.ariaLabel}
-      className="flex items-center gap-1 rounded-full border border-white/10 bg-white/5 p-1"
+      className="relative flex items-center gap-1 rounded-full border border-white/10 bg-white/5 p-1 shadow-lg shadow-slate-950/20"
     >
       {locales.map((locale) => {
         const isActive = locale === currentLocale;
@@ -69,13 +69,13 @@ export function LanguageSwitcher({ currentLocale }: LanguageSwitcherProps) {
             href={getLocalizedPath(locale)}
             aria-current={isActive ? "page" : undefined}
             title={copy.switchTo[locale]}
-            className={`rounded-full px-3 py-1 text-xs font-semibold uppercase transition ${
+            className={`zt-button-press relative rounded-full px-3 py-1 text-xs font-semibold uppercase transition ${
               isActive
-                ? "bg-cyan-400 text-slate-950"
-                : "text-slate-300 hover:text-white"
+                ? "bg-cyan-400 text-slate-950 shadow-lg shadow-cyan-950/30"
+                : "text-slate-300 hover:bg-white/5 hover:text-white"
             }`}
           >
-            {locale}
+            <span>{locale}</span>
             <span className="sr-only"> — {languageLabels[locale]}</span>
           </Link>
         );
