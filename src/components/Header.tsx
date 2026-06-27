@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { siteConfig } from "@/config/site";
+import { getMainNavigationItems } from "@/config/navigation";
 import { Dictionary } from "@/lib/i18n";
 import { Locale } from "@/types/locale";
 
@@ -9,31 +10,8 @@ type HeaderProps = {
   dictionary: Dictionary;
 };
 
-const servicesLabels: Record<Locale, string> = {
-  en: "Services",
-  pl: "Usługi",
-};
-
-const stackLabels: Record<Locale, string> = {
-  en: "Stack",
-  pl: "Technologie",
-};
-
-const faqLabels: Record<Locale, string> = {
-  en: "FAQ",
-  pl: "FAQ",
-};
-
 export function Header({ locale, dictionary }: HeaderProps) {
-  const navigationItems = [
-    { label: dictionary.navigation.home, href: `/${locale}/` },
-    { label: dictionary.navigation.projects, href: `/${locale}/projects/` },
-    { label: servicesLabels[locale], href: `/${locale}/services/` },
-    { label: dictionary.navigation.about, href: `/${locale}/about/` },
-    { label: stackLabels[locale], href: `/${locale}/stack/` },
-    { label: faqLabels[locale], href: `/${locale}/#faq` },
-    { label: dictionary.navigation.contact, href: `/${locale}/contact/` },
-  ];
+  const navigationItems = getMainNavigationItems(locale, dictionary);
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/85 backdrop-blur supports-backdrop-filter:bg-slate-950/70">

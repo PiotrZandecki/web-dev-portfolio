@@ -57,6 +57,8 @@ All notable changes to this project will be documented in this file.
 - Added production readiness checklist section on Stack page.
 - Added JSON-LD structured data for Stack page.
 - Added production checklist documentation.
+- Added centralized navigation configuration.
+- Added deployment options documentation.
 
 ### Changed
 
@@ -77,6 +79,7 @@ All notable changes to this project will be documented in this file.
 - Reordered project pages so live demo, source code and preview appear before deeper technical documentation.
 - Reordered projects page so the project explorer appears before internal production and maintenance sections.
 - Simplified project case study navigation for a clearer production reading flow.
+- Refactored Header and Footer to use shared navigation configuration.
 
 ### Planned
 

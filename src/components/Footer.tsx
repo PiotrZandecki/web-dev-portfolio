@@ -1,4 +1,8 @@
 import Link from "next/link";
+import {
+  getLanguageNavigationItems,
+  getMainNavigationItems,
+} from "@/config/navigation";
 import { getContactLinks, siteConfig } from "@/config/site";
 import { Dictionary } from "@/lib/i18n";
 import { Locale } from "@/types/locale";
@@ -22,26 +26,17 @@ const footerCopy: Record<
   {
     navigationTitle: string;
     linksTitle: string;
-    services: string;
-    stack: string;
-    faq: string;
     sourceCode: string;
   }
 > = {
   en: {
     navigationTitle: "Navigation",
     linksTitle: "Links",
-    services: "Services",
-    stack: "Stack",
-    faq: "FAQ",
     sourceCode: "Source code",
   },
   pl: {
     navigationTitle: "Nawigacja",
     linksTitle: "Linki",
-    services: "Usługi",
-    stack: "Technologie",
-    faq: "FAQ",
     sourceCode: "Kod źródłowy",
   },
 };
@@ -49,37 +44,8 @@ const footerCopy: Record<
 export function Footer({ locale, dictionary }: FooterProps) {
   const contactLinks = getContactLinks();
   const copy = footerCopy[locale];
-
-  const navigationLinks = [
-    {
-      label: dictionary.navigation.home,
-      href: `/${locale}/`,
-    },
-    {
-      label: dictionary.navigation.projects,
-      href: `/${locale}/projects/`,
-    },
-    {
-      label: copy.services,
-      href: `/${locale}/services/`,
-    },
-    {
-      label: dictionary.navigation.about,
-      href: `/${locale}/about/`,
-    },
-    {
-      label: copy.stack,
-      href: `/${locale}/stack/`,
-    },
-    {
-      label: copy.faq,
-      href: `/${locale}/#faq`,
-    },
-    {
-      label: dictionary.navigation.contact,
-      href: `/${locale}/contact/`,
-    },
-  ];
+  const navigationLinks = getMainNavigationItems(locale, dictionary);
+  const languageLinks = getLanguageNavigationItems();
 
   const externalLinks = [
     {
@@ -144,17 +110,13 @@ export function Footer({ locale, dictionary }: FooterProps) {
           </h2>
 
           <ul className="mt-5 grid gap-3 text-sm text-slate-400">
-            <li>
-              <Link href="/en/" className="transition hover:text-white">
-                English
-              </Link>
-            </li>
-
-            <li>
-              <Link href="/pl/" className="transition hover:text-white">
-                Polski
-              </Link>
-            </li>
+            {languageLinks.map((link) => (
+              <li key={link.href}>
+                <Link href={link.href} className="transition hover:text-white">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
 
             {externalLinks.map((link) => (
               <li key={link.label}>
