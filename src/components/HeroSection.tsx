@@ -11,41 +11,47 @@ type HeroSectionProps = {
 const heroCopy = {
   en: {
     availability: "Available for frontend-focused web projects",
-    primaryCta: "View services",
-    secondaryCta: "Explore projects",
+    title: "I build clean, bilingual websites and frontend interfaces.",
+    description:
+      "Z-TECH is a personal web development brand focused on modern business websites, portfolio systems and maintainable frontend projects built with Next.js, TypeScript and Tailwind CSS.",
+    primaryCta: "View projects",
+    secondaryCta: "View services",
     contactCta: "Contact Z-TECH",
-    cardEyebrow: "Z-TECH delivery focus",
-    cardTitle: "Clean websites, project hubs and frontend interfaces.",
+    cardEyebrow: "Production-ready frontend",
+    cardTitle: "Websites that are easy to present, deploy and maintain.",
     cardDescription:
-      "A practical approach to web development: clear structure, reusable components, bilingual content and deployment-ready delivery.",
+      "A practical approach to frontend delivery: clear structure, reusable components, bilingual content, SEO basics and static deployment on Cloudflare Pages.",
     highlights: [
       "Business websites",
       "Portfolio systems",
       "Bilingual pages",
-      "Static deployment",
+      "Production deployment",
     ],
     stackLabel: "Core stack",
-    deliveryLabel: "Delivery",
-    deliveryValue: "Netlify / Static export",
+    deliveryLabel: "Deployment",
+    deliveryValue: "Cloudflare Pages",
   },
   pl: {
-    availability: "Dostępne pod projekty webowe skupione na frontendzie",
-    primaryCta: "Zobacz usługi",
-    secondaryCta: "Zobacz projekty",
+    availability: "Dostępny pod projekty webowe skupione na frontendzie",
+    title: "Tworzę czyste, dwujęzyczne strony i interfejsy frontendowe.",
+    description:
+      "Z-TECH to osobista marka web developmentowa skupiona na nowoczesnych stronach firmowych, systemach portfolio i łatwych w utrzymaniu projektach frontendowych budowanych w Next.js, TypeScript i Tailwind CSS.",
+    primaryCta: "Zobacz projekty",
+    secondaryCta: "Zobacz usługi",
     contactCta: "Kontakt z Z-TECH",
-    cardEyebrow: "Kierunek realizacji Z-TECH",
-    cardTitle: "Czyste strony, huby projektów i interfejsy frontendowe.",
+    cardEyebrow: "Frontend gotowy produkcyjnie",
+    cardTitle: "Strony łatwe do pokazania, wdrożenia i utrzymania.",
     cardDescription:
-      "Praktyczne podejście do web developmentu: czytelna struktura, komponenty wielokrotnego użytku, treści dwujęzyczne i przygotowanie pod wdrożenie.",
+      "Praktyczne podejście do frontendu: czytelna struktura, komponenty wielokrotnego użytku, treści dwujęzyczne, podstawy SEO i statyczny deployment na Cloudflare Pages.",
     highlights: [
       "Strony firmowe",
       "Systemy portfolio",
       "Strony dwujęzyczne",
-      "Statyczny deployment",
+      "Deployment produkcyjny",
     ],
     stackLabel: "Główny stack",
     deliveryLabel: "Wdrożenie",
-    deliveryValue: "Netlify / Static export",
+    deliveryValue: "Cloudflare Pages",
   },
 };
 
@@ -80,23 +86,23 @@ export function HeroSection({ locale, dictionary }: HeroSectionProps) {
             id="hero-heading"
             className="max-w-4xl text-5xl font-bold tracking-tight text-white md:text-7xl"
           >
-            {dictionary.home.title}
+            {copy.title}
           </h1>
 
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-            {dictionary.home.description}
+            {copy.description}
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
-              href={`/${locale}/services/`}
+              href={`/${locale}/projects/`}
               className="rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-950/40 transition hover:bg-cyan-300"
             >
               {copy.primaryCta}
             </Link>
 
             <Link
-              href={`/${locale}/projects/`}
+              href={`/${locale}/services/`}
               className="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/5"
             >
               {copy.secondaryCta}

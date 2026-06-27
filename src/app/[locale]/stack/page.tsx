@@ -32,23 +32,23 @@ const stackPageCopy: Record<
 > = {
   en: {
     eyebrow: "Stack",
-    title: "Technology stack and frontend workflow.",
+    title: "A frontend stack focused on clarity, speed and maintainability.",
     description:
-      "A closer look at the tools, structure and workflow used to build Z-TECH projects: Next.js, TypeScript, Tailwind CSS, bilingual content and static deployment.",
+      "The Z-TECH stack is built around practical delivery: Next.js for structure, TypeScript for safer code, Tailwind CSS for consistent interfaces, bilingual content and Cloudflare Pages for static production deployment.",
     metaTitle: "Stack | Z-TECH",
     metaDescription:
-      "Technology stack behind Z-TECH frontend projects: Next.js, TypeScript, Tailwind CSS, bilingual content and Netlify deployment.",
+      "Technology stack behind Z-TECH frontend projects: Next.js, TypeScript, Tailwind CSS, bilingual content and Cloudflare Pages deployment.",
     breadcrumbHome: "Home",
     breadcrumbStack: "Stack",
   },
   pl: {
     eyebrow: "Technologie",
-    title: "Stack technologiczny i workflow frontendowy.",
+    title: "Stack frontendowy skupiony na czytelności, szybkości i utrzymaniu.",
     description:
-      "Bliższy widok narzędzi, struktury i workflow używanego do budowania projektów Z-TECH: Next.js, TypeScript, Tailwind CSS, treści dwujęzyczne i statyczny deployment.",
+      "Stack Z-TECH jest oparty o praktyczną realizację projektów: Next.js dla struktury, TypeScript dla bezpieczniejszego kodu, Tailwind CSS dla spójnych interfejsów, treści dwujęzyczne i Cloudflare Pages jako statyczne wdrożenie produkcyjne.",
     metaTitle: "Technologie | Z-TECH",
     metaDescription:
-      "Stack technologiczny projektów frontendowych Z-TECH: Next.js, TypeScript, Tailwind CSS, treści dwujęzyczne i deployment na Netlify.",
+      "Stack technologiczny projektów frontendowych Z-TECH: Next.js, TypeScript, Tailwind CSS, treści dwujęzyczne i deployment na Cloudflare Pages.",
     breadcrumbHome: "Start",
     breadcrumbStack: "Technologie",
   },

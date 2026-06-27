@@ -33,24 +33,25 @@ const servicesPageCopy: Record<
 > = {
   en: {
     eyebrow: "Services",
-    title: "Frontend services for clear and practical web projects.",
+    title:
+      "Frontend services for websites that need to look clear and work reliably.",
     description:
-      "Z-TECH focuses on business websites, frontend interfaces, portfolio pages and bilingual project structures built with a deployment-ready mindset.",
+      "I help with modern business websites, portfolio pages, landing pages and bilingual frontend projects. The focus is simple: clean structure, readable content, responsive UI and deployment-ready delivery.",
     metaTitle: "Services | Z-TECH",
     metaDescription:
-      "Frontend services by Z-TECH: business websites, frontend interfaces, portfolio pages and bilingual web projects.",
+      "Frontend services by Z-TECH Piotr Zandecki: business websites, portfolio pages, landing pages and bilingual web projects built with a deployment-ready workflow.",
     breadcrumbHome: "Home",
     breadcrumbServices: "Services",
   },
   pl: {
     eyebrow: "Usługi",
     title:
-      "Usługi frontendowe dla czytelnych i praktycznych projektów webowych.",
+      "Usługi frontendowe dla stron, które mają wyglądać czytelnie i działać stabilnie.",
     description:
-      "Z-TECH skupia się na stronach firmowych, interfejsach frontendowych, portfolio i dwujęzycznych strukturach projektów przygotowanych pod wdrożenie.",
+      "Pomagam przy nowoczesnych stronach firmowych, portfolio, landing page’ach i dwujęzycznych projektach frontendowych. Cel jest prosty: czysta struktura, zrozumiałe treści, responsywny interfejs i przygotowanie pod wdrożenie.",
     metaTitle: "Usługi | Z-TECH",
     metaDescription:
-      "Usługi frontendowe Z-TECH: strony firmowe, interfejsy frontendowe, portfolio i dwujęzyczne projekty webowe.",
+      "Usługi frontendowe Z-TECH Piotr Zandecki: strony firmowe, portfolio, landing page’e i dwujęzyczne projekty webowe budowane w workflow gotowym pod wdrożenie.",
     breadcrumbHome: "Start",
     breadcrumbServices: "Usługi",
   },

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactMethodsSection } from "@/components/ContactMethodsSection";
+import { FinalCta } from "@/components/FinalCta";
 import { JsonLd } from "@/components/JsonLd";
 import { PageIntro } from "@/components/PageIntro";
 import { ProjectInquirySection } from "@/components/ProjectInquirySection";
@@ -29,23 +30,23 @@ const contactPageCopy: Record<
 > = {
   en: {
     eyebrow: "Contact",
-    title: "Let’s talk about a practical frontend project.",
+    title: "Have a website or frontend idea to build?",
     description:
-      "Use the contact links below to reach Z-TECH directly. The current focus is on frontend projects, business websites, portfolio pages and clean web interfaces.",
+      "Send a message if you need a business website, portfolio page, landing page or clean frontend interface. I focus on practical, bilingual and deployment-ready web projects.",
     metaTitle: "Contact | Z-TECH",
     metaDescription:
-      "Contact Z-TECH Piotr Zandecki for frontend projects, business websites and portfolio web development.",
+      "Contact Z-TECH Piotr Zandecki for business websites, portfolio pages, landing pages and frontend web development.",
     breadcrumbHome: "Home",
     breadcrumbContact: "Contact",
   },
   pl: {
     eyebrow: "Kontakt",
-    title: "Porozmawiajmy o praktycznym projekcie frontendowym.",
+    title: "Masz pomysł na stronę albo projekt frontendowy?",
     description:
-      "Skorzystaj z linków kontaktowych poniżej, żeby skontaktować się bezpośrednio z Z-TECH. Aktualny kierunek to projekty frontendowe, strony firmowe, portfolio i czyste interfejsy webowe.",
+      "Napisz, jeśli potrzebujesz strony firmowej, portfolio, landing page’a albo czystego interfejsu frontendowego. Skupiam się na praktycznych, dwujęzycznych projektach webowych gotowych do wdrożenia.",
     metaTitle: "Kontakt | Z-TECH",
     metaDescription:
-      "Kontakt z Z-TECH Piotr Zandecki w sprawie projektów frontendowych, stron firmowych i web developmentu.",
+      "Kontakt z Z-TECH Piotr Zandecki w sprawie stron firmowych, portfolio, landing page’y i projektów frontendowych.",
     breadcrumbHome: "Start",
     breadcrumbContact: "Kontakt",
   },
@@ -116,6 +117,8 @@ export default async function ContactPage({ params }: ContactPageProps) {
       <ContactMethodsSection locale={locale} />
 
       <ProjectInquirySection locale={locale} />
+
+      <FinalCta locale={locale} />
     </main>
   );
 }
