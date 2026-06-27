@@ -17,9 +17,9 @@ export function Header({ locale, dictionary }: HeaderProps) {
     <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/85 backdrop-blur supports-backdrop-filter:bg-slate-950/70">
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-6 focus:top-4 focus:z-60 focus:rounded-full focus:bg-cyan-400 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-slate-950"
+        className="fixed left-1/2 top-4 z-100 -translate-x-1/2 -translate-y-20 rounded-full border border-cyan-300/30 bg-slate-950 px-5 py-3 text-sm font-semibold text-cyan-100 opacity-0 shadow-2xl shadow-cyan-950/40 outline-none transition focus:translate-y-0 focus:opacity-100"
       >
-        Skip to content
+        {locale === "pl" ? "Przejdź do treści" : "Skip to content"}
       </a>
 
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
@@ -32,7 +32,7 @@ export function Header({ locale, dictionary }: HeaderProps) {
         </Link>
 
         <nav
-          aria-label="Main navigation"
+          aria-label={locale === "pl" ? "Główna nawigacja" : "Main navigation"}
           className="hidden items-center gap-4 text-sm text-slate-300 xl:flex"
         >
           {navigationItems.map((item) => (
@@ -50,7 +50,7 @@ export function Header({ locale, dictionary }: HeaderProps) {
       </div>
 
       <nav
-        aria-label="Mobile navigation"
+        aria-label={locale === "pl" ? "Nawigacja mobilna" : "Mobile navigation"}
         className="no-scrollbar mx-auto flex max-w-6xl gap-3 overflow-x-auto px-6 pb-4 text-sm text-slate-300 xl:hidden"
       >
         {navigationItems.map((item) => (
