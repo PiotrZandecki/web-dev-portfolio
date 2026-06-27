@@ -15,13 +15,6 @@ export function Header({ locale, dictionary }: HeaderProps) {
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/85 backdrop-blur supports-backdrop-filter:bg-slate-950/70">
-      <a
-        href="#main-content"
-        className="fixed left-1/2 top-4 z-100 -translate-x-1/2 -translate-y-20 rounded-full border border-cyan-300/30 bg-slate-950 px-5 py-3 text-sm font-semibold text-cyan-100 opacity-0 shadow-2xl shadow-cyan-950/40 outline-none transition focus:translate-y-0 focus:opacity-100"
-      >
-        {locale === "pl" ? "Przejdź do treści" : "Skip to content"}
-      </a>
-
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
         <Link
           href={`/${locale}/`}
