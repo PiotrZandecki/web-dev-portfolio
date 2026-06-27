@@ -2,13 +2,19 @@
 
 Bilingual web developer portfolio built with Next.js, TypeScript and Tailwind CSS.
 
+Current release:
+
+```txt
+v1.1.0
+```
+
 Live site:
 
 ```txt
 https://zandeckidev.netlify.app
 ```
 
-The portfolio is designed as a central hub for smaller web development projects. Each project has its own page, case study sections, technology stack, links area and prepared space for embedded live previews.
+The portfolio is designed as a central hub for web development projects. Each project has its own page, case study sections, technology stack, links area, release documentation and prepared space for embedded live previews.
 
 ## Author
 
@@ -24,6 +30,7 @@ Z-TECH Piotr Zandecki
 - i18n routing with `/en` and `/pl`
 - SEO routes: sitemap, robots, manifest, Open Graph image
 - Netlify deployment
+- Cloudflare Pages compatible static output
 
 ## Local development
 
@@ -45,6 +52,21 @@ Open:
 http://localhost:3000
 ```
 
+## Production checks
+
+Run:
+
+```bash
+npm run lint
+npm run build
+```
+
+The production static output is generated into:
+
+```txt
+out
+```
+
 ## Environment variables
 
 Create `.env.local` based on `.env.example`.
@@ -57,7 +79,7 @@ NEXT_PUBLIC_GITHUB_URL=
 NEXT_PUBLIC_REPOSITORY_URL=
 ```
 
-For production deployment, set these values in Netlify Environment Variables.
+For production deployment, set these values in the hosting provider environment variables.
 
 Production values used for this project:
 
@@ -101,19 +123,33 @@ NEXT_PUBLIC_REPOSITORY_URL=https://github.com/PiotrZandecki/web-dev-portfolio
 /opengraph-image
 ```
 
-## Pre-deployment checks
-
-Run:
-
-```bash
-npm run lint
-npm run build
-```
-
-The production static output is generated into:
+## Documentation
 
 ```txt
-out
+docs/ADD_PROJECT.md
+docs/PROJECT_ENTRY_TEMPLATE.md
+docs/PRODUCTION_CHECKLIST.md
+docs/DEPLOYMENT_OPTIONS.md
+docs/FINAL_HANDOFF.md
+docs/RELEASE_1_1_0.md
+```
+
+## Adding new projects
+
+Use:
+
+```txt
+docs/ADD_PROJECT.md
+docs/PROJECT_ENTRY_TEMPLATE.md
+```
+
+Main files:
+
+```txt
+src/content/projects.ts
+src/content/projectTechnicalDetails.ts
+src/content/projectReleaseDetails.ts
+public/project-previews
 ```
 
 ## Netlify deployment
@@ -127,17 +163,24 @@ Publish directory: out
 
 These values are stored in `netlify.toml`.
 
-Before deployment:
+## Cloudflare Pages deployment
 
-1. Push the repository to GitHub.
-2. Import the repository in Netlify.
-3. Add environment variables:
-   - `NEXT_PUBLIC_SITE_URL`
-   - `NEXT_PUBLIC_CONTACT_EMAIL`
-   - `NEXT_PUBLIC_GITHUB_URL`
-   - `NEXT_PUBLIC_REPOSITORY_URL`
-4. Run production build.
-5. Check both language versions after deployment.
+Recommended fallback deployment settings:
+
+```txt
+Production branch: main
+Build command: npm run build
+Build output directory: out
+```
+
+Environment variables:
+
+```env
+NEXT_PUBLIC_SITE_URL=https://your-project.pages.dev
+NEXT_PUBLIC_CONTACT_EMAIL=p.zandecki24@gmail.com
+NEXT_PUBLIC_GITHUB_URL=https://github.com/PiotrZandecki
+NEXT_PUBLIC_REPOSITORY_URL=https://github.com/PiotrZandecki/web-dev-portfolio
+```
 
 ## Final check URLs
 

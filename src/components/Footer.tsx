@@ -3,6 +3,7 @@ import {
   getLanguageNavigationItems,
   getMainNavigationItems,
 } from "@/config/navigation";
+import { siteRelease } from "@/config/release";
 import { getContactLinks, siteConfig } from "@/config/site";
 import { Dictionary } from "@/lib/i18n";
 import { Locale } from "@/types/locale";
@@ -27,17 +28,20 @@ const footerCopy: Record<
     navigationTitle: string;
     linksTitle: string;
     sourceCode: string;
+    releaseStatus: string;
   }
 > = {
   en: {
     navigationTitle: "Navigation",
     linksTitle: "Links",
     sourceCode: "Source code",
+    releaseStatus: "Production-ready portfolio system",
   },
   pl: {
     navigationTitle: "Nawigacja",
     linksTitle: "Linki",
     sourceCode: "Kod źródłowy",
+    releaseStatus: "Produkcyjny system portfolio",
   },
 };
 
@@ -80,6 +84,10 @@ export function Footer({ locale, dictionary }: FooterProps) {
           <p className="mt-6 text-sm text-slate-500">{siteConfig.author}</p>
 
           <p className="mt-2 text-sm text-slate-500">
+            v{siteRelease.version} · {copy.releaseStatus}
+          </p>
+
+          <p className="mt-2 text-sm text-slate-500">
             © 2026 {siteConfig.name}. {dictionary.footer.rights}
           </p>
 
@@ -104,7 +112,7 @@ export function Footer({ locale, dictionary }: FooterProps) {
           </ul>
         </nav>
 
-        <nav aria-label="Footer external links">
+        <nav aria-label="Footer links">
           <h2 className="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-400">
             {copy.linksTitle}
           </h2>
