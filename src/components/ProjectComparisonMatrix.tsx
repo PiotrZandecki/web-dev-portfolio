@@ -24,8 +24,11 @@ const matrixCopy: Record<
     readiness: string;
     action: string;
     available: string;
-    pending: string;
+    planned: string;
     viewCaseStudy: string;
+    shortCaseStudy: string;
+    completed: string;
+    inProgress: string;
   }
 > = {
   en: {
@@ -42,8 +45,11 @@ const matrixCopy: Record<
     readiness: "Readiness",
     action: "Action",
     available: "Available",
-    pending: "Pending",
+    planned: "Planned",
     viewCaseStudy: "View case study",
+    shortCaseStudy: "Case study",
+    completed: "Completed",
+    inProgress: "In progress",
   },
   pl: {
     eyebrow: "Macierz techniczna",
@@ -59,31 +65,45 @@ const matrixCopy: Record<
     readiness: "Gotowość",
     action: "Akcja",
     available: "Dostępne",
-    pending: "Oczekuje",
+    planned: "Planowane",
     viewCaseStudy: "Zobacz case study",
+    shortCaseStudy: "Case study",
+    completed: "Ukończony",
+    inProgress: "W trakcie",
   },
 };
+
+const desktopGridColumns =
+  "grid-cols-[minmax(10rem,1.35fr)_minmax(6.5rem,0.8fr)_minmax(8.5rem,1fr)_minmax(5.5rem,0.7fr)_minmax(5.5rem,0.7fr)_minmax(5.75rem,0.75fr)_minmax(5rem,0.65fr)_minmax(7.25rem,0.85fr)]";
 
 function StatusPill({
   isAvailable,
   availableLabel,
-  pendingLabel,
+  plannedLabel,
 }: {
   isAvailable: boolean;
   availableLabel: string;
-  pendingLabel: string;
+  plannedLabel: string;
 }) {
   return (
     <span
-      className={`inline-flex rounded-full px-3 py-1 text-xs font-semibold ${
+      className={`inline-flex max-w-full whitespace-nowrap rounded-full px-3 py-1 text-xs font-semibold ${
         isAvailable
           ? "bg-cyan-400/10 text-cyan-300"
           : "bg-white/10 text-slate-400"
       }`}
     >
-      {isAvailable ? availableLabel : pendingLabel}
+      {isAvailable ? availableLabel : plannedLabel}
     </span>
   );
+}
+
+function getStatusLabel(project: Project, locale: Locale) {
+  if (project.status === "completed") {
+    return matrixCopy[locale].completed;
+  }
+
+  return matrixCopy[locale].inProgress;
 }
 
 export function ProjectComparisonMatrix({
@@ -114,89 +134,100 @@ export function ProjectComparisonMatrix({
       </div>
 
       <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5">
-        <div className="hidden overflow-x-auto lg:block">
-          <table className="w-full border-collapse text-left text-sm">
-            <thead className="border-b border-white/10 bg-slate-950">
-              <tr className="text-xs uppercase tracking-[0.18em] text-slate-500">
-                <th className="px-5 py-4 font-semibold">{copy.project}</th>
-                <th className="px-5 py-4 font-semibold">{copy.status}</th>
-                <th className="px-5 py-4 font-semibold">{copy.type}</th>
-                <th className="px-5 py-4 font-semibold">{copy.live}</th>
-                <th className="px-5 py-4 font-semibold">{copy.source}</th>
-                <th className="px-5 py-4 font-semibold">{copy.preview}</th>
-                <th className="px-5 py-4 font-semibold">{copy.readiness}</th>
-                <th className="px-5 py-4 font-semibold">{copy.action}</th>
-              </tr>
-            </thead>
+        <div className="hidden xl:block">
+          <div
+            className={`grid ${desktopGridColumns} border-b border-white/10 bg-slate-950 text-xs uppercase tracking-[0.18em] text-slate-500`}
+          >
+            <div className="px-5 py-4 font-semibold">{copy.project}</div>
+            <div className="px-5 py-4 font-semibold">{copy.status}</div>
+            <div className="px-5 py-4 font-semibold">{copy.type}</div>
+            <div className="px-5 py-4 font-semibold">{copy.live}</div>
+            <div className="px-5 py-4 font-semibold">{copy.source}</div>
+            <div className="px-5 py-4 font-semibold">{copy.preview}</div>
+            <div className="px-5 py-4 font-semibold">{copy.readiness}</div>
+            <div className="px-5 py-4 font-semibold">{copy.action}</div>
+          </div>
 
-            <tbody className="divide-y divide-white/10">
-              {projects.map((project) => {
-                const links = getResolvedProjectLinks(project);
-                const readiness = getProjectReadiness(project);
+          <div className="divide-y divide-white/10">
+            {projects.map((project) => {
+              const links = getResolvedProjectLinks(project);
+              const readiness = getProjectReadiness(project);
 
-                return (
-                  <tr key={project.slug} className="text-slate-300">
-                    <td className="px-5 py-5">
-                      <div>
-                        <p className="font-semibold text-white">
-                          {project.title}
-                        </p>
+              return (
+                <div
+                  key={project.slug}
+                  className={`grid ${desktopGridColumns} items-center text-sm text-slate-300`}
+                >
+                  <div className="min-w-0 px-5 py-5">
+                    <p className="font-semibold leading-5 text-white">
+                      {project.title}
+                    </p>
 
-                        <p className="mt-1 text-xs text-slate-500">
-                          {project.slug}
-                        </p>
-                      </div>
-                    </td>
+                    <p className="mt-1 truncate text-xs text-slate-500">
+                      {project.slug}
+                    </p>
+                  </div>
 
-                    <td className="px-5 py-5">{project.status}</td>
-                    <td className="px-5 py-5">{project.category[locale]}</td>
+                  <div className="min-w-0 px-5 py-5">
+                    <span className="text-slate-300">
+                      {getStatusLabel(project, locale)}
+                    </span>
+                  </div>
 
-                    <td className="px-5 py-5">
-                      <StatusPill
-                        isAvailable={links.hasLiveUrl}
-                        availableLabel={copy.available}
-                        pendingLabel={copy.pending}
-                      />
-                    </td>
+                  <div className="min-w-0 px-5 py-5">
+                    <span className="leading-5 text-slate-300">
+                      {project.category[locale]}
+                    </span>
+                  </div>
 
-                    <td className="px-5 py-5">
-                      <StatusPill
-                        isAvailable={links.hasSourceUrl}
-                        availableLabel={copy.available}
-                        pendingLabel={copy.pending}
-                      />
-                    </td>
+                  <div className="min-w-0 px-5 py-5">
+                    <StatusPill
+                      isAvailable={links.hasLiveUrl}
+                      availableLabel={copy.available}
+                      plannedLabel={copy.planned}
+                    />
+                  </div>
 
-                    <td className="px-5 py-5">
-                      <StatusPill
-                        isAvailable={project.mockups.length > 0}
-                        availableLabel={copy.available}
-                        pendingLabel={copy.pending}
-                      />
-                    </td>
+                  <div className="min-w-0 px-5 py-5">
+                    <StatusPill
+                      isAvailable={links.hasSourceUrl}
+                      availableLabel={copy.available}
+                      plannedLabel={copy.planned}
+                    />
+                  </div>
 
-                    <td className="px-5 py-5">
-                      <span className="font-semibold text-white">
-                        {readiness.score}%
-                      </span>
-                    </td>
+                  <div className="min-w-0 px-5 py-5">
+                    <StatusPill
+                      isAvailable={project.mockups.length > 0}
+                      availableLabel={copy.available}
+                      plannedLabel={copy.planned}
+                    />
+                  </div>
 
-                    <td className="px-5 py-5">
-                      <Link
-                        href={`/${locale}/projects/${project.slug}/`}
-                        className="rounded-full bg-cyan-400 px-4 py-2 text-xs font-semibold text-slate-950 transition hover:bg-cyan-300"
-                      >
+                  <div className="min-w-0 px-5 py-5">
+                    <span className="font-semibold text-white">
+                      {readiness.score}%
+                    </span>
+                  </div>
+
+                  <div className="min-w-0 px-5 py-5">
+                    <Link
+                      href={`/${locale}/projects/${project.slug}/`}
+                      className="inline-flex w-full items-center justify-center rounded-full bg-cyan-400 px-3 py-2 text-center text-[11px] font-semibold leading-none text-slate-950 transition hover:bg-cyan-300"
+                    >
+                      <span className="hidden 2xl:inline">
                         {copy.viewCaseStudy}
-                      </Link>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+                      </span>
+                      <span className="2xl:hidden">{copy.shortCaseStudy}</span>
+                    </Link>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
 
-        <div className="grid gap-4 p-4 lg:hidden">
+        <div className="grid gap-4 p-4 xl:hidden">
           {projects.map((project) => {
             const links = getResolvedProjectLinks(project);
             const readiness = getProjectReadiness(project);
@@ -207,28 +238,43 @@ export function ProjectComparisonMatrix({
                 className="rounded-3xl border border-white/10 bg-slate-950 p-5"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <h3 className="text-xl font-semibold text-white">
+                  <div className="min-w-0">
+                    <h3 className="text-xl font-semibold leading-7 text-white">
                       {project.title}
                     </h3>
+
+                    <p className="mt-1 text-xs text-slate-500">
+                      {project.slug}
+                    </p>
 
                     <p className="mt-2 text-sm text-slate-400">
                       {project.category[locale]}
                     </p>
                   </div>
 
-                  <span className="rounded-full bg-white/10 px-3 py-1 text-xs text-slate-300">
+                  <span className="shrink-0 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-slate-300">
                     {readiness.score}%
                   </span>
                 </div>
 
                 <div className="mt-5 grid gap-3">
                   <div className="flex items-center justify-between gap-4">
+                    <span className="text-sm text-slate-500">
+                      {copy.status}
+                    </span>
+
+                    <span className="text-sm font-medium text-slate-300">
+                      {getStatusLabel(project, locale)}
+                    </span>
+                  </div>
+
+                  <div className="flex items-center justify-between gap-4">
                     <span className="text-sm text-slate-500">{copy.live}</span>
+
                     <StatusPill
                       isAvailable={links.hasLiveUrl}
                       availableLabel={copy.available}
-                      pendingLabel={copy.pending}
+                      plannedLabel={copy.planned}
                     />
                   </div>
 
@@ -236,10 +282,11 @@ export function ProjectComparisonMatrix({
                     <span className="text-sm text-slate-500">
                       {copy.source}
                     </span>
+
                     <StatusPill
                       isAvailable={links.hasSourceUrl}
                       availableLabel={copy.available}
-                      pendingLabel={copy.pending}
+                      plannedLabel={copy.planned}
                     />
                   </div>
 
@@ -247,10 +294,11 @@ export function ProjectComparisonMatrix({
                     <span className="text-sm text-slate-500">
                       {copy.preview}
                     </span>
+
                     <StatusPill
                       isAvailable={project.mockups.length > 0}
                       availableLabel={copy.available}
-                      pendingLabel={copy.pending}
+                      plannedLabel={copy.planned}
                     />
                   </div>
                 </div>
