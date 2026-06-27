@@ -34,12 +34,19 @@ export function ProjectInquirySection({ locale }: ProjectInquirySectionProps) {
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">
-        {projectInquiryBlocks.map((block) => (
+        {projectInquiryBlocks.map((block, index) => (
           <article
             key={block.title.en}
-            className="rounded-3xl border border-white/10 bg-white/5 p-6 transition hover:border-cyan-400/30 hover:bg-white/[0.07]"
+            className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/30 hover:bg-white/[0.07] hover:shadow-2xl hover:shadow-cyan-950/10"
           >
-            <h3 className="text-xl font-semibold tracking-tight text-white">
+            <div
+              aria-hidden="true"
+              className="absolute right-6 top-6 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-slate-950 text-xs font-bold text-slate-500 transition group-hover:border-cyan-400/30 group-hover:text-cyan-300"
+            >
+              {String(index + 1).padStart(2, "0")}
+            </div>
+
+            <h3 className="pr-12 text-xl font-semibold tracking-tight text-white">
               {block.title[locale]}
             </h3>
 
@@ -51,7 +58,7 @@ export function ProjectInquirySection({ locale }: ProjectInquirySectionProps) {
               {block.items[locale].map((item) => (
                 <li
                   key={item}
-                  className="rounded-full bg-slate-900 px-3 py-1 text-xs font-medium text-slate-300"
+                  className="rounded-full border border-white/5 bg-slate-950 px-3 py-1 text-xs font-medium text-slate-300 transition group-hover:border-cyan-400/15"
                 >
                   {item}
                 </li>
@@ -61,7 +68,7 @@ export function ProjectInquirySection({ locale }: ProjectInquirySectionProps) {
         ))}
       </div>
 
-      <div className="mt-8 rounded-3xl border border-cyan-400/20 bg-cyan-400/6 p-6 md:p-8">
+      <div className="mt-8 overflow-hidden rounded-3xl border border-cyan-400/20 bg-cyan-400/6 p-6 transition hover:border-cyan-400/35 md:p-8">
         <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
           <div>
             <h3 className="text-2xl font-semibold tracking-tight text-white">
@@ -75,9 +82,15 @@ export function ProjectInquirySection({ locale }: ProjectInquirySectionProps) {
 
           <Link
             href={`/${locale}/projects/`}
-            className="w-fit rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/5"
+            className="zt-button-press group/link inline-flex w-fit items-center rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-white transition hover:border-cyan-400/40 hover:bg-cyan-400/10 hover:text-cyan-100"
           >
             {locale === "pl" ? "Zobacz projekty" : "View projects"}
+            <span
+              aria-hidden="true"
+              className="ml-2 transition group-hover/link:translate-x-0.5"
+            >
+              →
+            </span>
           </Link>
         </div>
       </div>

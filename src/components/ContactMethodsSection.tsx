@@ -67,42 +67,58 @@ export function ContactMethodsSection({ locale }: ContactMethodsSectionProps) {
         {methods.map((method) => (
           <article
             key={method.id}
-            className="flex h-full flex-col rounded-3xl border border-white/10 bg-white/5 p-6 transition hover:border-cyan-400/30 hover:bg-white/[0.07]"
+            className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/35 hover:bg-white/[0.07] hover:shadow-2xl hover:shadow-cyan-950/20"
           >
-            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-400/10 text-lg font-bold text-cyan-300">
-              {method.id === "email" ? "@" : "{ }"}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100"
+            >
+              <div className="absolute -right-24 -top-24 h-52 w-52 rounded-full bg-cyan-400/10 blur-3xl" />
+              <div className="absolute bottom-0 left-0 h-px w-full bg-linear-to-r from-cyan-400/60 via-cyan-300/20 to-transparent" />
             </div>
 
-            <h3 className="text-2xl font-semibold tracking-tight text-white">
-              {method.title[locale]}
-            </h3>
+            <div className="relative flex h-full flex-col">
+              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-400/10 text-lg font-bold text-cyan-300 ring-1 ring-cyan-400/10 transition group-hover:bg-cyan-400/15 group-hover:ring-cyan-400/25">
+                {method.id === "email" ? "@" : "{ }"}
+              </div>
 
-            <p className="mt-4 flex-1 text-sm leading-6 text-slate-300">
-              {method.description[locale]}
-            </p>
+              <h3 className="text-2xl font-semibold tracking-tight text-white">
+                {method.title[locale]}
+              </h3>
 
-            <p className="mt-5 break-all rounded-2xl bg-slate-900 p-4 text-sm text-slate-400">
-              {method.value ||
-                (locale === "pl" ? "Do uzupełnienia" : "To be added")}
-            </p>
+              <p className="mt-4 flex-1 text-sm leading-6 text-slate-300">
+                {method.description[locale]}
+              </p>
 
-            <p className="mt-4 text-xs leading-5 text-slate-500">
-              {method.helper[locale]}
-            </p>
+              <p className="mt-5 break-all rounded-2xl border border-white/5 bg-slate-950 p-4 text-sm text-slate-400 transition group-hover:border-cyan-400/15">
+                {method.value ||
+                  (locale === "pl" ? "Do uzupełnienia" : "To be added")}
+              </p>
 
-            {method.href ? (
-              <a
-                href={method.href}
-                {...getExternalLinkProps(method.href)}
-                className="mt-6 inline-flex w-fit rounded-full bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
-              >
-                {method.cta}
-              </a>
-            ) : (
-              <span className="mt-6 inline-flex w-fit rounded-full bg-white/10 px-5 py-3 text-sm font-semibold text-slate-400">
-                {locale === "pl" ? "Do uzupełnienia" : "Pending"}
-              </span>
-            )}
+              <p className="mt-4 text-xs leading-5 text-slate-500">
+                {method.helper[locale]}
+              </p>
+
+              {method.href ? (
+                <a
+                  href={method.href}
+                  {...getExternalLinkProps(method.href)}
+                  className="zt-button-press group/link mt-6 inline-flex w-fit items-center rounded-full bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
+                >
+                  {method.cta}
+                  <span
+                    aria-hidden="true"
+                    className="ml-2 transition group-hover/link:translate-x-0.5"
+                  >
+                    →
+                  </span>
+                </a>
+              ) : (
+                <span className="mt-6 inline-flex w-fit rounded-full bg-white/10 px-5 py-3 text-sm font-semibold text-slate-400">
+                  {locale === "pl" ? "Do uzupełnienia" : "Pending"}
+                </span>
+              )}
+            </div>
           </article>
         ))}
       </div>

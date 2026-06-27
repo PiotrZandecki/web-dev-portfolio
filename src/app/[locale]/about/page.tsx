@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { AboutSection } from "@/components/AboutSection";
+import { AnimatedSection } from "@/components/AnimatedSection";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FinalCta } from "@/components/FinalCta";
 import { JsonLd } from "@/components/JsonLd";
@@ -30,24 +31,24 @@ const aboutPageCopy: Record<
   }
 > = {
   en: {
-    eyebrow: "About Z-TECH",
-    title: "A personal web development brand by Piotr Zandecki.",
+    eyebrow: "About",
+    title: "About Z-TECH and the way this portfolio is built.",
     description:
-      "Z-TECH is my frontend-focused web development space for building clean, bilingual and maintainable websites. I focus on practical project delivery: clear structure, reusable components, readable content and deployment-ready results.",
+      "Z-TECH is a frontend-focused web development portfolio and service-oriented project built around practical work, clean structure, bilingual content and deployment-ready delivery.",
     metaTitle: "About | Z-TECH",
     metaDescription:
-      "Learn more about Z-TECH Piotr Zandecki, a frontend-focused web development brand built around clean structure, bilingual content and maintainable projects.",
+      "Learn more about Z-TECH Piotr Zandecki, frontend development focus, project workflow and technology stack.",
     breadcrumbHome: "Home",
     breadcrumbAbout: "About",
   },
   pl: {
     eyebrow: "O Z-TECH",
-    title: "Osobista marka web developmentowa Piotra Zandeckiego.",
+    title: "O Z-TECH i sposobie budowania tego portfolio.",
     description:
-      "Z-TECH to moje frontendowe miejsce do budowania czystych, dwujęzycznych i łatwych w utrzymaniu stron internetowych. Skupiam się na praktycznej realizacji projektów: czytelnej strukturze, komponentach wielokrotnego użytku, zrozumiałych treściach i rezultatach gotowych do wdrożenia.",
+      "Z-TECH to portfolio web development skupione na frontendzie oraz projekt usługowy oparty o praktyczną pracę, czystą strukturę, dwujęzyczne treści i przygotowanie pod wdrożenie.",
     metaTitle: "O Z-TECH | Z-TECH",
     metaDescription:
-      "Dowiedz się więcej o Z-TECH Piotr Zandecki — frontendowej marce web developmentowej opartej na czystej strukturze, dwujęzycznych treściach i łatwych w utrzymaniu projektach.",
+      "Dowiedz się więcej o Z-TECH Piotr Zandecki, kierunku frontendowym, workflow projektowym i stacku technologicznym.",
     breadcrumbHome: "Start",
     breadcrumbAbout: "O Z-TECH",
   },
@@ -108,21 +109,31 @@ export default async function AboutPage({ params }: AboutPageProps) {
     >
       <JsonLd data={getAboutPageStructuredData(locale)} />
 
-      <Breadcrumbs items={breadcrumbItems} />
+      <AnimatedSection>
+        <Breadcrumbs items={breadcrumbItems} />
 
-      <PageIntro
-        eyebrow={copy.eyebrow}
-        title={copy.title}
-        description={copy.description}
-      />
+        <PageIntro
+          eyebrow={copy.eyebrow}
+          title={copy.title}
+          description={copy.description}
+        />
+      </AnimatedSection>
 
-      <AboutSection locale={locale} />
+      <AnimatedSection delay={0.05}>
+        <AboutSection locale={locale} />
+      </AnimatedSection>
 
-      <SkillsSection locale={locale} dictionary={dictionary} />
+      <AnimatedSection delay={0.05}>
+        <SkillsSection locale={locale} dictionary={dictionary} />
+      </AnimatedSection>
 
-      <WorkProcessSection locale={locale} />
+      <AnimatedSection delay={0.05}>
+        <WorkProcessSection locale={locale} />
+      </AnimatedSection>
 
-      <FinalCta locale={locale} />
+      <AnimatedSection delay={0.05}>
+        <FinalCta locale={locale} />
+      </AnimatedSection>
     </main>
   );
 }

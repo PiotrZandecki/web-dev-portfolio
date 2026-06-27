@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { siteConfig } from "@/config/site";
 import { Locale } from "@/types/locale";
 
 type FinalCtaProps = {
@@ -12,25 +11,25 @@ const finalCtaCopy: Record<
     eyebrow: string;
     title: string;
     description: string;
-    projectsLabel: string;
-    contactLabel: string;
+    primaryCta: string;
+    secondaryCta: string;
   }
 > = {
   en: {
     eyebrow: "Next step",
-    title: "Need a clean frontend project or business website?",
+    title: "Have a frontend project in mind?",
     description:
-      "Z-TECH is focused on practical web development: clear structure, responsive interfaces, bilingual content and deployment-ready frontend projects.",
-    projectsLabel: "View projects",
-    contactLabel: "Contact Z-TECH",
+      "Let’s talk about a practical website, portfolio, landing page or frontend interface that can be built, deployed and maintained with a clear structure.",
+    primaryCta: "Contact Z-TECH",
+    secondaryCta: "View projects",
   },
   pl: {
-    eyebrow: "Kolejny krok",
-    title: "Potrzebujesz czystego projektu frontendowego albo strony firmowej?",
+    eyebrow: "Następny krok",
+    title: "Masz na myśli projekt frontendowy?",
     description:
-      "Z-TECH skupia się na praktycznym web developmencie: czytelnej strukturze, responsywnych interfejsach, treściach dwujęzycznych i projektach gotowych do wdrożenia.",
-    projectsLabel: "Zobacz projekty",
-    contactLabel: "Skontaktuj się",
+      "Porozmawiajmy o praktycznej stronie, portfolio, landing page’u albo interfejsie frontendowym, który można zbudować, wdrożyć i utrzymywać w czytelnej strukturze.",
+    primaryCta: "Kontakt z Z-TECH",
+    secondaryCta: "Zobacz projekty",
   },
 };
 
@@ -39,42 +38,57 @@ export function FinalCta({ locale }: FinalCtaProps) {
 
   return (
     <section className="mx-auto max-w-6xl px-6 py-20">
-      <div className="relative overflow-hidden rounded-3xl border border-cyan-400/20 bg-cyan-400/6 p-8 md:p-12">
+      <div className="relative overflow-hidden rounded-3xl border border-cyan-400/20 bg-cyan-400/6 p-8 md:p-10">
         <div
           aria-hidden="true"
-          className="absolute right-0 top-0 h-64 w-64 translate-x-1/3 -translate-y-1/3 rounded-full bg-cyan-400/20 blur-3xl"
+          className="absolute -right-24 -top-24 h-64 w-64 rounded-full bg-cyan-400/10 blur-3xl zt-soft-pulse"
         />
 
-        <div className="relative grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
+        <div
+          aria-hidden="true"
+          className="absolute bottom-0 left-0 h-px w-full bg-linear-to-r from-cyan-400/70 via-cyan-300/20 to-transparent"
+        />
+
+        <div className="relative grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
           <div>
-            <p className="text-sm font-medium uppercase tracking-[0.3em] text-cyan-300">
+            <p className="text-sm font-medium uppercase tracking-[0.3em] text-cyan-400">
               {copy.eyebrow}
             </p>
 
-            <h2 className="mt-4 max-w-3xl text-4xl font-bold tracking-tight text-white md:text-5xl">
+            <h2 className="mt-4 max-w-3xl text-3xl font-bold tracking-tight text-white md:text-5xl">
               {copy.title}
             </h2>
 
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-300">
+            <p className="mt-5 max-w-2xl text-sm leading-6 text-slate-300 md:text-base md:leading-7">
               {copy.description}
             </p>
-
-            <p className="mt-6 text-sm text-slate-500">{siteConfig.author}</p>
           </div>
 
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-3 lg:justify-end">
             <Link
-              href={`/${locale}/projects/`}
-              className="rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
+              href={`/${locale}/contact/#contact-top`}
+              className="zt-button-press group/link inline-flex items-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-950/40 transition hover:bg-cyan-300"
             >
-              {copy.projectsLabel}
+              {copy.primaryCta}
+              <span
+                aria-hidden="true"
+                className="ml-2 transition group-hover/link:translate-x-0.5"
+              >
+                →
+              </span>
             </Link>
 
             <Link
-              href={`/${locale}/#contact`}
-              className="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/5"
+              href={`/${locale}/projects/`}
+              className="zt-button-press group/link inline-flex items-center rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-cyan-400/40 hover:bg-cyan-400/10 hover:text-cyan-100"
             >
-              {copy.contactLabel}
+              {copy.secondaryCta}
+              <span
+                aria-hidden="true"
+                className="ml-2 transition group-hover/link:translate-x-0.5"
+              >
+                →
+              </span>
             </Link>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { AnimatedSection } from "@/components/AnimatedSection";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FinalCta } from "@/components/FinalCta";
 import { JsonLd } from "@/components/JsonLd";
@@ -32,9 +33,9 @@ const stackPageCopy: Record<
 > = {
   en: {
     eyebrow: "Stack",
-    title: "A frontend stack focused on clarity, speed and maintainability.",
+    title: "Technology stack and frontend workflow.",
     description:
-      "The Z-TECH stack is built around practical delivery: Next.js for structure, TypeScript for safer code, Tailwind CSS for consistent interfaces, bilingual content and Cloudflare Pages for static production deployment.",
+      "A closer look at the tools, structure and workflow used to build Z-TECH projects: Next.js, TypeScript, Tailwind CSS, bilingual content and static deployment.",
     metaTitle: "Stack | Z-TECH",
     metaDescription:
       "Technology stack behind Z-TECH frontend projects: Next.js, TypeScript, Tailwind CSS, bilingual content and Cloudflare Pages deployment.",
@@ -43,9 +44,9 @@ const stackPageCopy: Record<
   },
   pl: {
     eyebrow: "Technologie",
-    title: "Stack frontendowy skupiony na czytelności, szybkości i utrzymaniu.",
+    title: "Stack technologiczny i workflow frontendowy.",
     description:
-      "Stack Z-TECH jest oparty o praktyczną realizację projektów: Next.js dla struktury, TypeScript dla bezpieczniejszego kodu, Tailwind CSS dla spójnych interfejsów, treści dwujęzyczne i Cloudflare Pages jako statyczne wdrożenie produkcyjne.",
+      "Bliższy widok narzędzi, struktury i workflow używanego do budowania projektów Z-TECH: Next.js, TypeScript, Tailwind CSS, treści dwujęzyczne i statyczny deployment.",
     metaTitle: "Technologie | Z-TECH",
     metaDescription:
       "Stack technologiczny projektów frontendowych Z-TECH: Next.js, TypeScript, Tailwind CSS, treści dwujęzyczne i deployment na Cloudflare Pages.",
@@ -109,23 +110,35 @@ export default async function StackPage({ params }: StackPageProps) {
     >
       <JsonLd data={getStackPageStructuredData(locale)} />
 
-      <Breadcrumbs items={breadcrumbItems} />
+      <AnimatedSection>
+        <Breadcrumbs items={breadcrumbItems} />
 
-      <PageIntro
-        eyebrow={copy.eyebrow}
-        title={copy.title}
-        description={copy.description}
-      />
+        <PageIntro
+          eyebrow={copy.eyebrow}
+          title={copy.title}
+          description={copy.description}
+        />
+      </AnimatedSection>
 
-      <TechStackSection locale={locale} />
+      <AnimatedSection delay={0.05}>
+        <TechStackSection locale={locale} />
+      </AnimatedSection>
 
-      <SkillsSection locale={locale} dictionary={dictionary} />
+      <AnimatedSection delay={0.05}>
+        <SkillsSection locale={locale} dictionary={dictionary} />
+      </AnimatedSection>
 
-      <SiteProductionChecklist locale={locale} />
+      <AnimatedSection delay={0.05}>
+        <SiteProductionChecklist locale={locale} />
+      </AnimatedSection>
 
-      <WorkProcessSection locale={locale} />
+      <AnimatedSection delay={0.05}>
+        <WorkProcessSection locale={locale} />
+      </AnimatedSection>
 
-      <FinalCta locale={locale} />
+      <AnimatedSection delay={0.05}>
+        <FinalCta locale={locale} />
+      </AnimatedSection>
     </main>
   );
 }

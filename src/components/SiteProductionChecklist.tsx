@@ -58,18 +58,25 @@ export function SiteProductionChecklist({
           </h2>
         </div>
 
-        <div className="rounded-3xl border border-cyan-400/20 bg-cyan-400/6 p-6 lg:justify-self-end">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-300">
-            {copy.statusLabel}
-          </p>
+        <div className="relative overflow-hidden rounded-3xl border border-cyan-400/20 bg-cyan-400/6 p-6 transition hover:border-cyan-400/35 lg:justify-self-end">
+          <div
+            aria-hidden="true"
+            className="absolute -right-20 -top-20 h-44 w-44 rounded-full bg-cyan-400/10 blur-3xl"
+          />
 
-          <p className="mt-3 text-2xl font-bold tracking-tight text-white">
-            {copy.statusValue}
-          </p>
+          <div className="relative">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-300">
+              {copy.statusLabel}
+            </p>
 
-          <p className="mt-4 max-w-xl text-sm leading-6 text-slate-300">
-            {copy.description}
-          </p>
+            <p className="mt-3 text-2xl font-bold tracking-tight text-white">
+              {copy.statusValue}
+            </p>
+
+            <p className="mt-4 max-w-xl text-sm leading-6 text-slate-300">
+              {copy.description}
+            </p>
+          </div>
         </div>
       </div>
 
@@ -77,7 +84,7 @@ export function SiteProductionChecklist({
         {productionChecklistGroups.map((group) => (
           <article
             key={group.title.en}
-            className="rounded-3xl border border-white/10 bg-white/5 p-6 transition hover:border-cyan-400/30 hover:bg-white/[0.07]"
+            className="group rounded-3xl border border-white/10 bg-white/5 p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/30 hover:bg-white/[0.07] hover:shadow-2xl hover:shadow-cyan-950/10"
           >
             <h3 className="text-2xl font-semibold tracking-tight text-white">
               {group.title[locale]}
@@ -91,9 +98,12 @@ export function SiteProductionChecklist({
               {group.items[locale].map((item) => (
                 <li
                   key={item}
-                  className="flex gap-3 rounded-2xl bg-slate-950 p-4 text-sm leading-6 text-slate-300"
+                  className="flex gap-3 rounded-2xl border border-white/5 bg-slate-950 p-4 text-sm leading-6 text-slate-300 transition group-hover:border-cyan-400/15"
                 >
-                  <span aria-hidden="true" className="text-cyan-300">
+                  <span
+                    aria-hidden="true"
+                    className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-cyan-400/10 text-xs text-cyan-300 transition group-hover:scale-110 group-hover:bg-cyan-400/15"
+                  >
                     ✓
                   </span>
                   <span>{item}</span>

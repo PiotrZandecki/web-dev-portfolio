@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { AnimatedSection } from "@/components/AnimatedSection";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactMethodsSection } from "@/components/ContactMethodsSection";
-import { FinalCta } from "@/components/FinalCta";
 import { JsonLd } from "@/components/JsonLd";
 import { PageIntro } from "@/components/PageIntro";
 import { ProjectInquirySection } from "@/components/ProjectInquirySection";
@@ -30,23 +30,23 @@ const contactPageCopy: Record<
 > = {
   en: {
     eyebrow: "Contact",
-    title: "Have a website or frontend idea to build?",
+    title: "Let’s talk about a practical frontend project.",
     description:
-      "Send a message if you need a business website, portfolio page, landing page or clean frontend interface. I focus on practical, bilingual and deployment-ready web projects.",
+      "Use the contact links below to reach Z-TECH directly. The current focus is on frontend projects, business websites, portfolio pages and clean web interfaces.",
     metaTitle: "Contact | Z-TECH",
     metaDescription:
-      "Contact Z-TECH Piotr Zandecki for business websites, portfolio pages, landing pages and frontend web development.",
+      "Contact Z-TECH Piotr Zandecki for frontend projects, business websites and portfolio web development.",
     breadcrumbHome: "Home",
     breadcrumbContact: "Contact",
   },
   pl: {
     eyebrow: "Kontakt",
-    title: "Masz pomysł na stronę albo projekt frontendowy?",
+    title: "Porozmawiajmy o praktycznym projekcie frontendowym.",
     description:
-      "Napisz, jeśli potrzebujesz strony firmowej, portfolio, landing page’a albo czystego interfejsu frontendowego. Skupiam się na praktycznych, dwujęzycznych projektach webowych gotowych do wdrożenia.",
+      "Skorzystaj z linków kontaktowych poniżej, żeby skontaktować się bezpośrednio z Z-TECH. Aktualny kierunek to projekty frontendowe, strony firmowe, portfolio i czyste interfejsy webowe.",
     metaTitle: "Kontakt | Z-TECH",
     metaDescription:
-      "Kontakt z Z-TECH Piotr Zandecki w sprawie stron firmowych, portfolio, landing page’y i projektów frontendowych.",
+      "Kontakt z Z-TECH Piotr Zandecki w sprawie projektów frontendowych, stron firmowych i web developmentu.",
     breadcrumbHome: "Start",
     breadcrumbContact: "Kontakt",
   },
@@ -106,19 +106,23 @@ export default async function ContactPage({ params }: ContactPageProps) {
     >
       <JsonLd data={getContactPageStructuredData(locale)} />
 
-      <Breadcrumbs items={breadcrumbItems} />
+      <AnimatedSection id="contact-top" className="scroll-mt-32">
+        <Breadcrumbs items={breadcrumbItems} />
 
-      <PageIntro
-        eyebrow={copy.eyebrow}
-        title={copy.title}
-        description={copy.description}
-      />
+        <PageIntro
+          eyebrow={copy.eyebrow}
+          title={copy.title}
+          description={copy.description}
+        />
+      </AnimatedSection>
 
-      <ContactMethodsSection locale={locale} />
+      <AnimatedSection delay={0.05}>
+        <ContactMethodsSection locale={locale} />
+      </AnimatedSection>
 
-      <ProjectInquirySection locale={locale} />
-
-      <FinalCta locale={locale} />
+      <AnimatedSection delay={0.05}>
+        <ProjectInquirySection locale={locale} />
+      </AnimatedSection>
     </main>
   );
 }

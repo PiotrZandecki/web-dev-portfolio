@@ -7,17 +7,20 @@ type AnimatedSectionProps = {
   children: ReactNode;
   className?: string;
   delay?: number;
+  id?: string;
 };
 
 export function AnimatedSection({
   children,
   className,
   delay = 0,
+  id,
 }: AnimatedSectionProps) {
   const shouldReduceMotion = useReducedMotion();
 
   return (
     <motion.div
+      id={id}
       className={className}
       initial={shouldReduceMotion ? false : { opacity: 0, y: 28 }}
       whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}

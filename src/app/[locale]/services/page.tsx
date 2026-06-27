@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { AnimatedSection } from "@/components/AnimatedSection";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FaqSection } from "@/components/FaqSection";
 import { FinalCta } from "@/components/FinalCta";
@@ -33,25 +34,24 @@ const servicesPageCopy: Record<
 > = {
   en: {
     eyebrow: "Services",
-    title:
-      "Frontend services for websites that need to look clear and work reliably.",
+    title: "Frontend services for clear and practical web projects.",
     description:
-      "I help with modern business websites, portfolio pages, landing pages and bilingual frontend projects. The focus is simple: clean structure, readable content, responsive UI and deployment-ready delivery.",
+      "Z-TECH focuses on business websites, frontend interfaces, portfolio pages and bilingual project structures built with a deployment-ready mindset.",
     metaTitle: "Services | Z-TECH",
     metaDescription:
-      "Frontend services by Z-TECH Piotr Zandecki: business websites, portfolio pages, landing pages and bilingual web projects built with a deployment-ready workflow.",
+      "Frontend services by Z-TECH: business websites, frontend interfaces, portfolio pages and bilingual web projects.",
     breadcrumbHome: "Home",
     breadcrumbServices: "Services",
   },
   pl: {
     eyebrow: "Usługi",
     title:
-      "Usługi frontendowe dla stron, które mają wyglądać czytelnie i działać stabilnie.",
+      "Usługi frontendowe dla czytelnych i praktycznych projektów webowych.",
     description:
-      "Pomagam przy nowoczesnych stronach firmowych, portfolio, landing page’ach i dwujęzycznych projektach frontendowych. Cel jest prosty: czysta struktura, zrozumiałe treści, responsywny interfejs i przygotowanie pod wdrożenie.",
+      "Z-TECH skupia się na stronach firmowych, interfejsach frontendowych, portfolio i dwujęzycznych strukturach projektów przygotowanych pod wdrożenie.",
     metaTitle: "Usługi | Z-TECH",
     metaDescription:
-      "Usługi frontendowe Z-TECH Piotr Zandecki: strony firmowe, portfolio, landing page’e i dwujęzyczne projekty webowe budowane w workflow gotowym pod wdrożenie.",
+      "Usługi frontendowe Z-TECH: strony firmowe, interfejsy frontendowe, portfolio i dwujęzyczne projekty webowe.",
     breadcrumbHome: "Start",
     breadcrumbServices: "Usługi",
   },
@@ -111,25 +111,39 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
     >
       <JsonLd data={getServicesPageStructuredData(locale)} />
 
-      <Breadcrumbs items={breadcrumbItems} />
+      <AnimatedSection>
+        <Breadcrumbs items={breadcrumbItems} />
 
-      <PageIntro
-        eyebrow={copy.eyebrow}
-        title={copy.title}
-        description={copy.description}
-      />
+        <PageIntro
+          eyebrow={copy.eyebrow}
+          title={copy.title}
+          description={copy.description}
+        />
+      </AnimatedSection>
 
-      <ServicePackagesSection locale={locale} />
+      <AnimatedSection delay={0.05}>
+        <ServicePackagesSection locale={locale} />
+      </AnimatedSection>
 
-      <ValuePropositionSection locale={locale} />
+      <AnimatedSection delay={0.05}>
+        <ValuePropositionSection locale={locale} />
+      </AnimatedSection>
 
-      <ServicesSection locale={locale} />
+      <AnimatedSection delay={0.05}>
+        <ServicesSection locale={locale} />
+      </AnimatedSection>
 
-      <WorkProcessSection locale={locale} />
+      <AnimatedSection delay={0.05}>
+        <WorkProcessSection locale={locale} />
+      </AnimatedSection>
 
-      <FaqSection locale={locale} />
+      <AnimatedSection delay={0.05}>
+        <FaqSection locale={locale} />
+      </AnimatedSection>
 
-      <FinalCta locale={locale} />
+      <AnimatedSection delay={0.05}>
+        <FinalCta locale={locale} />
+      </AnimatedSection>
     </main>
   );
 }
