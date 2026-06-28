@@ -178,25 +178,31 @@ export const projects: Project[] = [
       pl: "Strona firmowa",
     },
     shortDescription: {
-      en: "A modern business website for a beauty brand, focused on services, trust and responsive presentation.",
-      pl: "Nowoczesna strona firmowa dla marki beauty, skupiona na usługach, zaufaniu i responsywnej prezentacji.",
+      en: "A production business website for a beauty brand, focused on services, trust, responsive presentation and public deployment.",
+      pl: "Produkcyjna strona firmowa dla marki beauty, skupiona na usługach, zaufaniu, responsywnej prezentacji i publicznym wdrożeniu.",
     },
     description: {
-      en: "Aurora Beauty is a business website project created for the beauty industry. It focuses on clear service presentation, trust-building sections, testimonials, responsive layout and consistent visual direction.",
-      pl: "Aurora Beauty to projekt strony firmowej dla branży beauty. Skupia się na czytelnej prezentacji usług, sekcjach budujących zaufanie, opiniach klientów, responsywnym layoucie i spójnym kierunku wizualnym.",
+      en: "Aurora Beauty is a production business website project created for the beauty industry. It is deployed under a dedicated subdomain, connected to a public source repository and presented as a complete case study focused on service clarity, trust-building sections, responsive layout and consistent visual direction.",
+      pl: "Aurora Beauty to produkcyjny projekt strony firmowej dla branży beauty. Jest wdrożony pod dedykowaną subdomeną, połączony z publicznym repozytorium i zaprezentowany jako kompletne case study skupione na czytelności usług, sekcjach budujących zaufanie, responsywnym layoucie i spójnym kierunku wizualnym.",
     },
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Static Export",
+      "Cloudflare Pages",
+    ],
     highlights: {
       en: [
-        "Business landing page structure",
-        "Service-focused content sections",
-        "Testimonials and trust signals",
+        "Production deployment under aurora.zandeckidev.pl",
+        "Public GitHub source repository",
+        "Service-focused business website structure",
         "Responsive layout for mobile and desktop",
       ],
       pl: [
-        "Struktura firmowej strony landing page",
-        "Sekcje skupione na prezentacji usług",
-        "Opinie klientów i elementy budujące zaufanie",
+        "Produkcyjne wdrożenie pod aurora.zandeckidev.pl",
+        "Publiczne repozytorium źródłowe na GitHubie",
+        "Struktura strony firmowej skupiona na usługach",
         "Responsywny layout dla mobile i desktopu",
       ],
     },
@@ -219,13 +225,13 @@ export const projects: Project[] = [
         "The page structure prioritizes services, trust signals and clear conversion paths.",
         "Reusable sections keep the visual direction consistent across the full business website.",
         "Image assets are integrated to support the brand mood without overwhelming the layout.",
-        "Information architecture balances aesthetic presentation with practical service clarity.",
+        "The project is deployed as a production-ready static website under a dedicated subdomain.",
       ],
       pl: [
         "Struktura strony priorytetyzuje usługi, elementy zaufania i czytelne ścieżki konwersji.",
         "Sekcje wielokrotnego użytku utrzymują spójny kierunek wizualny na całej stronie firmowej.",
         "Assety graficzne wspierają charakter marki bez przeciążania layoutu.",
-        "Architektura informacji łączy estetyczną prezentację z praktyczną czytelnością usług.",
+        "Projekt jest wdrożony jako produkcyjna strona statyczna pod dedykowaną subdomeną.",
       ],
     },
     challenges: {
@@ -242,14 +248,14 @@ export const projects: Project[] = [
     },
     nextSteps: {
       en: [
-        "Publish the project as a live preview under a dedicated subdomain.",
-        "Replace the designed preview with real production screenshots.",
-        "Add the source code link if the repository becomes public.",
+        "Use the live deployment as the main case study reference.",
+        "Add real production screenshots later if the visual preview should be replaced.",
+        "Extend the business website with additional sections if the service scope grows.",
       ],
       pl: [
-        "Opublikować projekt jako live preview pod dedykowaną subdomeną.",
-        "Zastąpić zaprojektowany preview prawdziwymi screenshotami produkcyjnymi.",
-        "Dodać link do kodu źródłowego, jeśli repozytorium będzie publiczne.",
+        "Używać wdrożenia live jako głównego odniesienia w case study.",
+        "Dodać realne screenshoty produkcyjne później, jeśli preview wizualne ma zostać zastąpione.",
+        "Rozszerzyć stronę firmową o kolejne sekcje, jeśli zakres usług będzie się rozwijał.",
       ],
     },
     process: [
@@ -275,12 +281,12 @@ export const projects: Project[] = [
       },
       {
         title: {
-          en: "Responsive polish",
-          pl: "Dopracowanie responsywności",
+          en: "Production deployment",
+          pl: "Deployment produkcyjny",
         },
         description: {
-          en: "The final step focused on responsive behavior, spacing, consistency and visual balance.",
-          pl: "Ostatni etap skupiał się na responsywności, odstępach, spójności i równowadze wizualnej.",
+          en: "The final phase connected the site to a dedicated production subdomain and public source repository.",
+          pl: "Końcowy etap połączył stronę z dedykowaną subdomeną produkcyjną i publicznym repozytorium źródłowym.",
         },
       },
     ],
@@ -297,6 +303,9 @@ export const projects: Project[] = [
         imageSrc: "/project-previews/aurora-beauty-home.svg",
       },
     ],
+    liveUrl: "https://aurora.zandeckidev.pl",
+    sourceUrl: "https://github.com/PiotrZandecki/aurora-beauty-site",
+    embedUrl: "https://aurora.zandeckidev.pl",
   },
   {
     slug: "web-dev-portfolio",
@@ -380,12 +389,12 @@ export const projects: Project[] = [
     nextSteps: {
       en: [
         "Replace designed previews with real production screenshots where available.",
-        "Add live demos for Private Space and Aurora Beauty under dedicated subdomains.",
+        "Add live demo for Private Space under a dedicated subdomain.",
         "Continue adding new frontend projects as separate case studies.",
       ],
       pl: [
         "Zastąpić zaprojektowane preview prawdziwymi screenshotami produkcyjnymi tam, gdzie będą dostępne.",
-        "Dodać live demo dla Private Space i Aurora Beauty pod dedykowanymi subdomenami.",
+        "Dodać live demo dla Private Space pod dedykowaną subdomeną.",
         "Dodawać kolejne projekty frontendowe jako osobne case studies.",
       ],
     },

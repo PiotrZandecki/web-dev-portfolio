@@ -139,64 +139,64 @@ export const projectReleaseDetails: Record<string, ProjectReleaseDetails> = {
 
   "aurora-beauty": {
     releaseTitle: {
-      en: "Presented as a completed website case study with a planned live preview.",
-      pl: "Prezentowane jako ukończone case study strony z planowanym live preview.",
+      en: "Production business website connected to live and source links.",
+      pl: "Produkcyjna strona firmowa z podpiętym live i kodem źródłowym.",
     },
     releaseDescription: {
-      en: "Aurora Beauty is presented as a completed business website project. The case study is ready for a future live preview under a dedicated subdomain and can receive a source repository link if the code becomes public.",
-      pl: "Aurora Beauty jest prezentowane jako ukończony projekt strony firmowej. Case study jest gotowe na przyszły live preview pod dedykowaną subdomeną i może otrzymać link do repozytorium, jeśli kod zostanie upubliczniony.",
+      en: "Aurora Beauty is now deployed under a dedicated subdomain, connected to a public GitHub repository and available as an embedded live preview inside the portfolio case study.",
+      pl: "Aurora Beauty jest teraz wdrożona pod dedykowaną subdomeną, połączona z publicznym repozytorium GitHub i dostępna jako osadzony podgląd live w case study portfolio.",
     },
     liveDemo: {
-      status: "prepared",
+      status: "connected",
       title: {
         en: "Live demo",
         pl: "Wersja live",
       },
       description: {
-        en: "A public live preview is planned for a dedicated project subdomain.",
-        pl: "Publiczny live preview jest zaplanowany pod dedykowaną subdomeną projektu.",
+        en: "The production deployment is connected and publicly available under the aurora.zandeckidev.pl subdomain.",
+        pl: "Produkcyjne wdrożenie jest podpięte i publicznie dostępne pod subdomeną aurora.zandeckidev.pl.",
       },
       label: {
-        en: "Live preview planned",
-        pl: "Live preview planowane",
+        en: "Live on Cloudflare Pages",
+        pl: "Live na Cloudflare Pages",
       },
       notes: {
         en: [
-          "The project is completed from a portfolio case study perspective.",
-          "The live demo area is prepared for a future deployment.",
-          "The current visual preview keeps the project presentable before live publication.",
+          "The project is deployed as a production business website.",
+          "The live URL points to aurora.zandeckidev.pl.",
+          "The case study can embed the live site directly from the subdomain.",
         ],
         pl: [
-          "Projekt jest ukończony z perspektywy case study w portfolio.",
-          "Obszar live demo jest przygotowany pod przyszłe wdrożenie.",
-          "Aktualny preview wizualny pozwala prezentować projekt przed publikacją live.",
+          "Projekt jest wdrożony jako produkcyjna strona firmowa.",
+          "Adres live prowadzi do aurora.zandeckidev.pl.",
+          "Case study może osadzić stronę live bezpośrednio z subdomeny.",
         ],
       },
     },
     sourceCode: {
-      status: "prepared",
+      status: "connected",
       title: {
         en: "Source code",
         pl: "Kod źródłowy",
       },
       description: {
-        en: "The source area is prepared if the repository becomes public later.",
-        pl: "Obszar kodu źródłowego jest przygotowany na wypadek późniejszej publikacji repozytorium.",
+        en: "The public source repository is connected and available from the project links.",
+        pl: "Publiczne repozytorium źródłowe jest podpięte i dostępne z linków projektu.",
       },
       label: {
-        en: "Source prepared",
-        pl: "Kod przygotowany",
+        en: "Repository connected",
+        pl: "Repozytorium podpięte",
       },
       notes: {
         en: [
-          "The case study explains the structure and implementation focus.",
-          "The source area is ready if the repository is made public.",
-          "The project can remain portfolio-only if the source stays private.",
+          "The source link points to the Aurora Beauty GitHub repository.",
+          "The repository documents the business website structure and implementation.",
+          "The source card is now active in the technical project sections.",
         ],
         pl: [
-          "Case study opisuje strukturę i kierunek implementacji.",
-          "Obszar source jest gotowy, jeśli repozytorium zostanie upublicznione.",
-          "Projekt może pozostać tylko w portfolio, jeśli kod zostanie prywatny.",
+          "Link do kodu prowadzi do repozytorium GitHub projektu Aurora Beauty.",
+          "Repozytorium dokumentuje strukturę strony firmowej i implementację.",
+          "Karta source jest teraz aktywna w technicznych sekcjach projektu.",
         ],
       },
     },
@@ -207,39 +207,39 @@ export const projectReleaseDetails: Record<string, ProjectReleaseDetails> = {
         pl: "Podgląd wizualny",
       },
       description: {
-        en: "A designed visual preview is connected and matches the beauty-business direction.",
-        pl: "Zaprojektowany podgląd wizualny jest podpięty i pasuje do kierunku strony beauty.",
+        en: "A designed visual preview remains connected, while the live deployment is now available as the primary project reference.",
+        pl: "Zaprojektowany podgląd wizualny pozostaje podpięty, a wdrożenie live jest teraz głównym odniesieniem dla projektu.",
       },
       label: {
-        en: "Preview available",
-        pl: "Preview dostępne",
+        en: "Preview and live connected",
+        pl: "Preview i live podpięte",
       },
       notes: {
         en: [
-          "The preview communicates the visual direction of the website.",
-          "It supports the project card, featured sections and case study.",
-          "It can be replaced with a real production screenshot later.",
+          "The designed preview supports project cards and visual context.",
+          "The embedded live preview can reference the deployed production site.",
+          "Production screenshots can still be added later if needed.",
         ],
         pl: [
-          "Preview komunikuje kierunek wizualny strony.",
-          "Wspiera kartę projektu, sekcje featured i case study.",
-          "Może zostać później zastąpiony realnym screenshotem produkcyjnym.",
+          "Zaprojektowany preview wspiera karty projektów i kontekst wizualny.",
+          "Osadzony podgląd live może odwoływać się do wdrożonej strony produkcyjnej.",
+          "Screenshoty produkcyjne nadal można dodać później, jeśli będą potrzebne.",
         ],
       },
     },
     build: {
       command: "npm run build",
-      output: "Static business website build",
+      output: "Production static website build",
       checks: {
         en: [
-          "Responsive presentation is documented.",
-          "Visual preview is available.",
-          "Future deployment and source links can be attached through project data.",
+          "Production URL is connected.",
+          "Public GitHub repository is connected.",
+          "Embedded live preview can load from the dedicated subdomain.",
         ],
         pl: [
-          "Responsywna prezentacja jest opisana.",
-          "Preview wizualny jest dostępny.",
-          "Przyszłe linki deployment i source można podpiąć przez dane projektu.",
+          "Adres produkcyjny jest podpięty.",
+          "Publiczne repozytorium GitHub jest podpięte.",
+          "Osadzony podgląd live może ładować się z dedykowanej subdomeny.",
         ],
       },
     },
