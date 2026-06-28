@@ -1,5 +1,6 @@
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { RouteScrollManager } from "@/components/RouteScrollManager";
 import { getDictionary, isLocale } from "@/lib/i18n";
 import { locales } from "@/types/locale";
 import { notFound } from "next/navigation";
@@ -29,6 +30,7 @@ export default async function LocaleLayout({
 
   return (
     <>
+      <RouteScrollManager />
       <Header locale={locale} dictionary={dictionary} />
       {children}
       <Footer locale={locale} dictionary={dictionary} />
