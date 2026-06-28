@@ -3,6 +3,7 @@ import { siteConfig } from "@/config/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://zandeckidev.pl"),
   title: {
     default: siteConfig.name,
     template: `%s | ${siteConfig.name}`,

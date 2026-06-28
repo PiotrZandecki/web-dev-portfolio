@@ -1,11 +1,10 @@
 "use client";
 
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
 export function RouteScrollManager() {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   useEffect(() => {
     const hasHash = window.location.hash.length > 0;
@@ -14,12 +13,14 @@ export function RouteScrollManager() {
       return;
     }
 
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "auto",
+    window.requestAnimationFrame(() => {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "auto",
+      });
     });
-  }, [pathname, searchParams]);
+  }, [pathname]);
 
   return null;
 }
