@@ -29,7 +29,7 @@ export const techStackGroups: TechStackGroup[] = [
       ],
       pl: [
         "Statyczna i dynamiczna struktura stron",
-        "Architektura oparta o reusable routing",
+        "Architektura oparta o routing wielokrotnego użytku",
         "Routing i metadane przygotowane pod SEO",
       ],
     },
@@ -40,8 +40,8 @@ export const techStackGroups: TechStackGroup[] = [
       pl: "Bezpieczeństwo typów",
     },
     description: {
-      en: "TypeScript helps keep content models, props and project structures predictable as the portfolio grows.",
-      pl: "TypeScript pomaga utrzymać przewidywalne modele treści, propsy i strukturę projektu podczas rozwoju portfolio.",
+      en: "TypeScript keeps content models, props and project structures predictable as the codebase expands and new sections are added.",
+      pl: "TypeScript pomaga utrzymać przewidywalne modele treści, propsy i strukturę projektu podczas rozbudowy kodu oraz dodawania kolejnych sekcji.",
     },
     tools: ["TypeScript", "Typed content models", "Component props"],
     outcomes: {
@@ -98,7 +98,7 @@ export const techStackGroups: TechStackGroup[] = [
       ],
       pl: [
         "Polskie i angielskie wersje stron",
-        "Reusable lokalizowane treści",
+        "Lokalizowane treści wielokrotnego użytku",
         "Skalowalna struktura wielojęzyczna",
       ],
     },
@@ -109,10 +109,10 @@ export const techStackGroups: TechStackGroup[] = [
       pl: "Deployment i produkcja",
     },
     description: {
-      en: "The project is prepared for static export, Netlify deployment, SEO routes and production checks.",
-      pl: "Projekt jest przygotowany pod statyczny export, deployment na Netlify, trasy SEO i testy produkcyjne.",
+      en: "The project is prepared for static export, Cloudflare Pages deployment, SEO routes and production checks.",
+      pl: "Projekt jest przygotowany pod statyczny export, deployment na Cloudflare Pages, trasy SEO i kontrole produkcyjne.",
     },
-    tools: ["Netlify", "Static export", "GitHub", "Sitemap", "Robots"],
+    tools: ["Cloudflare Pages", "Static export", "GitHub", "Sitemap", "Robots"],
     outcomes: {
       en: [
         "Deployment-ready output",
@@ -132,20 +132,20 @@ export const techStackGroups: TechStackGroup[] = [
       pl: "Workflow jakościowy",
     },
     description: {
-      en: "A practical workflow based on linting, build checks, commits, deployment verification and changelog updates.",
-      pl: "Praktyczny workflow oparty o lint, build, commity, weryfikację deploymentu i aktualizację changeloga.",
+      en: "A practical workflow based on linting, build checks, commits, deployment verification and release documentation.",
+      pl: "Praktyczny workflow oparty o lint, build, commity, weryfikację deploymentu i dokumentację release.",
     },
     tools: ["ESLint", "npm scripts", "Git", "CHANGELOG"],
     outcomes: {
       en: [
         "Cleaner code before deployment",
         "Stable local checkpoints",
-        "Documented project progress",
+        "Documented release history",
       ],
       pl: [
         "Czystszy kod przed deploymentem",
         "Stabilne lokalne checkpointy",
-        "Udokumentowany rozwój projektu",
+        "Udokumentowana historia release",
       ],
     },
   },

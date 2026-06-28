@@ -20,106 +20,109 @@ const maintenanceCopy: Record<
   }
 > = {
   en: {
-    eyebrow: "Growth system",
-    title: "A portfolio built to keep evolving.",
+    eyebrow: "Maintenance system",
+    title: "A project system built for clarity, scale and long-term use.",
     description:
-      "This portfolio is not meant to be a frozen showcase. It is a place for continuous learning, testing new ideas, improving existing projects and staying up to date with modern frontend development.",
+      "Z-TECH projects are structured as professional case studies and maintainable frontend products. The focus is on clear documentation, reliable implementation, reusable patterns and deployment-ready presentation.",
     sections: [
       {
-        title: "1. Learn continuously",
+        title: "1. Structured delivery",
         description:
-          "Each project is a chance to practice real frontend decisions instead of only collecting static screenshots.",
+          "Each project is organized around a clear scope, reusable content structure and a presentation flow that makes the work easy to review.",
         items: [
-          "Explore new frontend patterns and implementation ideas",
-          "Compare different ways to structure reusable components",
-          "Turn lessons from each project into stronger case studies",
+          "Define project scope, goals and interface areas",
+          "Use consistent content models and reusable sections",
+          "Present each project as a complete case study",
         ],
       },
       {
-        title: "2. Improve the stack",
+        title: "2. Maintainable frontend",
         description:
-          "The technology stack should stay practical, modern and aligned with real deployment needs.",
+          "The technical structure is designed to keep interfaces predictable, scalable and easier to extend after release.",
         items: [
-          "Review framework, styling and deployment choices",
-          "Keep the project structure clean and maintainable",
-          "Update tooling when it brings real value to the workflow",
+          "Keep components focused, reusable and easy to update",
+          "Separate content, configuration and UI logic",
+          "Use stable frontend patterns across pages and sections",
         ],
       },
       {
-        title: "3. Refine existing work",
+        title: "3. Production quality",
         description:
-          "A finished project can still become better through polish, accessibility, performance and clearer presentation.",
+          "Projects are prepared with deployment, responsiveness, accessibility and long-term presentation quality in mind.",
         items: [
-          "Improve UI details, responsiveness and interaction quality",
-          "Replace previews with real screenshots when available",
-          "Keep case studies clear, useful and easy to review",
+          "Check responsive layouts across key breakpoints",
+          "Keep pages readable, accessible and easy to navigate",
+          "Prepare live links, source links and release notes",
         ],
       },
       {
-        title: "4. Build forward",
+        title: "4. Continuous improvement",
         description:
-          "New projects should expand the portfolio with different use cases, stronger demos and more complete frontend experience.",
+          "Finished projects can be refined with better content, stronger visuals, updated assets and clearer technical context.",
         items: [
-          "Add new projects that show different frontend skills",
-          "Connect live demos and source links where possible",
-          "Use the portfolio as a long-term record of progress",
+          "Improve case studies with stronger project evidence",
+          "Update previews, links and technical notes when needed",
+          "Keep the portfolio aligned with current frontend standards",
         ],
       },
     ],
-    footerTitle: "The goal: keep learning and stay up to date.",
+    footerTitle:
+      "The goal: professional frontend delivery that stays maintainable.",
     footerDescription:
-      "Z-TECH should grow together with my skills: through new projects, updated stack decisions, fresh experiments, better case studies and continuous improvements to the production portfolio.",
+      "Z-TECH is built around clear project presentation, structured implementation and practical maintenance. The portfolio is designed to support new work, stronger case studies and reliable production updates without losing consistency.",
   },
   pl: {
-    eyebrow: "System rozwoju",
-    title: "Portfolio zbudowane tak, żeby stale się rozwijało.",
+    eyebrow: "System utrzymania",
+    title:
+      "System projektów zbudowany pod czytelność, skalowanie i długoterminowe użycie.",
     description:
-      "To portfolio nie ma być zamkniętą, statyczną wizytówką. Ma być miejscem ciągłej nauki, testowania nowych pomysłów, dopracowywania istniejących projektów i bycia na bieżąco z nowoczesnym frontend developmentem.",
+      "Projekty Z-TECH są przygotowywane jako profesjonalne case studies i utrzymywalne realizacje frontendowe. Główny nacisk jest położony na czytelną dokumentację, stabilną implementację, wzorce wielokrotnego użytku i prezentację gotową pod wdrożenie.",
     sections: [
       {
-        title: "1. Uczyć się regularnie",
+        title: "1. Uporządkowana realizacja",
         description:
-          "Każdy projekt jest okazją do ćwiczenia realnych decyzji frontendowych, a nie tylko dodania kolejnego screena do portfolio.",
+          "Każdy projekt jest organizowany wokół jasnego zakresu, spójnej struktury treści i sposobu prezentacji, który ułatwia ocenę wykonanej pracy.",
         items: [
-          "Testować nowe wzorce frontendowe i pomysły implementacyjne",
-          "Porównywać różne sposoby budowania komponentów wielokrotnego użytku",
-          "Przekuwać wnioski z projektów w mocniejsze case studies",
+          "Określenie zakresu, celów i kluczowych obszarów interfejsu",
+          "Stosowanie spójnych modeli treści i sekcji wielokrotnego użytku",
+          "Prezentowanie projektu jako kompletnego case study",
         ],
       },
       {
-        title: "2. Rozwijać stack",
+        title: "2. Utrzymywalny frontend",
         description:
-          "Stack technologiczny powinien pozostać praktyczny, nowoczesny i dopasowany do realnych potrzeb wdrożeniowych.",
+          "Struktura techniczna jest projektowana tak, aby interfejsy były przewidywalne, skalowalne i łatwiejsze do dalszej rozbudowy po wdrożeniu.",
         items: [
-          "Regularnie oceniać wybór frameworka, stylowania i deploymentu",
-          "Utrzymywać czystą i łatwą w rozwoju strukturę projektu",
-          "Aktualizować narzędzia wtedy, gdy faktycznie poprawiają workflow",
+          "Utrzymywanie komponentów jako czytelnych i łatwych do aktualizacji",
+          "Oddzielanie treści, konfiguracji i logiki interfejsu",
+          "Stosowanie stabilnych wzorców frontendowych między sekcjami",
         ],
       },
       {
-        title: "3. Dopracowywać istniejące projekty",
+        title: "3. Jakość produkcyjna",
         description:
-          "Ukończony projekt nadal może zyskać dzięki polishowi, dostępności, wydajności i lepszej prezentacji.",
+          "Projekty są przygotowywane z myślą o wdrożeniu, responsywności, dostępności i długoterminowej jakości prezentacji.",
         items: [
-          "Poprawiać detale UI, responsywność i jakość interakcji",
-          "Zastępować preview realnymi screenshotami, gdy będą dostępne",
-          "Utrzymywać case studies jako czytelne, konkretne i łatwe do oceny",
+          "Sprawdzanie layoutów responsywnych na kluczowych breakpointach",
+          "Utrzymywanie stron jako czytelnych, dostępnych i łatwych w nawigacji",
+          "Przygotowanie linków live, linków do kodu i notatek release",
         ],
       },
       {
-        title: "4. Budować dalej",
+        title: "4. Ciągłe usprawnienia",
         description:
-          "Nowe projekty powinny poszerzać portfolio o różne przypadki użycia, mocniejsze demo i pełniejsze doświadczenie frontendowe.",
+          "Gotowe projekty mogą być dopracowywane przez mocniejsze treści, lepsze materiały wizualne, aktualne assety i pełniejszy kontekst techniczny.",
         items: [
-          "Dodawać projekty pokazujące różne umiejętności frontendowe",
-          "Podpinać live demo i linki do kodu tam, gdzie to możliwe",
-          "Traktować portfolio jako długoterminowy zapis postępów",
+          "Wzmacnianie case studies przez konkretniejsze dowody realizacji",
+          "Aktualizowanie preview, linków i notatek technicznych w razie potrzeby",
+          "Utrzymywanie portfolio zgodnie z aktualnymi standardami frontendu",
         ],
       },
     ],
-    footerTitle: "Cel: uczyć się i być stale na bieżąco.",
+    footerTitle:
+      "Cel: profesjonalna realizacja frontendowa, która pozostaje utrzymywalna.",
     footerDescription:
-      "Z-TECH ma rozwijać się razem z moimi umiejętnościami: przez nowe projekty, aktualizację stacku, świeże eksperymenty, lepsze case studies i ciągłe dopracowywanie produkcyjnego portfolio.",
+      "Z-TECH opiera się na czytelnej prezentacji projektów, uporządkowanej implementacji i praktycznym utrzymaniu. Portfolio jest przygotowane tak, aby wspierać nowe realizacje, mocniejsze case studies i stabilne aktualizacje produkcyjne bez utraty spójności.",
   },
 };
 

@@ -19,8 +19,8 @@ export function ProjectCaseStudy({
       items: project.features[locale],
     },
     {
-      title: dictionary.projectSections.whatILearned,
-      items: project.whatILearned[locale],
+      title: dictionary.projectSections.technicalDecisions,
+      items: project.technicalDecisions[locale],
     },
     {
       title: dictionary.projectSections.challenges,

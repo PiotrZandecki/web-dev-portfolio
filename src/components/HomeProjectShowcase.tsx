@@ -23,21 +23,21 @@ const projectShowcaseCopy: Record<
 > = {
   en: {
     eyebrow: "Selected work",
-    title: "Projects built as practical case studies.",
+    title: "Projects presented as professional case studies.",
     description:
-      "The project section is designed as a growing hub of frontend work — each project has its own structure, process notes, visual preview and deployment-ready space for links.",
-    helperTitle: "Project-based development",
+      "The project section presents frontend work through structured case studies: each project includes scope, interface context, technical decisions, visual previews and deployment-ready links.",
+    helperTitle: "Structured project presentation",
     helperDescription:
-      "Every project is treated as a practical learning and delivery unit: planned, built, documented and prepared for public presentation.",
+      "Every project is prepared to show not only the final interface, but also the thinking behind the implementation: structure, features, delivery decisions and next steps.",
   },
   pl: {
     eyebrow: "Wybrane realizacje",
-    title: "Projekty budowane jako praktyczne case studies.",
+    title: "Projekty prezentowane jako profesjonalne case studies.",
     description:
-      "Sekcja projektów działa jako rozwijany hub pracy frontendowej — każdy projekt ma własną strukturę, opis procesu, podgląd wizualny i miejsce na linki po wdrożeniu.",
-    helperTitle: "Development oparty o projekty",
+      "Sekcja projektów prezentuje realizacje frontendowe w uporządkowanej formie case studies: każdy projekt zawiera zakres, kontekst interfejsu, decyzje techniczne, podgląd wizualny i linki przygotowane pod wdrożenie.",
+    helperTitle: "Uporządkowana prezentacja projektów",
     helperDescription:
-      "Każdy projekt jest traktowany jako praktyczna jednostka nauki i realizacji: zaplanowana, zbudowana, opisana i przygotowana do publicznej prezentacji.",
+      "Każdy projekt jest przygotowany tak, aby pokazać nie tylko finalny interfejs, ale też decyzje stojące za implementacją: strukturę, funkcje, sposób realizacji i kolejne kroki.",
   },
 };
 
@@ -75,9 +75,15 @@ export function HomeProjectShowcase({
 
           <Link
             href={`/${locale}/projects/`}
-            className="mt-6 inline-flex rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/5"
+            className="zt-button-press group/link mt-6 inline-flex items-center rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-white transition hover:border-cyan-400/40 hover:bg-cyan-400/10 hover:text-cyan-100"
           >
             {dictionary.common.viewProjects}
+            <span
+              aria-hidden="true"
+              className="ml-2 transition group-hover/link:translate-x-0.5"
+            >
+              →
+            </span>
           </Link>
         </div>
       </div>

@@ -27,7 +27,7 @@ export type Project = {
   technologies: string[];
   highlights: LocalizedList;
   features: LocalizedList;
-  whatILearned: LocalizedList;
+  technicalDecisions: LocalizedList;
   challenges: LocalizedList;
   nextSteps: LocalizedList;
   process: ProjectProcessStep[];
@@ -52,8 +52,8 @@ export const projects: Project[] = [
       pl: "Osobisty dashboard produktywności do zarządzania notatkami, listami i planami w jednym uporządkowanym miejscu.",
     },
     description: {
-      en: "Private Space is a practical productivity application built to organize personal notes, task lists and plans inside one dashboard. The project focuses on modular structure, local data persistence, reusable UI components and clear user flows.",
-      pl: "Private Space to praktyczna aplikacja produktywności zaprojektowana do organizowania notatek, list zadań i planów w jednym dashboardzie. Projekt skupia się na modułowej strukturze, lokalnym zapisie danych, komponentach wielokrotnego użytku i czytelnych przepływach użytkownika.",
+      en: "Private Space is a productivity application designed to organize personal notes, task lists and plans inside one dashboard. The project focuses on modular structure, local data persistence, reusable UI components and clear user flows.",
+      pl: "Private Space to aplikacja produktywności zaprojektowana do organizowania notatek, list zadań i planów w jednym dashboardzie. Projekt skupia się na modułowej strukturze, lokalnym zapisie danych, komponentach wielokrotnego użytku i czytelnych przepływach użytkownika.",
     },
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Local Storage"],
     highlights: {
@@ -84,18 +84,18 @@ export const projects: Project[] = [
         "Komponenty kart, nagłówków i wzorców UI wielokrotnego użytku.",
       ],
     },
-    whatILearned: {
+    technicalDecisions: {
       en: [
-        "How to split a growing app into smaller feature modules.",
-        "How to handle localStorage in a more predictable and safer way.",
-        "How to reduce UI flashing while loading client-side data.",
-        "How to keep React components reusable across multiple pages.",
+        "Feature modules are separated so notes, lists and plans can be extended independently.",
+        "The localStorage layer is isolated to keep browser persistence predictable and easier to maintain.",
+        "Client-side loading states are handled to reduce visual flashing and keep the interface stable.",
+        "Shared React components are reused across pages to keep the dashboard consistent.",
       ],
       pl: [
-        "Jak dzielić rosnącą aplikację na mniejsze moduły funkcjonalne.",
-        "Jak obsługiwać localStorage w bardziej przewidywalny i bezpieczny sposób.",
-        "Jak ograniczać miganie interfejsu podczas ładowania danych po stronie klienta.",
-        "Jak utrzymywać komponenty React jako elementy wielokrotnego użytku.",
+        "Moduły funkcjonalne są oddzielone tak, aby notatki, listy i plany można było rozwijać niezależnie.",
+        "Warstwa localStorage jest odseparowana, żeby lokalny zapis w przeglądarce był przewidywalny i łatwiejszy w utrzymaniu.",
+        "Stany ładowania po stronie klienta są obsługiwane tak, aby ograniczyć miganie interfejsu i utrzymać stabilny widok.",
+        "Wspólne komponenty React są używane między podstronami, aby zachować spójność dashboardu.",
       ],
     },
     challenges: {
@@ -129,8 +129,8 @@ export const projects: Project[] = [
           pl: "Struktura aplikacji",
         },
         description: {
-          en: "The app was divided into clear modules for notes, lists and plans so each feature could be developed independently.",
-          pl: "Aplikacja została podzielona na czytelne moduły notatek, list i planów, żeby każdą funkcję można było rozwijać niezależnie.",
+          en: "The app was divided into clear modules for notes, lists and plans so each feature can be maintained and extended independently.",
+          pl: "Aplikacja została podzielona na czytelne moduły notatek, list i planów, żeby każdą funkcję można było utrzymywać i rozwijać niezależnie.",
         },
       },
       {
@@ -139,8 +139,8 @@ export const projects: Project[] = [
           pl: "Zapis danych",
         },
         description: {
-          en: "A localStorage layer was added to keep user data in the browser and preserve the app state between sessions.",
-          pl: "Dodana została warstwa localStorage, która przechowuje dane użytkownika w przeglądarce i zachowuje stan aplikacji między sesjami.",
+          en: "A localStorage layer keeps user data in the browser and preserves application state between sessions.",
+          pl: "Warstwa localStorage przechowuje dane użytkownika w przeglądarce i zachowuje stan aplikacji między sesjami.",
         },
       },
       {
@@ -214,18 +214,18 @@ export const projects: Project[] = [
         "Responsywny design dopasowany do różnych rozmiarów ekranu.",
       ],
     },
-    whatILearned: {
+    technicalDecisions: {
       en: [
-        "How to structure a client-oriented business landing page.",
-        "How to keep visual consistency across many page sections.",
-        "How to work with image assets inside a real website layout.",
-        "How to balance aesthetics with clear information architecture.",
+        "The page structure prioritizes services, trust signals and clear conversion paths.",
+        "Reusable sections keep the visual direction consistent across the full business website.",
+        "Image assets are integrated to support the brand mood without overwhelming the layout.",
+        "Information architecture balances aesthetic presentation with practical service clarity.",
       ],
       pl: [
-        "Jak układać strukturę strony firmowej nastawionej na klienta.",
-        "Jak utrzymać spójność wizualną między wieloma sekcjami strony.",
-        "Jak pracować z grafikami w realnym layoucie strony internetowej.",
-        "Jak połączyć estetykę z czytelną architekturą informacji.",
+        "Struktura strony priorytetyzuje usługi, elementy zaufania i czytelne ścieżki konwersji.",
+        "Sekcje wielokrotnego użytku utrzymują spójny kierunek wizualny na całej stronie firmowej.",
+        "Assety graficzne wspierają charakter marki bez przeciążania layoutu.",
+        "Architektura informacji łączy estetyczną prezentację z praktyczną czytelnością usług.",
       ],
     },
     challenges: {
@@ -351,18 +351,18 @@ export const projects: Project[] = [
         "Statyczny deployment na Cloudflare Pages z własną domeną.",
       ],
     },
-    whatILearned: {
+    technicalDecisions: {
       en: [
-        "How to organize multilingual content without making the project too complex.",
-        "How to use dynamic routes for scalable project detail pages.",
-        "How to separate content, configuration, UI components and routing.",
-        "How to prepare a portfolio project for deployment, SEO and future growth.",
+        "Localized routing separates Polish and English content while keeping the page structure consistent.",
+        "Dynamic project routes make the case study system scalable for additional projects.",
+        "Content, configuration, UI components and routing are separated to improve maintainability.",
+        "Production setup includes static export, SEO metadata, sitemap, robots, manifest and deployment checks.",
       ],
       pl: [
-        "Jak organizować wielojęzyczne treści bez nadmiernego komplikowania projektu.",
-        "Jak używać dynamicznych tras dla skalowalnych podstron projektów.",
-        "Jak oddzielać treść, konfigurację, komponenty UI i routing.",
-        "Jak przygotować projekt portfolio pod deployment, SEO i dalszy rozwój.",
+        "Lokalizowany routing oddziela treści polskie i angielskie przy zachowaniu spójnej struktury stron.",
+        "Dynamiczne trasy projektów pozwalają skalować system case studies o kolejne realizacje.",
+        "Treść, konfiguracja, komponenty UI i routing są oddzielone, aby poprawić utrzymywalność projektu.",
+        "Konfiguracja produkcyjna obejmuje statyczny export, metadata SEO, sitemapę, robots, manifest i kontrole deploymentu.",
       ],
     },
     challenges: {

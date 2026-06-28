@@ -35,17 +35,17 @@ export const valuePropositions: ValueProposition[] = [
     },
     description: {
       en: "The goal is to build projects that pass production checks, generate static output and are ready to publish.",
-      pl: "Celem jest budowanie projektów, które przechodzą testy produkcyjne, generują statyczny output i są gotowe do publikacji.",
+      pl: "Celem jest budowanie projektów, które przechodzą kontrole produkcyjne, generują statyczny output i są gotowe do publikacji.",
     },
   },
   {
     title: {
-      en: "Project-based growth",
-      pl: "Rozwój przez projekty",
+      en: "Structured project delivery",
+      pl: "Uporządkowana realizacja projektów",
     },
     description: {
-      en: "Every project is treated as a case study: planned, implemented, documented and improved over time.",
-      pl: "Każdy projekt jest traktowany jako case study: zaplanowany, zaimplementowany, opisany i rozwijany z czasem.",
+      en: "Every project is handled as a complete case study: scoped, implemented, documented, reviewed and prepared for long-term maintenance.",
+      pl: "Każdy projekt jest prowadzony jako kompletne case study: z określonym zakresem, implementacją, dokumentacją, przeglądem i przygotowaniem pod długoterminowe utrzymanie.",
     },
   },
 ];

@@ -41,19 +41,19 @@ export const skillGroups: SkillGroup[] = [
       pl: "Workflow developerski",
     },
     description: {
-      en: "Tools that help keep projects structured, versioned, tested and ready for deployment.",
-      pl: "Narzędzia pomagające utrzymać strukturę projektu, kontrolę wersji, testy i gotowość do deploymentu.",
+      en: "Tools that help keep projects structured, versioned, reviewed and ready for deployment.",
+      pl: "Narzędzia pomagające utrzymać strukturę projektu, kontrolę wersji, przegląd zmian i gotowość do deploymentu.",
     },
-    skills: ["Git", "GitHub", "VS Code", "ESLint", "npm", "Vercel"],
+    skills: ["Git", "GitHub", "VS Code", "ESLint", "npm", "Cloudflare Pages"],
   },
   {
     title: {
-      en: "Currently improving",
-      pl: "Aktualnie rozwijam",
+      en: "Project delivery areas",
+      pl: "Obszary realizacji projektów",
     },
     description: {
-      en: "Areas I am actively practicing through portfolio projects and production-focused iterations.",
-      pl: "Obszary, które aktywnie ćwiczę przez projekty portfolio i iteracje skupione na jakości produkcyjnej.",
+      en: "Areas used to deliver complete frontend projects: from architecture and reusable UI to SEO, deployment and maintainable project structure.",
+      pl: "Obszary wykorzystywane przy realizacji kompletnych projektów frontendowych: od architektury i komponentów wielokrotnego użytku po SEO, deployment i utrzymywalną strukturę projektu.",
     },
     skills: [
       "Project Architecture",

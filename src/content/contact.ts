@@ -41,8 +41,8 @@ export const contactMethods: ContactMethod[] = [
       pl: "GitHub",
     },
     description: {
-      en: "A place to review repositories, source code, project structure and development progress.",
-      pl: "Miejsce do sprawdzenia repozytoriów, kodu źródłowego, struktury projektów i postępów developerskich.",
+      en: "A place to review repositories, source code, project structure and implementation quality.",
+      pl: "Miejsce do sprawdzenia repozytoriów, kodu źródłowego, struktury projektów i jakości implementacji.",
     },
     helper: {
       en: "Opens in a new browser tab.",
@@ -58,8 +58,8 @@ export const projectInquiryBlocks: ProjectInquiryBlock[] = [
       pl: "Cel projektu",
     },
     description: {
-      en: "Describe what the website or interface should help with and what result would make the project successful.",
-      pl: "Opisz, w czym strona albo interfejs ma pomóc i jaki efekt oznaczałby, że projekt się udał.",
+      en: "Describe what the website or interface should support and what result would make the project successful.",
+      pl: "Opisz, co strona albo interfejs ma wspierać i jaki efekt oznaczałby, że projekt spełnia swoje zadanie.",
     },
     items: {
       en: [
@@ -82,8 +82,8 @@ export const projectInquiryBlocks: ProjectInquiryBlock[] = [
       pl: "Treść i język",
     },
     description: {
-      en: "Mention whether the project should be in one language or prepared with Polish and English versions.",
-      pl: "Napisz, czy projekt ma być w jednym języku, czy przygotowany w wersji polskiej i angielskiej.",
+      en: "Mention whether the project should be prepared in one language or delivered with Polish and English versions.",
+      pl: "Napisz, czy projekt ma być przygotowany w jednym języku, czy dostarczony w wersji polskiej i angielskiej.",
     },
     items: {
       en: [
@@ -106,8 +106,8 @@ export const projectInquiryBlocks: ProjectInquiryBlock[] = [
       pl: "Kierunek wizualny",
     },
     description: {
-      en: "Share any references, mood, color direction or existing brand elements that should guide the design.",
-      pl: "Podeślij inspiracje, nastrój, kierunek kolorystyczny albo istniejące elementy marki, które powinny prowadzić design.",
+      en: "Share references, brand mood, color direction or existing assets that should guide the interface.",
+      pl: "Podeślij inspiracje, charakter marki, kierunek kolorystyczny albo istniejące materiały, które powinny poprowadzić interfejs.",
     },
     items: {
       en: [
@@ -117,7 +117,7 @@ export const projectInquiryBlocks: ProjectInquiryBlock[] = [
         "Existing logo or assets",
       ],
       pl: [
-        "Nastrój marki",
+        "Charakter marki",
         "Inspiracje stron",
         "Preferowane kolory",
         "Logo albo istniejące materiały",
@@ -130,21 +130,21 @@ export const projectInquiryBlocks: ProjectInquiryBlock[] = [
       pl: "Oczekiwania wdrożeniowe",
     },
     description: {
-      en: "Add information about where the project should be published and whether it needs a custom domain later.",
-      pl: "Dodaj informację, gdzie projekt ma zostać opublikowany i czy w przyszłości będzie potrzebna własna domena.",
+      en: "Add information about where the project should be published, whether it needs a custom domain and what should be prepared for release.",
+      pl: "Dodaj informację, gdzie projekt ma zostać opublikowany, czy potrzebuje własnej domeny i co powinno zostać przygotowane do release.",
     },
     items: {
       en: [
-        "Netlify deployment",
+        "Cloudflare Pages deployment",
         "Static export",
-        "Custom domain later",
-        "Public portfolio use",
+        "Custom domain",
+        "Production / public use",
       ],
       pl: [
-        "Deployment na Netlify",
+        "Deployment na Cloudflare Pages",
         "Statyczny export",
-        "Własna domena później",
-        "Publiczne użycie w portfolio",
+        "Własna domena",
+        "Użycie produkcyjne / publiczne",
       ],
     },
   },
@@ -164,12 +164,12 @@ export const contactPageDetails: Record<
   }
 > = {
   en: {
-    responseTitle: "Clear context makes the first reply better.",
+    responseTitle: "Clear project context makes the first reply more useful.",
     responseDescription:
-      "A good first message does not need to be long. A short description of the goal, content, visual direction and expected deployment is enough to start.",
+      "A good first message does not need to be long. A short description of the goal, content, visual direction and deployment expectations is enough to define the next step.",
     messageTitle: "Suggested first message",
     messageDescription:
-      "Use this as a simple structure when reaching out about a website or frontend project.",
+      "Use this as a simple structure when reaching out about a website, landing page, portfolio or frontend interface.",
     emailSubject: "Project inquiry for Z-TECH",
     emailBody:
       "Hi Piotr,%0D%0A%0D%0AI would like to discuss a frontend/web project.%0D%0A%0D%0AProject type:%0D%0AGoal:%0D%0ALanguage version:%0D%0AVisual direction:%0D%0ADeployment expectations:%0D%0A%0D%0ARegards,",
@@ -177,12 +177,12 @@ export const contactPageDetails: Record<
     githubCta: "Open GitHub",
   },
   pl: {
-    responseTitle: "Dobry kontekst ułatwia pierwszą odpowiedź.",
+    responseTitle: "Czytelny kontekst projektu ułatwia konkretną odpowiedź.",
     responseDescription:
-      "Pierwsza wiadomość nie musi być długa. Wystarczy krótki opis celu, treści, kierunku wizualnego i oczekiwań dotyczących wdrożenia.",
+      "Pierwsza wiadomość nie musi być długa. Wystarczy krótki opis celu, treści, kierunku wizualnego i oczekiwań wdrożeniowych, żeby okre nie musi być długa. Wystarczy krótki opis celu, treści, kierunku wizualślić kolejny krok.",
     messageTitle: "Proponowana pierwsza wiadomość",
     messageDescription:
-      "Możesz potraktować to jako prostą strukturę wiadomości przy kontakcie w sprawie strony albo projektu frontendowego.",
+      "Możesz potraktować to jako prostą strukturę wiadomości przy kontakcie w sprawie strony, landing page’a, portfolio albo interfejsu frontendowego.",
     emailSubject: "Zapytanie projektowe dla Z-TECH",
     emailBody:
       "Cześć Piotr,%0D%0A%0D%0AChciałbym/chciałabym porozmawiać o projekcie frontendowym/webowym.%0D%0A%0D%0ATyp projektu:%0D%0ACel:%0D%0AWersja językowa:%0D%0AKierunek wizualny:%0D%0AOczekiwania wdrożeniowe:%0D%0A%0D%0APozdrawiam,",

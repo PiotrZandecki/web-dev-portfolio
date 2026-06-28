@@ -129,7 +129,7 @@ export type Dictionary = {
     title: string;
     description: string;
     features: string;
-    whatILearned: string;
+    technicalDecisions: string;
     challenges: string;
     nextSteps: string;
   };
@@ -167,42 +167,42 @@ const dictionaries: Record<Locale, Dictionary> = {
       inProgress: "In progress",
     },
     seo: {
-      homeTitle: "Z-TECH | Web Developer Portfolio",
+      homeTitle: "Z-TECH | Frontend Web Development",
       homeDescription:
-        "Bilingual web developer portfolio by Z-TECH Piotr Zandecki, focused on Next.js, TypeScript, Tailwind CSS and project-based frontend development.",
+        "Professional frontend portfolio by Z-TECH Piotr Zandecki, focused on modern websites, bilingual interfaces, Next.js, TypeScript, Tailwind CSS and deployment-ready delivery.",
       projectsTitle: "Projects | Z-TECH",
       projectsDescription:
-        "A project hub with frontend projects, case studies, technologies, lessons learned and future embedded live previews.",
+        "A professional project hub with frontend case studies, technologies, implementation details, live previews and production-oriented delivery notes.",
       projectTitleSuffix: "Project Case Study | Z-TECH",
     },
     home: {
-      eyebrow: "Web Developer Portfolio",
-      title: "Building clean, useful and modern web experiences.",
+      eyebrow: "Frontend Web Development",
+      title: "Clean, modern and deployment-ready web experiences.",
       description:
-        "I create frontend projects focused on clear structure, responsive design and practical user experience. This portfolio is a central place for my web development work.",
-      focusLabel: "Current focus",
-      focusTitle: "Frontend development",
+        "Z-TECH delivers frontend projects focused on clear structure, responsive interfaces, reusable components and practical user experience across modern websites and web applications.",
+      focusLabel: "Delivery focus",
+      focusTitle: "Frontend development with production quality",
       focusDescription:
-        "Next.js, TypeScript, Tailwind CSS, reusable components and project-based learning.",
+        "Next.js, TypeScript, Tailwind CSS, reusable components, bilingual content structures and static deployment workflows.",
       focusItems: [
-        "Responsive layouts",
-        "Clean component structure",
-        "Portfolio-ready projects",
+        "Responsive web interfaces",
+        "Clean component architecture",
+        "Deployment-ready project structure",
       ],
       aboutEyebrow: "About",
-      aboutTitle: "I am learning by building real projects.",
+      aboutTitle: "Frontend development built around structure and delivery.",
       aboutDescription:
-        "My goal is to become a frontend developer by creating practical, polished and well-structured applications. Every project in this portfolio is a step toward stronger skills, better code and more confident problem solving.",
+        "Z-TECH combines practical implementation, clear technical structure and polished presentation to create websites and interfaces that are easy to review, deploy and maintain.",
       projectsEyebrow: "Selected Work",
       projectsTitle: "Projects",
       projectsDescription:
-        "A growing collection of projects created to practice real frontend development workflows and solve practical problems.",
+        "A curated collection of frontend projects prepared as clear case studies with structured content, technical decisions, visual previews and deployment context.",
     },
     projectsPage: {
       eyebrow: "Project Hub",
-      title: "My web development projects",
+      title: "Frontend projects and case studies",
       description:
-        "Each project has its own page with description, features, technologies and links. This section will grow together with my skills and portfolio.",
+        "Each project has its own case study with scope, features, technologies, implementation notes and links. The section is structured for clear presentation and long-term maintenance.",
     },
     projectsExplorer: {
       searchLabel: "Search",
@@ -221,9 +221,9 @@ const dictionaries: Record<Locale, Dictionary> = {
     },
     featuredProject: {
       eyebrow: "Featured",
-      previewTitle: "Designed as a portfolio case study",
+      previewTitle: "Prepared as a professional case study",
       previewDescription:
-        "Each project page combines overview, features, lessons learned, challenges and a future embedded live preview.",
+        "Each project page combines overview, features, technical decisions, challenges, next steps and space for live previews or source links.",
     },
     projectsSummary: {
       total: "Total projects",
@@ -235,7 +235,7 @@ const dictionaries: Record<Locale, Dictionary> = {
       eyebrow: "Project links",
       title: "Live version and source code",
       description:
-        "This section collects external links connected with the project. When a project is deployed or published, the links will appear here.",
+        "This section collects external links connected with the project. When a project is deployed or published, the links are available here.",
       liveDescription:
         "A deployed version of the project that can be opened and tested in the browser.",
       sourceDescription:
@@ -248,44 +248,45 @@ const dictionaries: Record<Locale, Dictionary> = {
     },
     projectProcess: {
       eyebrow: "Process",
-      title: "Project development process",
+      title: "Project delivery process",
       description:
-        "A simple breakdown of how the project is planned, structured and improved during development.",
+        "A structured breakdown of how the project is planned, implemented, reviewed and prepared for presentation or deployment.",
     },
     projectMockups: {
       eyebrow: "Visual preview",
       title: "Screens and interface areas",
       description:
-        "This section is prepared for screenshots, mockups or visual highlights that will show the project interface in context.",
+        "This section presents screenshots, mockups or visual highlights that show the project interface in context.",
       browserLabel: "Preview window",
     },
     relatedProjects: {
       eyebrow: "More projects",
       title: "Explore other case studies",
       description:
-        "Each project has its own page, structure and development notes. This portfolio is designed to grow with new work.",
+        "Each project has its own structure, technical context and presentation flow. Browse more case studies prepared for review.",
     },
     skillsSection: {
-      eyebrow: "Skills",
-      title: "Technologies I work with",
+      eyebrow: "Stack",
+      title: "Technologies and tools used in delivery",
       description:
-        "A focused set of tools and technologies I use while building frontend projects and improving my development workflow.",
+        "A focused set of frontend technologies, tooling and implementation practices used to build structured, maintainable and responsive web projects.",
     },
     contactSection: {
       eyebrow: "Contact",
       title: "Let’s build something useful.",
       description:
-        "I am developing my frontend skills through practical projects and I am open to opportunities where I can keep learning, building and improving.",
-      currentlyAvailable: "Currently focused on frontend portfolio projects.",
+        "Reach out to discuss a practical website, landing page, portfolio, frontend interface or deployment-ready web project.",
+      currentlyAvailable:
+        "Available for frontend-focused websites, portfolio systems and clean web interfaces.",
       emailMe: "Email Me",
       emailPlaceholderNote:
         "Contact details are controlled from one configuration file and can be updated before deployment.",
       emailTitle: "Email",
       githubTitle: "GitHub",
       emailDescription:
-        "The best place for direct contact, project questions or recruitment conversations.",
+        "The best place for direct contact, project questions or cooperation conversations.",
       githubDescription:
-        "A place for source code, repositories and development progress.",
+        "A place to review source code, repositories, project structure and implementation quality.",
       pendingValue: "To be added",
       openLink: "Open",
     },
@@ -293,9 +294,9 @@ const dictionaries: Record<Locale, Dictionary> = {
       caseStudy: "Case Study",
       title: "How this project was built",
       description:
-        "A short breakdown of the project scope, features, technical decisions and next development steps.",
+        "A short breakdown of the project scope, features, technical decisions, implementation challenges and next delivery steps.",
       features: "Features",
-      whatILearned: "What I learned",
+      technicalDecisions: "Technical decisions",
       challenges: "Challenges",
       nextSteps: "Next steps",
     },
@@ -331,42 +332,43 @@ const dictionaries: Record<Locale, Dictionary> = {
       inProgress: "W trakcie",
     },
     seo: {
-      homeTitle: "Z-TECH | Portfolio Web Developera",
+      homeTitle: "Z-TECH | Frontend Web Development",
       homeDescription:
-        "Dwujęzyczne portfolio web developera Z-TECH Piotr Zandecki, skupione na Next.js, TypeScript, Tailwind CSS i nauce frontendu przez realne projekty.",
+        "Profesjonalne portfolio frontendowe Z-TECH Piotr Zandecki, skupione na nowoczesnych stronach, dwujęzycznych interfejsach, Next.js, TypeScript, Tailwind CSS i wdrożeniach gotowych produkcyjnie.",
       projectsTitle: "Projekty | Z-TECH",
       projectsDescription:
-        "Hub projektów frontendowych z case studies, technologiami, wnioskami z nauki i miejscem na przyszłe osadzone podglądy live.",
+        "Profesjonalny hub projektów frontendowych z case studies, technologiami, szczegółami implementacji, podglądami live i notatkami wdrożeniowymi.",
       projectTitleSuffix: "Case Study Projektu | Z-TECH",
     },
     home: {
-      eyebrow: "Portfolio Web Developera",
-      title: "Tworzę czyste, użyteczne i nowoczesne strony internetowe.",
+      eyebrow: "Frontend Web Development",
+      title: "Czyste, nowoczesne i gotowe do wdrożenia projekty webowe.",
       description:
-        "Buduję projekty frontendowe skupione na przejrzystej strukturze, responsywności i praktycznym doświadczeniu użytkownika. To portfolio jest centralnym miejscem dla moich projektów webowych.",
-      focusLabel: "Aktualny kierunek",
-      focusTitle: "Frontend development",
+        "Z-TECH realizuje projekty frontendowe skupione na czytelnej strukturze, responsywnych interfejsach, komponentach wielokrotnego użytku i praktycznym doświadczeniu użytkownika.",
+      focusLabel: "Kierunek realizacji",
+      focusTitle: "Frontend development z jakością produkcyjną",
       focusDescription:
-        "Next.js, TypeScript, Tailwind CSS, komponenty wielokrotnego użytku i nauka przez projekty.",
+        "Next.js, TypeScript, Tailwind CSS, komponenty wielokrotnego użytku, dwujęzyczne struktury treści i statyczne workflow wdrożeniowe.",
       focusItems: [
-        "Responsywne layouty",
-        "Czysta struktura komponentów",
-        "Projekty gotowe do portfolio",
+        "Responsywne interfejsy webowe",
+        "Czysta architektura komponentów",
+        "Struktura gotowa pod wdrożenie",
       ],
       aboutEyebrow: "O mnie",
-      aboutTitle: "Uczę się przez budowanie realnych projektów.",
+      aboutTitle:
+        "Frontend development oparty o strukturę i jakość realizacji.",
       aboutDescription:
-        "Moim celem jest rozwój w kierunku frontend developera poprzez tworzenie praktycznych, dopracowanych i dobrze uporządkowanych aplikacji. Każdy projekt w tym portfolio to kolejny krok w stronę lepszego kodu, pewniejszego rozwiązywania problemów i mocniejszego warsztatu.",
+        "Z-TECH łączy praktyczną implementację, czytelną strukturę techniczną i dopracowaną prezentację, aby tworzyć strony oraz interfejsy łatwe do oceny, wdrożenia i utrzymania.",
       projectsEyebrow: "Wybrane realizacje",
       projectsTitle: "Projekty",
       projectsDescription:
-        "Rosnąca kolekcja projektów tworzonych po to, żeby ćwiczyć realny workflow frontendowy i rozwiązywać praktyczne problemy.",
+        "Wyselekcjonowana kolekcja projektów frontendowych przygotowanych jako czytelne case studies ze strukturą treści, decyzjami technicznymi, podglądem wizualnym i kontekstem wdrożeniowym.",
     },
     projectsPage: {
       eyebrow: "Centrum projektów",
-      title: "Moje projekty web development",
+      title: "Projekty frontendowe i case studies",
       description:
-        "Każdy projekt ma własną podstronę z opisem, funkcjami, technologiami i linkami. Ta sekcja będzie rozwijać się razem z moimi umiejętnościami i portfolio.",
+        "Każdy projekt ma własne case study z zakresem, funkcjami, technologiami, notatkami implementacyjnymi i linkami. Sekcja jest przygotowana pod czytelną prezentację i długoterminowe utrzymanie.",
     },
     projectsExplorer: {
       searchLabel: "Wyszukaj",
@@ -385,9 +387,9 @@ const dictionaries: Record<Locale, Dictionary> = {
     },
     featuredProject: {
       eyebrow: "Wyróżniony",
-      previewTitle: "Zaprojektowany jako case study do portfolio",
+      previewTitle: "Przygotowany jako profesjonalne case study",
       previewDescription:
-        "Każda podstrona projektu łączy opis, funkcje, wnioski z nauki, wyzwania i miejsce na przyszły osadzony podgląd live.",
+        "Każda podstrona projektu łączy opis, funkcje, decyzje techniczne, wyzwania, kolejne kroki i miejsce na podgląd live albo linki źródłowe.",
     },
     projectsSummary: {
       total: "Liczba projektów",
@@ -399,7 +401,7 @@ const dictionaries: Record<Locale, Dictionary> = {
       eyebrow: "Linki projektu",
       title: "Wersja live i kod źródłowy",
       description:
-        "Ta sekcja zbiera zewnętrzne linki związane z projektem. Po wdrożeniu lub opublikowaniu projektu linki pojawią się tutaj.",
+        "Ta sekcja zbiera zewnętrzne linki związane z projektem. Po wdrożeniu lub opublikowaniu projektu linki są dostępne tutaj.",
       liveDescription:
         "Wdrożona wersja projektu, którą można otworzyć i przetestować w przeglądarce.",
       sourceDescription:
@@ -412,45 +414,45 @@ const dictionaries: Record<Locale, Dictionary> = {
     },
     projectProcess: {
       eyebrow: "Proces",
-      title: "Proces tworzenia projektu",
+      title: "Proces realizacji projektu",
       description:
-        "Prosty podział pokazujący, jak projekt jest planowany, porządkowany i rozwijany w trakcie pracy.",
+        "Uporządkowany podział pokazujący, jak projekt jest planowany, implementowany, weryfikowany i przygotowywany do prezentacji albo wdrożenia.",
     },
     projectMockups: {
       eyebrow: "Podgląd wizualny",
       title: "Ekrany i obszary interfejsu",
       description:
-        "Ta sekcja jest przygotowana pod screeny, mockupy lub wizualne wyróżniki pokazujące interfejs projektu w kontekście.",
+        "Ta sekcja prezentuje screeny, mockupy lub wizualne wyróżniki pokazujące interfejs projektu w kontekście.",
       browserLabel: "Okno podglądu",
     },
     relatedProjects: {
       eyebrow: "Więcej projektów",
       title: "Zobacz inne case studies",
       description:
-        "Każdy projekt ma własną podstronę, strukturę i notatki z procesu tworzenia. To portfolio jest przygotowane tak, żeby rozwijało się razem z kolejnymi realizacjami.",
+        "Każdy projekt ma własną strukturę, kontekst techniczny i sposób prezentacji. Zobacz kolejne case studies przygotowane do oceny.",
     },
     skillsSection: {
-      eyebrow: "Umiejętności",
-      title: "Technologie, z którymi pracuję",
+      eyebrow: "Stack",
+      title: "Technologie i narzędzia używane w realizacji",
       description:
-        "Skupiony zestaw narzędzi i technologii, których używam podczas budowania projektów frontendowych i rozwijania swojego workflow.",
+        "Skupiony zestaw technologii frontendowych, narzędzi i praktyk implementacyjnych wykorzystywanych do budowania uporządkowanych, utrzymywalnych i responsywnych projektów webowych.",
     },
     contactSection: {
       eyebrow: "Kontakt",
       title: "Zbudujmy coś użytecznego.",
       description:
-        "Rozwijam swoje umiejętności frontendowe przez praktyczne projekty i jestem otwarty na możliwości, w których mogę dalej się uczyć, budować i rozwijać.",
+        "Skontaktuj się, aby omówić praktyczną stronę internetową, landing page, portfolio, interfejs frontendowy albo projekt webowy gotowy do wdrożenia.",
       currentlyAvailable:
-        "Aktualnie skupiam się na projektach frontendowych do portfolio.",
+        "Dostępny pod projekty frontendowe, systemy portfolio i czyste interfejsy webowe.",
       emailMe: "Napisz do mnie",
       emailPlaceholderNote:
         "Dane kontaktowe są kontrolowane z jednego pliku konfiguracji i mogą zostać uzupełnione przed wdrożeniem.",
       emailTitle: "Email",
       githubTitle: "GitHub",
       emailDescription:
-        "Najlepsze miejsce do bezpośredniego kontaktu, pytań o projekt albo rozmów rekrutacyjnych.",
+        "Najlepsze miejsce do bezpośredniego kontaktu, pytań o projekt albo rozmów o współpracy.",
       githubDescription:
-        "Miejsce na kod źródłowy, repozytoria i postępy developerskie.",
+        "Miejsce do sprawdzenia kodu źródłowego, repozytoriów, struktury projektów i jakości implementacji.",
       pendingValue: "Do uzupełnienia",
       openLink: "Otwórz",
     },
@@ -458,9 +460,9 @@ const dictionaries: Record<Locale, Dictionary> = {
       caseStudy: "Case Study",
       title: "Jak został zbudowany ten projekt",
       description:
-        "Krótki opis zakresu projektu, funkcji, decyzji technicznych oraz kolejnych kroków rozwoju.",
+        "Krótki opis zakresu projektu, funkcji, decyzji technicznych, wyzwań implementacyjnych oraz kolejnych kroków realizacji.",
       features: "Funkcje",
-      whatILearned: "Czego się nauczyłem",
+      technicalDecisions: "Decyzje techniczne",
       challenges: "Wyzwania",
       nextSteps: "Kolejne kroki",
     },
