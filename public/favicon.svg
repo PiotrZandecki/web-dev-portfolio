@@ -1,6 +1,14 @@
-<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="64" height="64" rx="16" fill="#020617"/>
-  <rect x="1" y="1" width="62" height="62" rx="15" stroke="#22D3EE" stroke-opacity="0.35" stroke-width="2"/>
-  <path d="M16 20H48L30.5 44H48" stroke="#22D3EE" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M16 44H30.5" stroke="#F8FAFC" stroke-width="6" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <rect width="120" height="120" rx="26" fill="#020617"/>
+  <polygon
+    points="60 10 102 35 102 85 60 110 18 85 18 35"
+    fill="none"
+    stroke="#22d3ee"
+    stroke-width="8"
+    stroke-linejoin="round"
+  />
+  <path d="M36 39H83L72 52H51L36 39Z" fill="#f8fafc"/>
+  <path d="M83 39L52 82H37L68 39H83Z" fill="#e2e8f0"/>
+  <path d="M37 82H83L72 69H52L37 82Z" fill="#f8fafc"/>
+  <path d="M72 63L90 43L78 75H62L72 63Z" fill="#22d3ee"/>
 </svg>

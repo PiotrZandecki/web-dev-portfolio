@@ -1,12 +1,12 @@
 import { Dictionary } from "@/lib/i18n";
 import { Locale } from "@/types/locale";
 
-export type NavigationItem = {
+type NavigationItem = {
   label: string;
   href: string;
 };
 
-const navigationLabels: Record<
+const navigationCopy: Record<
   Locale,
   {
     services: string;
@@ -30,7 +30,7 @@ export function getMainNavigationItems(
   locale: Locale,
   dictionary: Dictionary,
 ): NavigationItem[] {
-  const labels = navigationLabels[locale];
+  const copy = navigationCopy[locale];
 
   return [
     {
@@ -38,28 +38,28 @@ export function getMainNavigationItems(
       href: `/${locale}/`,
     },
     {
-      label: dictionary.navigation.projects,
-      href: `/${locale}/projects/`,
-    },
-    {
-      label: labels.services,
-      href: `/${locale}/services/`,
-    },
-    {
       label: dictionary.navigation.about,
       href: `/${locale}/about/`,
     },
     {
-      label: labels.stack,
+      label: copy.services,
+      href: `/${locale}/services/`,
+    },
+    {
+      label: dictionary.navigation.projects,
+      href: `/${locale}/projects/`,
+    },
+    {
+      label: copy.stack,
       href: `/${locale}/stack/`,
     },
     {
-      label: labels.faq,
-      href: `/${locale}/#faq`,
+      label: copy.faq,
+      href: `/${locale}/services/#faq`,
     },
     {
       label: dictionary.navigation.contact,
-      href: `/${locale}/contact/`,
+      href: `/${locale}/contact/#contact-top`,
     },
   ];
 }

@@ -40,7 +40,7 @@ export function FaqSection({ locale }: FaqSectionProps) {
     <section
       id="faq"
       aria-labelledby="faq-heading"
-      className="mx-auto max-w-6xl px-6 py-20"
+      className="mx-auto max-w-6xl scroll-mt-32 px-6 py-20"
     >
       <div className="mb-10">
         <p className="text-sm font-medium uppercase tracking-[0.3em] text-cyan-400">

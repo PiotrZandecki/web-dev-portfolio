@@ -1,9 +1,8 @@
-import { notFound } from "next/navigation";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { ScrollToTop } from "@/components/ScrollToTop";
 import { getDictionary, isLocale } from "@/lib/i18n";
 import { locales } from "@/types/locale";
+import { notFound } from "next/navigation";
 
 type LocaleLayoutProps = {
   children: React.ReactNode;
@@ -29,11 +28,10 @@ export default async function LocaleLayout({
   const dictionary = getDictionary(locale);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100">
-      <ScrollToTop />
+    <>
       <Header locale={locale} dictionary={dictionary} />
       {children}
       <Footer locale={locale} dictionary={dictionary} />
-    </div>
+    </>
   );
 }

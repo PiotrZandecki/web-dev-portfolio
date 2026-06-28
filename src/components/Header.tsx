@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrandLogo } from "@/components/BrandLogo";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { siteConfig } from "@/config/site";
 import { getMainNavigationItems } from "@/config/navigation";
@@ -12,6 +13,7 @@ type HeaderProps = {
 
 export function Header({ locale, dictionary }: HeaderProps) {
   const navigationItems = getMainNavigationItems(locale, dictionary);
+  const homeHref = `/${locale}/`;
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/85 backdrop-blur supports-backdrop-filter:bg-slate-950/70">
@@ -22,15 +24,21 @@ export function Header({ locale, dictionary }: HeaderProps) {
 
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
         <Link
-          href={`/${locale}/`}
-          aria-label={`${siteConfig.name} homepage`}
-          className="group inline-flex items-center gap-3 text-lg font-semibold tracking-tight text-white transition hover:text-cyan-200"
+          href={homeHref}
+          aria-label={
+            locale === "pl"
+              ? `${siteConfig.name} — strona główna`
+              : `${siteConfig.name} — homepage`
+          }
+          className="inline-flex shrink-0 transition hover:opacity-90"
         >
-          <span className="relative flex h-8 w-8 items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 text-xs font-bold text-cyan-300 transition group-hover:border-cyan-400/40 group-hover:bg-cyan-400/15 group-hover:shadow-lg group-hover:shadow-cyan-950/30">
-            Z
+          <span className="hidden sm:inline-flex">
+            <BrandLogo size="sm" />
           </span>
 
-          <span>{siteConfig.name}</span>
+          <span className="inline-flex sm:hidden">
+            <BrandLogo variant="mark" size="sm" />
+          </span>
         </Link>
 
         <nav

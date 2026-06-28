@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrandLogo } from "@/components/BrandLogo";
 import {
   getLanguageNavigationItems,
   getMainNavigationItems,
@@ -85,13 +86,9 @@ export function Footer({ locale, dictionary }: FooterProps) {
         <div>
           <Link
             href={`/${locale}/`}
-            className="group inline-flex items-center gap-3 text-2xl font-bold tracking-tight text-white transition hover:text-cyan-200"
+            className="inline-flex transition hover:opacity-90"
           >
-            <span className="flex h-10 w-10 items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 text-sm font-bold text-cyan-300 transition group-hover:border-cyan-400/40 group-hover:bg-cyan-400/15">
-              Z
-            </span>
-
-            <span>{siteConfig.name}</span>
+            <BrandLogo size="md" />
           </Link>
 
           <p className="mt-5 max-w-md text-sm leading-6 text-slate-400">
